@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary paths
+Disallow: /admin
+Disallow: /api/private
+Disallow: /*.json$
+Disallow: /src/
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /favicon.ico
+
+# Sitemap location
+Sitemap: https://un-dia-para-dar-colima.spartans-dev.io/sitemap.xml
