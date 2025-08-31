@@ -12,69 +12,70 @@ interface Student {
 
 const StudentCarousel: React.FC = () => {
   const students: Student[] = [
-    {
-      name: "Chayito",
-      age: "",
-      dream: "Chayito es risueña y le gusta colorear. Disfruta armar rompecabezas, usar calcetines únicos y participar siempre con alegría.",
-      image: "/chayito.jpeg",
-      media: "/audio/chayito.ogg"
-    },
-    {
-      name: "David",
-      age: "",
-      dream: "David es travieso y ama los dinosaurios y a Spider-Man. Le encanta cantar, bailar, colorear y disfrutar de los abrazos.",
-      image: "/david.jpeg",
-      media: "/audio/david.ogg"
-    },
-    {
-      name: "Yair",
-      age: "",
-      dream: "Yair es amoroso, bailarín y creativo. Le gusta ayudar a sus compañeros y disfruta cantar y pintar.",
-      image: "/jahir.jpeg",
-      media: "/audio/jahir.ogg"
-    },
-    {
-      name: "Ana Lorena Alonzo Valenzuela",
-      age: "41",
-      dream: "Le gusta cantar y bailar música de los años 80. También disfruta armar rompecabezas, platicar, contar chistes, jugar con Barbies y todo lo relacionado con el color rosa.",
-      image: "/lorena.jpeg",
-      media: "/audio/lorena.ogg"
-    },
-    {
-      name: "Marcia",
-      age: "",
-      dream: "Marcia es alegre y trabajadora. Le gusta bailar, ayudar, animar a otros y aprender a través del coloreado.",
-      image: "/marcia.jpeg",
-      media: "/audio/marcia.ogg"
-    },
-    {
-      name: "Max",
-      age: "",
-      dream: "Max es curioso y disfruta observar insectos y escuchar a las chachalacas. También le gustan los rompecabezas, la sopa de letras y caminar tranquilamente.",
-      image: "/max.jpeg",
-      media: "/audio/max.ogg"
-    },
-    {
-      name: "Sandy",
-      age: "",
-      dream: "Sandy es una fashionista creativa que siempre apoya a su hermana. Disfruta realizar actividades divertidas y hacer cosquillas.",
-      image: "/sandy.jpeg",
-      media: "/audio/sandy.ogg"
-    },
-    {
-      name: "Josué",
-      age: "",
-      dream: "Josué es fan de Shakira y Belinda. Es conversador, le gusta armar rompecabezas, dar abrazos y disfrutar de un pan con nata.",
-      image: "/josue.jpeg",
-      media: "/audio/josue.ogg"
-    },
-    {
-      name: "Judith",
-      age: "",
-      dream: "Judith es risueña y trabajadora. Le gusta bailar, hornear, colorear y dar abrazos a sus compañeros.",
-      image: "/judith.jpeg",
-      media: "/audio/judith.ogg"
-    }];
+  {
+    "name": "Chayito",
+    "age": "",
+    "dream": "Chayito es una niña risueña a la que le gusta colorear. Disfruta armar rompecabezas, usar calcetines únicos y participar siempre con mucha alegría.",
+    "image": "/chayito.jpeg",
+    "media": "/audio/chayito.ogg"
+  },
+  {
+    "name": "David",
+    "age": "",
+    "dream": "David es travieso y ama los dinosaurios, además de ser fan de Spider-Man. Le encanta cantar, bailar, colorear y también disfruta mucho de los abrazos.",
+    "image": "/david.jpeg",
+    "media": "/audio/david.ogg"
+  },
+  {
+    "name": "Yair",
+    "age": "",
+    "dream": "Yair es amoroso, creativo y un gran bailarín. Le gusta ayudar a sus compañeros, además de disfrutar al cantar y pintar.",
+    "image": "/jahir.jpeg",
+    "media": "/audio/jahir.ogg"
+  },
+  {
+    "name": "Ana Lorena Alonzo Valenzuela",
+    "age": "41",
+    "dream": "Le gusta cantar y bailar música de los años 80. También disfruta armar rompecabezas, platicar, contar chistes y jugar con Barbies. Todo lo relacionado con el color rosa le fascina.",
+    "image": "/lorena.jpeg",
+    "media": "/audio/lorena.ogg"
+  },
+  {
+    "name": "Marcia",
+    "age": "",
+    "dream": "Marcia es alegre y trabajadora. Le gusta bailar, ayudar a los demás, animar con su entusiasmo y aprender a través del coloreado.",
+    "image": "/marcia.jpeg",
+    "media": "/audio/marcia.ogg"
+  },
+  {
+    "name": "Max",
+    "age": "",
+    "dream": "Max es curioso y disfruta observar insectos, así como escuchar a las chachalacas. También le gustan los rompecabezas, la sopa de letras y caminar con tranquilidad.",
+    "image": "/max.jpeg",
+    "media": "/audio/max.ogg"
+  },
+  {
+    "name": "Sandy",
+    "age": "",
+    "dream": "Sandy es una fashionista creativa que siempre apoya a su hermana. Le gusta realizar actividades divertidas y también hacer cosquillas para provocar sonrisas.",
+    "image": "/sandy.jpeg",
+    "media": "/audio/sandy.ogg"
+  },
+  {
+    "name": "Josué",
+    "age": "",
+    "dream": "Josué es fan de Shakira y de Belinda. Es muy conversador, disfruta armar rompecabezas, dar abrazos y saborear un rico pan con nata.",
+    "image": "/josue.jpeg",
+    "media": "/audio/josue.ogg"
+  },
+  {
+    "name": "Judith",
+    "age": "",
+    "dream": "Judith es risueña y trabajadora. Le gusta bailar, hornear, colorear y también dar abrazos a sus compañeros.",
+    "image": "/judith.jpeg",
+    "media": "/audio/judith.ogg"
+  }
+];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
 
