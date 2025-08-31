@@ -16,7 +16,7 @@ const FundraisingEvents: React.FC = () => {
   const events: Event[] = [
     {
       id: 'kermes-mexicana',
-      title: 'Kermés Mexicana',
+      title: 'Kermés mexicana',
       description: 'Una mañana llena de juegos, antojitos y rifas para apoyar a Fundación Carolita. Disfruta con tu familia mientras contribuyes con donaciones y souvenirs solidarios.',
       date: 'Sábado 20 de septiembre 2025',
       time: '9:00 am – 1:00 pm',
@@ -26,7 +26,7 @@ const FundraisingEvents: React.FC = () => {
     },
     {
       id: 'pasarela-moda-circular',
-      title: 'Pasarela de Moda Circular',
+      title: 'Pasarela de moda circular',
       description: 'Vive una pasarela única donde la moda se convierte en solidaridad. Diseñadores, emprendedores y público se unen en un intercambio de prendas y experiencias con causa.',
       date: 'Sábado 25 de octubre 2025',
       time: '10:00 am – 2:00 pm',
@@ -36,7 +36,7 @@ const FundraisingEvents: React.FC = () => {
     },
     {
       id: 'carrera-con-causa',
-      title: 'Carrera con Causa',
+      title: 'Carrera con causa',
       description: 'Súmate a esta carrera inclusiva y solidaria. Corre, camina o apoya a los participantes en un evento que promueve salud, comunidad y recaudación para jóvenes con discapacidad.',
       date: 'Domingo 23 de noviembre 2025',
       time: '7:00 am',
@@ -46,7 +46,7 @@ const FundraisingEvents: React.FC = () => {
     },
     {
       id: 'un-dia-para-dar-colima',
-      title: 'Un Día para Dar Colima',
+      title: 'Un día para dar colima',
       description: 'La gran jornada solidaria del año. Un movimiento global en el que Colima se une para donar tiempo, recursos y apoyo, transformando vidas en nuestra comunidad.',
       date: 'Martes 2 de diciembre 2025',
       time: 'Por confirmar',
@@ -177,7 +177,7 @@ END:VCALENDAR`;
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-8 tracking-tight">
-              Eventos de Recaudación
+              Eventos de recaudación
             </h2>
             <p className="text-xl md:text-2xl text-[#808285] leading-relaxed max-w-4xl mx-auto font-light">
               Únete a nuestros eventos especiales y ayúdanos a recaudar fondos para continuar transformando vidas.

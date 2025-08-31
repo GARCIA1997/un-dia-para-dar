@@ -125,7 +125,7 @@ const ImpactStats: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-[#808285] text-center mb-16 tracking-tight">
-            Nuestro Impacto
+            Nuestro impacto
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">

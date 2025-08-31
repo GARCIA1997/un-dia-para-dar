@@ -161,7 +161,7 @@ const SponsorsCarousel: React.FC = () => {
           <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
             <h2 className="text-3xl md:text-4xl font-bold text-[#808285] mb-3 tracking-tight">
-              Donadores y Patrocinadores
+              Donadores y patrocinadores
             </h2>
             <p className="text-lg text-[#14AC94] font-medium">
               Gracias a quienes hacen posible nuestra misión

@@ -28,7 +28,7 @@ function App() {
   const shareEvent = () => {
     if (navigator.share) {
       navigator.share({
-        title: "Fundación Carolita IAP – Un Día para Dar México 2025",
+        title: "Fundación Carolita IAP – Un Día para Dar Colima 2025",
         text: "Un día para transformar vidas. Únete y sé parte del cambio.",
         url: window.location.href,
       });
@@ -78,7 +78,7 @@ END:VCALENDAR`;
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
-              Un Día para Dar México 2025
+             Un día para dar Colima 2025
             </h1>
             <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-[#FFFFFF] tracking-tight animate-fade-in-up">
               Fundación Carolita IAP
@@ -135,10 +135,10 @@ END:VCALENDAR`;
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
-              Qué es "Un Día para Dar"
+              ¿Qué es "Un día para dar"?
             </h2>
             <p className="text-xl md:text-2xl text-[#808285] leading-relaxed font-light">
-              "Un Día para Dar es un movimiento global que promueve la solidaridad y la generosidad. Cada año, millones de personas se unen para donar su tiempo, recursos y apoyo a causas que lo necesitan. Este 2025 unimos esfuerzos de corazón para apoyar a Fundación  Carolita que hoy está en proceso de transformación. "
+              "Un día para dar es un movimiento global que promueve la solidaridad y la generosidad. Cada año, millones de personas se unen para donar su tiempo, recursos y apoyo a causas que lo necesitan. Este 2025 unimos esfuerzos de corazón para apoyar a la Fundación Carolita, que hoy está en proceso de transformación."
             </p>
           </div>
         </div>
@@ -150,10 +150,10 @@ END:VCALENDAR`;
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
-                Quién es la Fundación Carolita IAP
+                ¿Quién es la Fundación Carolita IAP?
               </h2>
               <p className="text-xl md:text-2xl text-[#808285] leading-relaxed max-w-5xl mx-auto font-light">
-                "La Asociación tendrá por objeto social brindar atención, formación y acompañamiento integral a personas con discapacidad en situación de vulnerabilidad, mediante programas educativos, terapéuticos, culturales y de desarrollo personal que promuevan su inclusión, autonomía y calidad de vida."
+                "Nuestra asociación tiene como propósito brindar atención, formación y acompañamiento integral a personas con discapacidad en situación de vulnerabilidad. Lo hacemos a través de programas educativos, terapéuticos, culturales y de desarrollo personal que fomentan su inclusión, fortalecen su autonomía y mejoran su calidad de vida."
               </p>
             </div>
 
@@ -222,7 +222,7 @@ END:VCALENDAR`;
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] text-center mb-16 tracking-tight">
-              Qué realiza la Fundación
+              ¿Qué realiza la Fundación Carolita IAP?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
               <div className="bg-white rounded-[20px] p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 shadow-lg border border-gray-100">
@@ -255,7 +255,7 @@ END:VCALENDAR`;
                   Producción de galletas artesanales
                 </h3>
                 <p className="text-[#808285] text-base leading-relaxed font-light">
-                  Elaboradas por los beneficiarios como fuente de ingresos.
+                  Elaboradas por los beneficiarios como fuente de ingreso.
                 </p>
               </div>
               <div className="bg-white rounded-[20px] p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 shadow-lg border border-gray-100">
@@ -279,7 +279,7 @@ END:VCALENDAR`;
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">
-              Necesidades de Carolita
+              Necesidades de la Fundación Carolita IAP
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
               <div className="bg-white/10 backdrop-blur-sm rounded-[20px] p-8 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg">
@@ -314,8 +314,8 @@ END:VCALENDAR`;
       {/* Impact Stats */}
       <ImpactStats />
 
-      {/* Students Carousel */}
-      <StudentCarousel />
+      {/* Students Carousel <StudentCarousel /> */}
+      
 
       {/* Fundraising Events */}
       <FundraisingEvents />
@@ -327,11 +327,11 @@ END:VCALENDAR`;
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
               Llamado a la acción para asistir y ayudar
             </h2>
             <p className="text-xl md:text-2xl text-[#808285] leading-relaxed mb-12 font-light">
-              "Este año, tu participación puede marcar la diferencia. Ven, conoce nuestra labor y ayúdanos comprando nuestras galletas, realizando una donación o apadrinando a un joven."
+              "Este año, tu participación puede marcar la diferencia. Ven, conoce nuestra labor y ayúdanos comprando nuestras galletas, realizando una donación o apadrinando a una persona joven."
             </p>
             
             <div className="bg-white rounded-[20px] p-10 mb-12 shadow-xl border border-gray-100">
@@ -351,7 +351,7 @@ END:VCALENDAR`;
                 <div className="flex flex-col items-center gap-2">
                   <MapPin className="w-8 h-8 text-[#EE202E]" />
                   <span className="font-semibold text-lg text-center">
-                    Lugar: fundación Carolita IAP
+                    Lugar: Fundación Carolita IAP
                   </span>
                 </div>
               </div>

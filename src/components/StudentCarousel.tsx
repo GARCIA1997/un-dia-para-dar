@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Volume2 } from 'lucide-react';
 import WhatsAppButton from './WhatsAppButton';
 
 interface Student {
@@ -106,10 +106,10 @@ const StudentCarousel: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-8 tracking-tight">
-              Conoce a Nuestros Estudiantes
+              Conoce a nuestros estudiantes
             </h2>
             <h3 className="text-2xl md:text-3xl font-semibold text-[#14AC94] mb-6 tracking-tight">
-              Historias de Superación y Esperanza
+              Historias de superación y esperanza
             </h3>
             <p className="text-xl md:text-2xl text-[#808285] leading-relaxed max-w-4xl mx-auto font-light">
               Cada estudiante tiene una historia única y un sueño por cumplir. Tu apoyo puede hacer la diferencia.
@@ -145,7 +145,7 @@ const StudentCarousel: React.FC = () => {
                               onClick={() => handlePlayAudio(student.media)}
                               className="inline-flex items-center justify-center px-8 py-4 bg-[#14AC94] text-white rounded-full font-semibold hover:bg-[#0f9582] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-lg"
                             >
-                              <Play className="w-6 h-6 mr-3" />
+                              <Volume2 className="w-6 h-6 mr-3" />
                               Conoce su historia
                             </button>
 
@@ -155,7 +155,7 @@ const StudentCarousel: React.FC = () => {
                                 variant="primary"
                                 className="w-full text-lg px-8 py-4"
                               >
-                                Apadrinar Ahora
+                                Apadrinar ahora
                               </WhatsAppButton>
                             </div>
                           </div>
