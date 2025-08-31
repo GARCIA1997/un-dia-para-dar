@@ -14,6 +14,7 @@ const SponsorsCarousel: React.FC = () => {
     { id: '1', name: 'Spartans Dev', logo: '/spartansdevio-high-resolution-logo-color-on-transparent-background.png', url: 'https://spartans-dev.io' },
     { id: '2', name: 'Razo', logo: '/razo.png' },
     { id: '3', name: 'Macehual', logo: '/macehual.png' },
+    { id: '4', name: 'Artecultores', logo: '/artecultores.png' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

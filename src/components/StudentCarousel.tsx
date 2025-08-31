@@ -10,17 +10,71 @@ interface Student {
   media: string;
 }
 
-const StudentCarousel: React.FC = () => { const students: Student[] = [
-    { name: "Chayito", age: "", dream: "Chayito es risueña, le gusta colorear, rompecabezas, calcetines únicos y participar con alegría.", image: "/chayito.jpeg", media: "/audio/chayito.ogg" },
-    { name: "David", age: "", dream: "David es travieso, ama dinosaurios y Spider-Man, canta, baila, colorea y disfruta abrazos.", image:"/david.jpeg", media: "/audio/david.ogg" },
-    { name: "Yair", age: "", dream: "Yair es amoroso, bailarín, creativo, ayuda a sus compañeros y disfruta cantar y pintar.", image: "/jahir.jpeg", media: "/audio/jahir.ogg" },
-    { name: "Ana Lorena Alonzo Valenzuela", age: "41", dream: "Le gusta cantar, bailar 80’s, rompecabezas, platicar, chistes, Barbies y el color rosa.", image: "/lorena.jpeg", media: "/audio/lorena.ogg" },
-    { name: "Marcia", age: "", dream: "Marcia es alegre, trabajadora, disfruta bailar, ayudar, animar a otros y aprender coloreando.", image:"/marcia.jpeg", media: "/audio/marcia.ogg" },
-    { name: "Max", age: "", dream: "Max es curioso, disfruta insectos, chachalacas, rompecabezas, sopa de letras y caminar tranquilo.", image: "/max.jpeg", media: "/audio/max.ogg" },
-    { name: "Sandy", age: "", dream: "Sandy es fashionista, creativa, apoya a su hermana, disfruta actividades y hacer cosquillas.", image: "/sandy.jpeg", media: "/audio/sandy.ogg" },
-    { name: "Josué", age: "", dream: "Fan de Shakira y Belinda, conversador, le gustan rompecabezas, abrazos y pan con nata.", image: "/josue.jpeg", media: "/audio/josue.ogg" },
-    { name: "Judith", age: "", dream: "Risueña, trabajadora, disfruta bailar, hornear, colorear y dar abrazos a compañeros.", image: "/judith.jpeg", media: "/audio/judith.ogg" }
-  ];
+const StudentCarousel: React.FC = () => {
+  const students: Student[] = [
+    {
+      name: "Chayito",
+      age: "",
+      dream: "Chayito es risueña y le gusta colorear. Disfruta armar rompecabezas, usar calcetines únicos y participar siempre con alegría.",
+      image: "/chayito.jpeg",
+      media: "/audio/chayito.ogg"
+    },
+    {
+      name: "David",
+      age: "",
+      dream: "David es travieso y ama los dinosaurios y a Spider-Man. Le encanta cantar, bailar, colorear y disfrutar de los abrazos.",
+      image: "/david.jpeg",
+      media: "/audio/david.ogg"
+    },
+    {
+      name: "Yair",
+      age: "",
+      dream: "Yair es amoroso, bailarín y creativo. Le gusta ayudar a sus compañeros y disfruta cantar y pintar.",
+      image: "/jahir.jpeg",
+      media: "/audio/jahir.ogg"
+    },
+    {
+      name: "Ana Lorena Alonzo Valenzuela",
+      age: "41",
+      dream: "Le gusta cantar y bailar música de los años 80. También disfruta armar rompecabezas, platicar, contar chistes, jugar con Barbies y todo lo relacionado con el color rosa.",
+      image: "/lorena.jpeg",
+      media: "/audio/lorena.ogg"
+    },
+    {
+      name: "Marcia",
+      age: "",
+      dream: "Marcia es alegre y trabajadora. Le gusta bailar, ayudar, animar a otros y aprender a través del coloreado.",
+      image: "/marcia.jpeg",
+      media: "/audio/marcia.ogg"
+    },
+    {
+      name: "Max",
+      age: "",
+      dream: "Max es curioso y disfruta observar insectos y escuchar a las chachalacas. También le gustan los rompecabezas, la sopa de letras y caminar tranquilamente.",
+      image: "/max.jpeg",
+      media: "/audio/max.ogg"
+    },
+    {
+      name: "Sandy",
+      age: "",
+      dream: "Sandy es una fashionista creativa que siempre apoya a su hermana. Disfruta realizar actividades divertidas y hacer cosquillas.",
+      image: "/sandy.jpeg",
+      media: "/audio/sandy.ogg"
+    },
+    {
+      name: "Josué",
+      age: "",
+      dream: "Josué es fan de Shakira y Belinda. Es conversador, le gusta armar rompecabezas, dar abrazos y disfrutar de un pan con nata.",
+      image: "/josue.jpeg",
+      media: "/audio/josue.ogg"
+    },
+    {
+      name: "Judith",
+      age: "",
+      dream: "Judith es risueña y trabajadora. Le gusta bailar, hornear, colorear y dar abrazos a sus compañeros.",
+      image: "/judith.jpeg",
+      media: "/audio/judith.ogg"
+    }];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
 
@@ -63,7 +117,7 @@ const StudentCarousel: React.FC = () => { const students: Student[] = [
 
           <div className="relative max-w-5xl mx-auto">
             <div className="overflow-hidden rounded-[20px]">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
@@ -72,8 +126,8 @@ const StudentCarousel: React.FC = () => { const students: Student[] = [
                     <div className="bg-white rounded-[20px] shadow-2xl overflow-hidden mx-6 border border-gray-100">
                       <div className="md:flex">
                         <div className="md:w-1/2">
-                          <img 
-                            src={student.image} 
+                          <img
+                            src={student.image}
                             alt={`${student.name} - Estudiante de Fundación Carolita IAP, ${student.age} años`}
                             className="w-full h-72 md:h-full object-cover"
                           />
@@ -132,9 +186,8 @@ const StudentCarousel: React.FC = () => { const students: Student[] = [
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-[#EE202E]' : 'bg-gray-300'
-                  }`}
+                  className={`w-4 h-4 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#EE202E]' : 'bg-gray-300'
+                    }`}
                 />
               ))}
             </div>

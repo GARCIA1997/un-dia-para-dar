@@ -28,7 +28,7 @@ const FundraisingEvents: React.FC = () => {
       id: 'pasarela-moda-circular',
       title: 'Pasarela de Moda Circular',
       description: 'Vive una pasarela única donde la moda se convierte en solidaridad. Diseñadores, emprendedores y público se unen en un intercambio de prendas y experiencias con causa.',
-      date: 'Sábado 18 de octubre 2025',
+      date: 'Sábado 25 de octubre 2025',
       time: '10:00 am – 2:00 pm',
       location: 'Fundación Carolita IAP (instalaciones)',
       emoji: '👗',

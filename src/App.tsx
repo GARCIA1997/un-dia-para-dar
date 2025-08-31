@@ -9,7 +9,6 @@ import {
   MapPin,
   Clock,
   GraduationCap,
-  Wrench,
   Home,
   Car,
   Facebook,
@@ -124,7 +123,7 @@ END:VCALENDAR`;
                 onClick={downloadCalendar}
                 className="bg-white/20 backdrop-blur-sm rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
               >
-                <Download className="w-6 h-6" />
+                <Calendar className="w-6 h-6" />
               </button>
             </div>
           </div>
@@ -242,7 +241,7 @@ END:VCALENDAR`;
                   <Stethoscope className="w-10 h-10 text-[#EE202E]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#808285] mb-4 tracking-tight">
-                  Terapias adaptativas
+                  Terapias ocupacionales
                 </h3>
                 <p className="text-[#808285] text-base leading-relaxed font-light">
                   Programas individuales de rehabilitación y desarrollo.

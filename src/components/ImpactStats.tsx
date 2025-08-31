@@ -23,10 +23,10 @@ const ImpactStats: React.FC = () => {
       icon: "users"
     },
     {
-      number: "+5,000",
+      number: "+60,000",
       label: "GALLETAS VENDIDAS AL AÑO",
       description: "Productos artesanales elaborados por nuestros beneficiarios",
-      finalValue: 5000,
+      finalValue: 60000,
       bgColor: "bg-[#14AC94]",
       textColor: "text-white",
       icon: "cookie"
