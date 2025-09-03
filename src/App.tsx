@@ -385,10 +385,10 @@ END:VCALENDAR`;
             </div>
 
             <div className="flex justify-center space-x-8 mb-12">
-              <a href="https://www.facebook.com/FundacionCarolita" className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
+              <a href="https://www.facebook.com/share/1BfmYrV77r/?mibextid=wwXIfr" className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
                 <Facebook className="w-7 h-7" />
               </a>
-              <a href="https://www.instagram.com/FundacionCarolita" className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
+              <a href="https://www.instagram.com/fundacioncarolita_?igsh=NHZndGF2OXB2NzBl" className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
                 <Instagram className="w-7 h-7" />
               </a>
               <a href="#" className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
