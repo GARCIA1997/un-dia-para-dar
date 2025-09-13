@@ -314,9 +314,9 @@ END:VCALENDAR`;
       {/* Impact Stats */}
       <ImpactStats />
 
-      {/* Students Carousel <StudentCarousel /> */}
+      {/* Students Carousel  */}   
+      <StudentCarousel />
       
-
       {/* Fundraising Events */}
       <FundraisingEvents />
 

@@ -16,63 +16,63 @@ const StudentCarousel: React.FC = () => {
     "name": "Chayito",
     "age": "",
     "dream": "Chayito es una niña risueña a la que le gusta colorear. Disfruta armar rompecabezas, usar calcetines únicos y participar siempre con mucha alegría.",
-    "image": "/chayito.jpeg",
+    "image": "/chayito.png",
     "media": "/audio/chayito.ogg"
   },
   {
     "name": "David",
     "age": "",
     "dream": "David es travieso y ama los dinosaurios, además de ser fan de Spider-Man. Le encanta cantar, bailar, colorear y también disfruta mucho de los abrazos.",
-    "image": "/david.jpeg",
+    "image": "/david.png",
     "media": "/audio/david.ogg"
   },
   {
     "name": "Yair",
     "age": "",
     "dream": "Yair es amoroso, creativo y un gran bailarín. Le gusta ayudar a sus compañeros, además de disfrutar al cantar y pintar.",
-    "image": "/jahir.jpeg",
+    "image": "/jahir.png",
     "media": "/audio/jahir.ogg"
   },
   {
-    "name": "Ana Lorena Alonzo Valenzuela",
+    "name": "Ana Lorena",
     "age": "41",
     "dream": "Le gusta cantar y bailar música de los años 80. También disfruta armar rompecabezas, platicar, contar chistes y jugar con Barbies. Todo lo relacionado con el color rosa le fascina.",
-    "image": "/lorena.jpeg",
+    "image": "/lorena.png",
     "media": "/audio/lorena.ogg"
   },
   {
     "name": "Marcia",
     "age": "",
     "dream": "Marcia es alegre y trabajadora. Le gusta bailar, ayudar a los demás, animar con su entusiasmo y aprender a través del coloreado.",
-    "image": "/marcia.jpeg",
+    "image": "/marcia.png",
     "media": "/audio/marcia.ogg"
   },
   {
     "name": "Max",
     "age": "",
     "dream": "Max es curioso y disfruta observar insectos, así como escuchar a las chachalacas. También le gustan los rompecabezas, la sopa de letras y caminar con tranquilidad.",
-    "image": "/max.jpeg",
+    "image": "/max.png",
     "media": "/audio/max.ogg"
   },
   {
     "name": "Sandy",
     "age": "",
     "dream": "Sandy es una fashionista creativa que siempre apoya a su hermana. Le gusta realizar actividades divertidas y también hacer cosquillas para provocar sonrisas.",
-    "image": "/sandy.jpeg",
+    "image": "/sandy.png",
     "media": "/audio/sandy.ogg"
   },
-  {
+  /*{
     "name": "Josué",
     "age": "",
     "dream": "Josué es fan de Shakira y de Belinda. Es muy conversador, disfruta armar rompecabezas, dar abrazos y saborear un rico pan con nata.",
     "image": "/josue.jpeg",
     "media": "/audio/josue.ogg"
-  },
+  },*/
   {
     "name": "Judith",
     "age": "",
     "dream": "Judith es risueña y trabajadora. Le gusta bailar, hornear, colorear y también dar abrazos a sus compañeros.",
-    "image": "/judith.jpeg",
+    "image": "/judith.png",
     "media": "/audio/judith.ogg"
   }
 ];
@@ -140,14 +140,14 @@ const StudentCarousel: React.FC = () => {
                           <p className="text-[#808285] mb-8 text-xl leading-relaxed font-light">
                             "{student.dream}"
                           </p>
-                          <div className="space-y-6">
-                            <button
+                           <div className="space-y-6">
+                            {/*<button
                               onClick={() => handlePlayAudio(student.media)}
                               className="inline-flex items-center justify-center px-8 py-4 bg-[#14AC94] text-white rounded-full font-semibold hover:bg-[#0f9582] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-lg"
                             >
                               <Volume2 className="w-6 h-6 mr-3" />
                               Conoce su historia
-                            </button>
+                            </button>*/}
 
                             <div>
                               <WhatsAppButton
