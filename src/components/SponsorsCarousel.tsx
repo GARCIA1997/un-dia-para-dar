@@ -154,7 +154,7 @@ const SponsorsCarousel: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 bg-gray-50 border-t border-gray-200">
+    <section ref={sectionRef} className="py-16 bg-gray-50 border-t border-gray-200" id="sponsors">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}

@@ -62,7 +62,7 @@ const FundraisingEvents: React.FC = () => {
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
       if (!ref) return null;
-      
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -77,7 +77,7 @@ const FundraisingEvents: React.FC = () => {
         },
         { threshold: 0.1 }
       );
-      
+
       observer.observe(ref);
       return observer;
     });
@@ -98,32 +98,32 @@ const FundraisingEvents: React.FC = () => {
       // Extract day, month, year from Spanish date format
       const dateMatch = dateStr.match(/(\d{1,2})\s+de\s+(\w+)\s+(\d{4})/);
       if (!dateMatch) return null;
-      
+
       const day = parseInt(dateMatch[1]);
       const monthName = dateMatch[2].toLowerCase();
       const year = parseInt(dateMatch[3]);
-      
+
       // Spanish month names to numbers
       const months: { [key: string]: number } = {
         'enero': 0, 'febrero': 1, 'marzo': 2, 'abril': 3,
         'mayo': 4, 'junio': 5, 'julio': 6, 'agosto': 7,
         'septiembre': 8, 'octubre': 9, 'noviembre': 10, 'diciembre': 11
       };
-      
+
       const month = months[monthName];
       if (month === undefined) return null;
-      
+
       // Parse time - handle ranges by taking the start time
       let hour = 9; // default hour
       let minute = 0; // default minute
-      
+
       if (timeStr && timeStr !== 'Por confirmar') {
         const timeMatch = timeStr.match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
         if (timeMatch) {
           hour = parseInt(timeMatch[1]);
           minute = parseInt(timeMatch[2]);
           const period = timeMatch[3].toLowerCase();
-          
+
           // Convert to 24-hour format
           if (period === 'pm' && hour !== 12) {
             hour += 12;
@@ -132,18 +132,18 @@ const FundraisingEvents: React.FC = () => {
           }
         }
       }
-      
+
       return new Date(year, month, day, hour, minute);
     };
-    
+
     const startDate = parseEventDate(event.date, event.time);
     if (!startDate) {
       alert('Error: No se pudo procesar la fecha del evento');
       return;
     }
-    
+
     const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000); // 3 hours duration
-    
+
     const formatDate = (date: Date) => {
       return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
     };
@@ -172,7 +172,7 @@ END:VCALENDAR`;
   };
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white" id="events">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -229,7 +229,7 @@ END:VCALENDAR`;
                       <MessageCircle className="w-5 h-5 mr-2" />
                       ¿En qué puedo colaborar?
                     </a>
-                    
+
                     <a
                       href={event.googleMapsUrl}
                       target="_blank"
@@ -239,7 +239,7 @@ END:VCALENDAR`;
                       <MapPin className="w-5 h-5 mr-2" />
                       Ver ubicación
                     </a>
-                    
+
                     <button
                       onClick={() => generateCalendarFile(event)}
                       className="w-full bg-[#EE202E] text-white font-semibold py-3 px-4 rounded-full hover:bg-[#d11c29] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"

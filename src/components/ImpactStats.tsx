@@ -65,7 +65,7 @@ const ImpactStats: React.FC = () => {
                 newVisible[index] = true;
                 return newVisible;
               });
-              
+
               // Start count-up animation
               animateNumber(index, stats[index].finalValue);
             }, index * 200);
@@ -92,7 +92,7 @@ const ImpactStats: React.FC = () => {
     const timer = setInterval(() => {
       step++;
       currentValue = Math.min(currentValue + increment, finalValue);
-      
+
       setAnimatedValues(prev => {
         const newValues = [...prev];
         newValues[index] = Math.floor(currentValue);
@@ -121,13 +121,13 @@ const ImpactStats: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 bg-gray-50">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-gray-50" id="impact">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-[#808285] text-center mb-16 tracking-tight">
             Nuestro impacto
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {stats.map((stat, index) => {
               const IconComponent = iconMap[stat.icon as keyof typeof iconMap];
@@ -146,15 +146,15 @@ const ImpactStats: React.FC = () => {
                     stat.bgColor === 'bg-white' ? 'text-[#14AC94]' : 'text-white'
                   }`} />
                 </div>
-                
+
                 <div className={`font-bold mb-4 ${stat.textColor} tracking-tight`} style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
                   {formatNumber(animatedValues[index], stat.number)}
                 </div>
-                
+
                 <div className={`${stat.textColor} font-bold mb-4 tracking-wide text-center`} style={{ fontSize: 'clamp(0.875rem, 2vw, 1.125rem)' }}>
                   {stat.label}
                 </div>
-                
+
                 <p className={`${stat.textColor} ${stat.bgColor === 'bg-white' ? 'opacity-80' : 'opacity-90'} leading-relaxed font-light text-center break-words`} style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
                   {stat.description}
                 </p>

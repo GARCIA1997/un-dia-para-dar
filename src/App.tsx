@@ -1,10 +1,9 @@
-import React from 'react';
-import { 
-  Heart, 
-  Users, 
-  Briefcase, 
-  Stethoscope, 
-  Cookie, 
+import {
+  Heart,
+  Users,
+  Briefcase,
+  Stethoscope,
+  Cookie,
   Calendar,
   MapPin,
   Clock,
@@ -15,7 +14,6 @@ import {
   Instagram,
   Share2,
   Book,
-  Download
 } from 'lucide-react';
 import CountdownTimer from './components/CountdownTimer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -23,6 +21,7 @@ import ImpactStats from './components/ImpactStats';
 import FundraisingEvents from './components/FundraisingEvents';
 import SponsorsCarousel from './components/SponsorsCarousel';
 import StudentCarousel from './components/StudentCarousel';
+import { useEffect } from 'react';
 
 function App() {
   const shareEvent = () => {
@@ -64,10 +63,20 @@ END:VCALENDAR`;
     URL.revokeObjectURL(url);
   };
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [window.location.hash]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#EE202E] via-[#EE202E] to-[#d11c29] text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#EE202E] via-[#EE202E] to-[#d11c29] text-white overflow-hidden" id="home">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative container mx-auto px-6 py-20 md:py-32">
           <div className="text-center max-w-5xl mx-auto">
@@ -131,7 +140,7 @@ END:VCALENDAR`;
       </section>
 
       {/* What is Un Día para Dar */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white" id="description">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
@@ -145,7 +154,7 @@ END:VCALENDAR`;
       </section>
 
       {/* About Foundation */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      <section className="py-20 md:py-32 bg-gray-50" id="about">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -218,7 +227,7 @@ END:VCALENDAR`;
       </section>
 
       {/* Foundation Activities */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white" id="activities">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] text-center mb-16 tracking-tight">
@@ -230,7 +239,7 @@ END:VCALENDAR`;
                   <Briefcase className="w-10 h-10 text-[#EE202E]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#808285] mb-4 tracking-tight">
-                  ⁠Habilidades adaptativas 
+                  ⁠Habilidades adaptativas
                 </h3>
                 <p className="text-[#808285] text-base leading-relaxed font-light">
                   Desarrollo de hábitos de independencia.
@@ -274,8 +283,8 @@ END:VCALENDAR`;
         </div>
       </section>
 
+      <section className="py-20 md:py-32 bg-gradient-to-br from-[#14AC94] to-[#0f9582] text-white" id="needs">
       {/* Needs */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-[#14AC94] to-[#0f9582] text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">
@@ -314,9 +323,9 @@ END:VCALENDAR`;
       {/* Impact Stats */}
       <ImpactStats />
 
-      {/* Students Carousel  */}   
+      {/* Students Carousel  */}
       <StudentCarousel />
-      
+
       {/* Fundraising Events */}
       <FundraisingEvents />
 
@@ -324,7 +333,7 @@ END:VCALENDAR`;
       <SponsorsCarousel />
 
       {/* Call to Action */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white" id="cta">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
@@ -333,7 +342,7 @@ END:VCALENDAR`;
             <p className="text-xl md:text-2xl text-[#808285] leading-relaxed mb-12 font-light">
               "Este año, tu participación puede marcar la diferencia. Ven, conoce nuestra labor y ayúdanos comprando nuestras galletas, realizando una donación o apadrinando a una persona joven."
             </p>
-            
+
             <div className="bg-white rounded-[20px] p-10 mb-12 shadow-xl border border-gray-100">
               <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 text-[#808285]">
                 <div className="flex flex-col items-center gap-2">
@@ -361,7 +370,7 @@ END:VCALENDAR`;
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#808285] text-white py-16">
+      <footer className="bg-[#808285] text-white py-16" id="footer">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-12">
