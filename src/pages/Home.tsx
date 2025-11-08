@@ -22,6 +22,7 @@ import FundraisingEvents from "../components/FundraisingEvents";
 import ImpactStats from "../components/ImpactStats";
 import SponsorsCarousel from "../components/SponsorsCarousel";
 import StudentCarousel from "../components/StudentCarousel";
+import NeedsCta from "../components/NeedsCta";
 
 export default function Home() {
   const shareEvent = () => {
@@ -380,6 +381,9 @@ END:VCALENDAR`;
 
       {/* Students Carousel  */}
       <StudentCarousel />
+
+      {/* Needs CTA Section */}
+      <NeedsCta />
 
       {/* Fundraising Events */}
       <FundraisingEvents />
