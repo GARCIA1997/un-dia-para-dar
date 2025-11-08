@@ -1,30 +1,40 @@
 import { Heart } from "lucide-react";
 import { needs } from "../utils/carolita";
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 export default function Carolita() {
+  const WHATSAPP_NUMBER = "523122459294";
   const handleWhatsAppClick = (needTitle: string) => {
     const message = encodeURIComponent(
       `Hola, me gustaría apoyar con la ${needTitle} de Carolita.`
     );
-    window.open(`https://wa.me/525512345678?text=${message}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
 
   const handleGeneralSupport = () => {
     const message = encodeURIComponent(
       "Hola, quiero apoyar a la fundación Carolita."
     );
-    window.open(`https://wa.me/525512345678?text=${message}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center pl-10">
+          <div className="flex items-center justify-between pl-10">
             <img
               src="/images/carolita.png"
               alt="Fundación Carolita"
               className="h-16 sm:h-20 w-auto scale-[2] "
             />
+            <Link
+              to="/"
+              
+              className="items-center p-4 bg-gradient-to-r from-[#F26C21] to-[#FBB040] hover:from-[#E85C1A] hover:to-[#EA9F2F] text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl text-lg group w-fit h-fit"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </header>

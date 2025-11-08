@@ -11,10 +11,11 @@ interface Sponsor {
 
 const SponsorsCarousel: React.FC = () => {
   const sponsors: Sponsor[] = [
-    { id: '1', name: 'Spartans Dev', logo: '/spartansdevio-high-resolution-logo-color-on-transparent-background.png', url: 'https://spartans-dev.io' },
-    { id: '2', name: 'Razo', logo: '/razo.png' },
-    { id: '3', name: 'Macehual', logo: '/macehual.png' },
-    { id: '4', name: 'Artecultores', logo: '/artecultores.png' },
+    { id: '1', name: 'Spartans Dev', logo: 'images/sponsors/spartansdevio.png', url: 'https://spartans-dev.io' },
+    { id: '2', name: 'Razo', logo: 'images/sponsors/razo.png' },
+    { id: '3', name: 'Macehual', logo: 'images/sponsors/macehual.png' },
+    { id: '4', name: 'Artecultores', logo: 'images/sponsors/artecultores.png' },
+    { id: '5', name: 'Cmic', logo: 'images/sponsors/cmic.png' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
