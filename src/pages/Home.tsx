@@ -385,9 +385,9 @@ END:VCALENDAR`;
       {/* Needs CTA Section */}
       <NeedsCta />
 
-      {/* Fundraising Events */}
+      {/* Fundraising Events 
       <FundraisingEvents />
-
+      */}
       {/* Sponsors Carousel */}
       <SponsorsCarousel />
 
