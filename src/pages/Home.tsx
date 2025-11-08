@@ -18,10 +18,10 @@ import {
 import { useEffect } from "react";
 import CountdownTimer from "../components/CountdownTimer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import FundraisingEvents from "../components/FundraisingEvents";
 import ImpactStats from "../components/ImpactStats";
 import SponsorsCarousel from "../components/SponsorsCarousel";
 import StudentCarousel from "../components/StudentCarousel";
+import NeedsCta from "../components/NeedsCta";
 
 export default function Home() {
   const shareEvent = () => {
@@ -381,9 +381,12 @@ END:VCALENDAR`;
       {/* Students Carousel  */}
       <StudentCarousel />
 
-      {/* Fundraising Events */}
-      <FundraisingEvents />
+      {/* Needs CTA Section */}
+      <NeedsCta />
 
+      {/* Fundraising Events 
+      <FundraisingEvents />
+      */}
       {/* Sponsors Carousel */}
       <SponsorsCarousel />
 
@@ -411,13 +414,13 @@ END:VCALENDAR`;
                 <div className="flex flex-col items-center gap-2">
                   <Clock className="w-8 h-8 text-[#EE202E]" />
                   <span className="font-semibold text-lg text-center">
-                    Hora: Por confirmar
+                    Hora: 9:00 AM - 8:00 PM
                   </span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <MapPin className="w-8 h-8 text-[#EE202E]" />
                   <span className="font-semibold text-lg text-center">
-                    Lugar: Fundación Carolita IAP
+                    Lugar: Jardín Libertad, Colima, México
                   </span>
                 </div>
               </div>
