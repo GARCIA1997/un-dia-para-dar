@@ -16,6 +16,7 @@ const SponsorsCarousel: React.FC = () => {
     { id: '3', name: 'Macehual', logo: 'images/sponsors/macehual.png' },
     { id: '4', name: 'Artecultores', logo: 'images/sponsors/artecultores.png' },
     { id: '5', name: 'Cmic', logo: 'images/sponsors/cmic.png' },
+    { id: '6', name: 'Bestia Grupera', logo: 'images/sponsors/bestia.png' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
