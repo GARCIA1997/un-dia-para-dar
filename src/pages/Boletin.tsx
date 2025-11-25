@@ -227,11 +227,20 @@ export default function Boletin() {
         </section>
       </main>
 
-      {/* Footer */}
+            {/* Footer */}
       <footer className="bg-[#808285] text-white py-12 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-white/80 font-light">
-            © 2025 Fundación Carolita, IAP. Todos los derechos reservados.
+            © 2025 Un Día Para Dar Colima. Todos los derechos reservados:{" "}
+            <a
+              href="https://spartans-dev.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white"
+            >
+              Powered by Spartans-dev.io
+            </a>
+            .
           </p>
         </div>
       </footer>
