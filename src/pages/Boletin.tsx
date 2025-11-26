@@ -114,43 +114,57 @@ export default function Boletin() {
           {/* Main Newsletter (Right in desktop, first in mobile) */}
           <div className="lg:col-span-2 order-1">
             <section>
-              <div className="bg-gradient-to-br from-[#EE202E] to-[#d11c29] rounded-[20px] p-8 md:p-12 text-white shadow-xl overflow-hidden">
-                <div className="flex items-start justify-between mb-6">
-                  <span className="text-3xl md:text-4xl">{newsletters[0].image}</span>
-                  <span className="bg-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
-                    Destacado
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                  {newsletters[0].title}
-                </h2>
-                <p className="text-white/90 text-lg mb-6 font-light">
-                  {newsletters[0].description}
-                </p>
-                <div className="flex flex-col md:flex-row gap-4 text-white/80 text-sm mb-8">
-                  <div className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    {newsletters[0].date}
+              <div className="bg-white rounded-[20px] shadow-xl overflow-hidden border border-gray-100">
+                <div className="relative h-64 md:h-80 overflow-hidden">
+                  <img
+                    src="https://images.pexels.com/photos/6646922/pexels-photo-6646922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt={newsletters[0].title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-[#EE202E] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                      Destacado
+                    </span>
                   </div>
-                  <div className="flex items-center">
-                    <User className="w-4 h-4 mr-2" />
-                    {newsletters[0].author}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="text-white/90 text-sm font-medium bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full inline-block">
+                      {newsletters[0].category}
+                    </span>
                   </div>
                 </div>
-                <button
-                  onClick={() => toggleExpand(newsletters[0].id)}
-                  className="inline-flex items-center bg-white text-[#EE202E] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-                >
-                  Leer más
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
-                {expandedId === newsletters[0].id && (
-                  <div className="mt-8 pt-8 border-t border-white/30">
-                    <p className="text-white/95 font-light leading-relaxed whitespace-pre-line">
-                      {newsletters[0].content}
-                    </p>
+                <div className="p-8 md:p-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-[#808285]">
+                    {newsletters[0].title}
+                  </h2>
+                  <p className="text-[#808285]/80 text-lg mb-6 font-light leading-relaxed">
+                    {newsletters[0].description}
+                  </p>
+                  <div className="flex flex-col md:flex-row gap-4 text-[#808285]/60 text-sm mb-8">
+                    <div className="flex items-center">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      {newsletters[0].date}
+                    </div>
+                    <div className="flex items-center">
+                      <User className="w-4 h-4 mr-2" />
+                      {newsletters[0].author}
+                    </div>
                   </div>
-                )}
+                  <button
+                    onClick={() => toggleExpand(newsletters[0].id)}
+                    className="inline-flex items-center bg-[#EE202E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#d11c29] transition-all duration-300 hover:scale-105 shadow-md"
+                  >
+                    Leer más
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
+                  {expandedId === newsletters[0].id && (
+                    <div className="mt-8 pt-8 border-t border-gray-200">
+                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line">
+                        {newsletters[0].content}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             </section>
 
