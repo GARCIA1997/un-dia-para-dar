@@ -26,7 +26,7 @@ const newsletters: Newsletter[] = [
 Desde las 9 AM hasta las 8 PM, el Jardín Libertad será el epicentro de actividades llenas de color, alegría y propósito. Tendremos actividades diversas durante todo el día, con un enfoque especial en el evento cultural que comenzará a las 6 PM, contando con invitados especiales que compartirán su talento y experiencia.
 
 Este evento es una oportunidad única para conocer el trabajo de Fundación Carolita IAP, interactuar con nuestros beneficiarios y ser parte de un cambio significativo. Esperamos tu participación.`,
-    image: '🎉'
+    image: 'https://images.pexels.com/photos/6646922/pexels-photo-6646922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ Este evento es una oportunidad única para conocer el trabajo de Fundación Caro
 Nuestros beneficiarios son el corazón de nuestra misión. Cada uno de ellos tiene una historia única de superación, aprendizaje y crecimiento. Sus logros son nuestra inspiración para continuar adelante.
 
 Si deseas conocer más sobre sus historias y el impacto de tu apoyo, te invitamos a visitarnos o contactarnos a través de nuestros canales de comunicación.`,
-    image: '❤️'
+    image: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ Este proyecto de producción artesanal no solo genera ingresos para la fundació
 Cada galleta que compras apoya directamente a personas con discapacidad. Nuestras variedades incluyen chocolate, vainilla, avena y más. ¡Pruébalas y sé parte del cambio!
 
 Para hacer tu pedido, contáctanos por WhatsApp o visita nuestras redes sociales.`,
-    image: '🍪'
+    image: 'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   },
   {
     id: 4,
@@ -76,7 +76,7 @@ Entre nuestras principales necesidades están:
 • Equipos especializados para terapias
 
 Si deseas conocer en detalle cómo puedes apoyar alguna de estas necesidades, te invitamos a visitar nuestra página de Carolita o contactarnos directamente. Tu aporte, grande o pequeño, hace la diferencia.`,
-    image: '🤝'
+    image: 'https://images.pexels.com/photos/6646915/pexels-photo-6646915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   }
 ];
 
@@ -176,39 +176,46 @@ export default function Boletin() {
                   return (
                     <div
                       key={newsletter.id}
-                      className="bg-white border border-gray-200 rounded-[20px] p-6 md:p-8 shadow-lg"
+                      className="bg-white border border-gray-200 rounded-[20px] shadow-lg overflow-hidden"
                     >
-                      <div className="flex items-start gap-4 mb-6">
-                        <span className="text-3xl md:text-4xl">{newsletter.image}</span>
-                        <div className="flex-grow">
-                          <span className="text-xs font-bold bg-[#EE202E]/10 text-[#EE202E] px-3 py-1 rounded-full inline-block mb-3">
+                      <div className="relative h-64 md:h-80 overflow-hidden">
+                        <img
+                          src={newsletter.image}
+                          alt={newsletter.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <span className="text-white/90 text-sm font-medium bg-[#EE202E] backdrop-blur-sm px-3 py-1 rounded-full inline-block">
                             {newsletter.category}
                           </span>
-                          <h2 className="text-2xl md:text-3xl font-bold text-[#808285] mb-3 tracking-tight">
-                            {newsletter.title}
-                          </h2>
-                          <div className="flex flex-col md:flex-row gap-3 text-[#808285]/60 text-sm mb-4">
-                            <div className="flex items-center">
-                              <Calendar className="w-4 h-4 mr-2" />
-                              {newsletter.date}
-                            </div>
-                            <div className="flex items-center">
-                              <User className="w-4 h-4 mr-2" />
-                              {newsletter.author}
-                            </div>
-                          </div>
                         </div>
                       </div>
-                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line mb-6">
-                        {newsletter.content}
-                      </p>
-                      <button
-                        onClick={() => setExpandedId(null)}
-                        className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors"
-                      >
-                        Cerrar
-                        <ArrowLeft className="w-4 h-4 ml-2" />
-                      </button>
+                      <div className="p-6 md:p-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#808285] mb-3 tracking-tight">
+                          {newsletter.title}
+                        </h2>
+                        <div className="flex flex-col md:flex-row gap-3 text-[#808285]/60 text-sm mb-6">
+                          <div className="flex items-center">
+                            <Calendar className="w-4 h-4 mr-2" />
+                            {newsletter.date}
+                          </div>
+                          <div className="flex items-center">
+                            <User className="w-4 h-4 mr-2" />
+                            {newsletter.author}
+                          </div>
+                        </div>
+                        <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line mb-6">
+                          {newsletter.content}
+                        </p>
+                        <button
+                          onClick={() => setExpandedId(null)}
+                          className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors"
+                        >
+                          Cerrar
+                          <ArrowLeft className="w-4 h-4 ml-2" />
+                        </button>
+                      </div>
                     </div>
                   );
                 })}
@@ -226,26 +233,33 @@ export default function Boletin() {
                 {newsletters.slice(1).map((newsletter) => (
                   <article
                     key={newsletter.id}
-                    className="bg-white border border-gray-200 rounded-[20px] p-4 hover:shadow-lg transition-all duration-300 hover:border-[#EE202E]/50 cursor-pointer"
+                    className="bg-white border border-gray-200 rounded-[20px] overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-[#EE202E]/50 cursor-pointer group"
                     onClick={() => toggleExpand(newsletter.id)}
                   >
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl">{newsletter.image}</span>
-                      <div className="flex-grow">
-                        <span className="text-xs font-bold bg-[#EE202E]/10 text-[#EE202E] px-2 py-1 rounded-full inline-block mb-2">
+                    <div className="relative h-32 overflow-hidden">
+                      <img
+                        src={newsletter.image}
+                        alt={newsletter.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                      <div className="absolute top-2 left-2">
+                        <span className="text-xs font-bold bg-[#EE202E] text-white px-2 py-1 rounded-full">
                           {newsletter.category}
                         </span>
-                        <h4 className="text-sm font-bold text-[#808285] mb-1 line-clamp-2 hover:text-[#EE202E] transition-colors">
-                          {newsletter.title}
-                        </h4>
-                        <p className="text-xs text-[#808285]/60 mb-2 line-clamp-2 font-light">
-                          {newsletter.description}
-                        </p>
-                        <span className="text-xs text-[#808285]/50 flex items-center">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {newsletter.date}
-                        </span>
                       </div>
+                    </div>
+                    <div className="p-4">
+                      <h4 className="text-sm font-bold text-[#808285] mb-1 line-clamp-2 group-hover:text-[#EE202E] transition-colors">
+                        {newsletter.title}
+                      </h4>
+                      <p className="text-xs text-[#808285]/60 mb-2 line-clamp-2 font-light">
+                        {newsletter.description}
+                      </p>
+                      <span className="text-xs text-[#808285]/50 flex items-center">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {newsletter.date}
+                      </span>
                     </div>
                   </article>
                 ))}
