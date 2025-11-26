@@ -109,7 +109,7 @@ export default function Boletin() {
           <div className="lg:col-span-2 order-1">
             <section>
               <div className="bg-white rounded-[20px] shadow-xl overflow-hidden border border-gray-100">
-                <div className="relative h-64 md:h-80 overflow-hidden">
+                <div className="relative h-80 md:h-96 overflow-hidden">
                   <img
                     src={newsletters[0].image}
                     alt={newsletters[0].title}
@@ -183,7 +183,7 @@ export default function Boletin() {
                       }`}
                       onClick={() => toggleExpand(newsletter.id)}
                     >
-                      <div className="relative h-32 overflow-hidden">
+                      <div className="relative h-48 overflow-hidden">
                         <img
                           src={newsletter.image}
                           alt={newsletter.title}
