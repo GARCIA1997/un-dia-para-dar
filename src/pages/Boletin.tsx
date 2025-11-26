@@ -109,122 +109,154 @@ export default function Boletin() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        {/* Featured Newsletter */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-br from-[#EE202E] to-[#d11c29] rounded-[20px] p-8 md:p-12 text-white shadow-xl overflow-hidden">
-            <div className="flex items-start justify-between mb-6">
-              <span className="text-3xl md:text-4xl">{newsletters[0].image}</span>
-              <span className="bg-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
-                Destacado
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-              {newsletters[0].title}
-            </h2>
-            <p className="text-white/90 text-lg mb-6 font-light">
-              {newsletters[0].description}
-            </p>
-            <div className="flex flex-col md:flex-row gap-4 text-white/80 text-sm mb-8">
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
-                {newsletters[0].date}
-              </div>
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                {newsletters[0].author}
-              </div>
-            </div>
-            <button
-              onClick={() => toggleExpand(newsletters[0].id)}
-              className="inline-flex items-center bg-white text-[#EE202E] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-            >
-              Leer más
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
-            {expandedId === newsletters[0].id && (
-              <div className="mt-8 pt-8 border-t border-white/30">
-                <p className="text-white/95 font-light leading-relaxed whitespace-pre-line">
-                  {newsletters[0].content}
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Newsletters Grid */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#808285] mb-10 tracking-tight">
-            Más boletines
-          </h3>
-          <div className="space-y-6">
-            {newsletters.slice(1).map((newsletter) => (
-              <article
-                key={newsletter.id}
-                className="bg-white border border-gray-200 rounded-[20px] p-6 md:p-8 hover:shadow-lg transition-all duration-300 hover:border-[#EE202E]/50"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl md:text-4xl mt-1">{newsletter.image}</span>
-                  <div className="flex-grow">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs font-bold bg-[#EE202E]/10 text-[#EE202E] px-3 py-1 rounded-full">
-                        {newsletter.category}
-                      </span>
-                      <span className="text-xs text-[#808285]/60 font-medium">
-                        {newsletter.date}
-                      </span>
-                    </div>
-                    <h4 className="text-xl md:text-2xl font-bold text-[#808285] mb-2 tracking-tight">
-                      {newsletter.title}
-                    </h4>
-                    <p className="text-[#808285]/80 font-light mb-4 leading-relaxed">
-                      {newsletter.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#808285]/60 flex items-center font-light">
-                        <User className="w-4 h-4 mr-2" />
-                        {newsletter.author}
-                      </span>
-                      <button
-                        onClick={() => toggleExpand(newsletter.id)}
-                        className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors group"
-                      >
-                        {expandedId === newsletter.id ? 'Leer menos' : 'Leer más'}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                    {expandedId === newsletter.id && (
-                      <div className="mt-6 pt-6 border-t border-gray-200">
-                        <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line">
-                          {newsletter.content}
+      <main className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Sidebar - Suggested Newsletters (Left) */}
+          <aside className="lg:col-span-1 order-2 lg:order-1">
+            <div className="lg:sticky lg:top-24">
+              <h3 className="text-2xl font-bold text-[#808285] mb-6 tracking-tight">
+                Más Boletines
+              </h3>
+              <div className="space-y-4">
+                {newsletters.slice(1).map((newsletter) => (
+                  <article
+                    key={newsletter.id}
+                    className="bg-white border border-gray-200 rounded-[20px] p-4 hover:shadow-lg transition-all duration-300 hover:border-[#EE202E]/50 cursor-pointer"
+                    onClick={() => toggleExpand(newsletter.id)}
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{newsletter.image}</span>
+                      <div className="flex-grow">
+                        <span className="text-xs font-bold bg-[#EE202E]/10 text-[#EE202E] px-2 py-1 rounded-full inline-block mb-2">
+                          {newsletter.category}
+                        </span>
+                        <h4 className="text-sm font-bold text-[#808285] mb-1 line-clamp-2 hover:text-[#EE202E] transition-colors">
+                          {newsletter.title}
+                        </h4>
+                        <p className="text-xs text-[#808285]/60 mb-2 line-clamp-2 font-light">
+                          {newsletter.description}
                         </p>
+                        <span className="text-xs text-[#808285]/50 flex items-center">
+                          <Calendar className="w-3 h-3 mr-1" />
+                          {newsletter.date}
+                        </span>
                       </div>
-                    )}
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {/* Call to Action Box */}
+              <div className="mt-6 bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-6 text-white">
+                <h4 className="text-lg font-bold mb-3 text-center">
+                  ¿Deseas recibir nuestro boletín?
+                </h4>
+                <p className="text-sm text-white/90 mb-4 text-center font-light">
+                  Suscríbete para recibir actualizaciones
+                </p>
+                <a
+                  href="https://wa.me/5213121109700?text=Hola, me gustaría suscribirme al boletín informativo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-white text-[#14AC94] font-semibold py-2 px-4 rounded-full text-center hover:bg-gray-100 transition-all duration-300 text-sm"
+                >
+                  Suscribirse
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main Newsletter (Right) */}
+          <div className="lg:col-span-2 order-1 lg:order-2">
+            <section className="mb-8">
+              <div className="bg-gradient-to-br from-[#EE202E] to-[#d11c29] rounded-[20px] p-8 md:p-12 text-white shadow-xl overflow-hidden">
+                <div className="flex items-start justify-between mb-6">
+                  <span className="text-3xl md:text-4xl">{newsletters[0].image}</span>
+                  <span className="bg-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
+                    Destacado
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  {newsletters[0].title}
+                </h2>
+                <p className="text-white/90 text-lg mb-6 font-light">
+                  {newsletters[0].description}
+                </p>
+                <div className="flex flex-col md:flex-row gap-4 text-white/80 text-sm mb-8">
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {newsletters[0].date}
+                  </div>
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    {newsletters[0].author}
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
+                <button
+                  onClick={() => toggleExpand(newsletters[0].id)}
+                  className="inline-flex items-center bg-white text-[#EE202E] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+                >
+                  Leer más
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
+                {expandedId === newsletters[0].id && (
+                  <div className="mt-8 pt-8 border-t border-white/30">
+                    <p className="text-white/95 font-light leading-relaxed whitespace-pre-line">
+                      {newsletters[0].content}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </section>
 
-        {/* Call to Action */}
-        <section className="mt-16 bg-gradient-to-r from-[#14AC94] to-[#0f9582] rounded-[20px] p-8 md:p-12 text-white text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            ¿Deseas recibir nuestro boletín?
-          </h3>
-          <p className="text-white/90 mb-8 font-light max-w-2xl mx-auto">
-            Suscríbete a nuestra lista de correo para recibir las últimas noticias y actualizaciones de Fundación Carolita IAP.
-          </p>
-          <a
-            href="https://wa.me/5213121109700?text=Hola, me gustaría suscribirme al boletín informativo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center bg-white text-[#14AC94] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-          >
-            Suscribirse por WhatsApp
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </a>
-        </section>
+            {/* Expanded Newsletter Content */}
+            {expandedId && expandedId !== newsletters[0].id && (
+              <section className="mb-8">
+                {newsletters.slice(1).map((newsletter) => {
+                  if (newsletter.id !== expandedId) return null;
+                  return (
+                    <div
+                      key={newsletter.id}
+                      className="bg-white border border-gray-200 rounded-[20px] p-6 md:p-8 shadow-lg"
+                    >
+                      <div className="flex items-start gap-4 mb-6">
+                        <span className="text-3xl md:text-4xl">{newsletter.image}</span>
+                        <div className="flex-grow">
+                          <span className="text-xs font-bold bg-[#EE202E]/10 text-[#EE202E] px-3 py-1 rounded-full inline-block mb-3">
+                            {newsletter.category}
+                          </span>
+                          <h2 className="text-2xl md:text-3xl font-bold text-[#808285] mb-3 tracking-tight">
+                            {newsletter.title}
+                          </h2>
+                          <div className="flex flex-col md:flex-row gap-3 text-[#808285]/60 text-sm mb-4">
+                            <div className="flex items-center">
+                              <Calendar className="w-4 h-4 mr-2" />
+                              {newsletter.date}
+                            </div>
+                            <div className="flex items-center">
+                              <User className="w-4 h-4 mr-2" />
+                              {newsletter.author}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line mb-6">
+                        {newsletter.content}
+                      </p>
+                      <button
+                        onClick={() => setExpandedId(null)}
+                        className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors"
+                      >
+                        Cerrar
+                        <ArrowLeft className="w-4 h-4 ml-2" />
+                      </button>
+                    </div>
+                  );
+                })}
+              </section>
+            )}
+          </div>
+        </div>
       </main>
 
             {/* Footer */}
