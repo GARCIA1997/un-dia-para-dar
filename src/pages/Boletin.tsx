@@ -112,7 +112,7 @@ export default function Boletin() {
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Sidebar - Suggested Newsletters (Left) */}
-          <aside className="lg:col-span-1 order-2 lg:order-1">
+          <aside className="lg:col-span-1">
             <div className="lg:sticky lg:top-24">
               <h3 className="text-2xl font-bold text-[#808285] mb-6 tracking-tight">
                 Más Boletines
@@ -167,7 +167,7 @@ export default function Boletin() {
           </aside>
 
           {/* Main Newsletter (Right) */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
+          <div className="lg:col-span-2">
             <section className="mb-8">
               <div className="bg-gradient-to-br from-[#EE202E] to-[#d11c29] rounded-[20px] p-8 md:p-12 text-white shadow-xl overflow-hidden">
                 <div className="flex items-start justify-between mb-6">
