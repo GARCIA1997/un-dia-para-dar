@@ -16,16 +16,24 @@ interface Newsletter {
 const newsletters: Newsletter[] = [
   {
     id: 1,
-    title: 'Un Día para Dar Colima 2025: Preparativos finales',
-    description: 'Nos acercamos al gran evento. Conoce todos los detalles y cómo puedes participar.',
-    date: '20 de noviembre de 2025',
-    author: 'Fundación Carolita',
-    category: 'Evento',
-    content: `El 2 de diciembre viviremos juntos "Un Día para Dar Colima", un movimiento global de solidaridad que transformará vidas en nuestra comunidad.
+    title: '¡La Alegría de Dar Vuelve a Colima!',
+    description: 'Invitación especial a la Rueda de Prensa de Un Día Para Dar Colima 2025',
+    date: '28 de noviembre de 2025',
+    author: 'Fundación Carolita IAP',
+    category: 'Prensa',
+    content: `La Fundación Carolita, IAP te invita a la Rueda de Prensa donde revelaremos todos los detalles de #UnDíaParaDarColima 2025.
 
-Desde las 9 AM hasta las 8 PM, el Jardín Libertad será el epicentro de actividades llenas de color, alegría y propósito. Tendremos actividades diversas durante todo el día, con un enfoque especial en el evento cultural que comenzará a las 6 PM, contando con invitados especiales que compartirán su talento y experiencia.
+Queremos compartir contigo el espíritu, las historias y las formas en las que puedes participar en esta jornada global de generosidad.
 
-Este evento es una oportunidad única para conocer el trabajo de Fundación Carolita IAP, interactuar con nuestros beneficiarios y ser parte de un cambio significativo. Esperamos tu participación.`,
+Únete a nosotros:
+
+Rueda de Prensa: 28 de Noviembre | 8:00 AM | INTERESELAR
+
+La Causa: Conoce las acciones que apoyan a jóvenes como los de la foto y a toda nuestra comunidad.
+
+¡Tu voz es clave para inspirar a Colima a dar!
+
+#UnDíaParaDarColima #DarEsAlegría #NoticiasColima #FundaciónCarolitaIAP #AyudaSocial`,
     image: 'https://images.pexels.com/photos/6646922/pexels-photo-6646922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   },
   {
