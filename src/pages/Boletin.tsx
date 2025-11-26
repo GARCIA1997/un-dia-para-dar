@@ -176,17 +176,24 @@ export default function Boletin() {
                 Más Boletines
               </h3>
               <div className="space-y-4">
-                {newsletters.slice(1).map((newsletter) => (
-                  <div key={newsletter.id}>
+                {newsletters.slice(1).map((newsletter) => {
+                  const isExpanded = expandedId === newsletter.id;
+
+                  return (
                     <article
-                      className="bg-white border border-gray-200 rounded-[20px] overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-[#EE202E]/50 cursor-pointer group"
+                      key={newsletter.id}
+                      className={`bg-white border rounded-[20px] overflow-hidden transition-all duration-300 cursor-pointer ${
+                        isExpanded
+                          ? 'border-[#EE202E] shadow-lg'
+                          : 'border-gray-200 hover:shadow-lg hover:border-[#EE202E]/50'
+                      }`}
                       onClick={() => toggleExpand(newsletter.id)}
                     >
                       <div className="relative h-32 overflow-hidden">
                         <img
                           src={newsletter.image}
                           alt={newsletter.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                         <div className="absolute top-2 left-2">
@@ -196,66 +203,54 @@ export default function Boletin() {
                         </div>
                       </div>
                       <div className="p-4">
-                        <h4 className="text-sm font-bold text-[#808285] mb-1 line-clamp-2 group-hover:text-[#EE202E] transition-colors">
-                          {newsletter.title}
+                        <h4 className="text-sm font-bold text-[#808285] mb-1 hover:text-[#EE202E] transition-colors">
+                          {isExpanded ? newsletter.title : (
+                            <span className="line-clamp-2">{newsletter.title}</span>
+                          )}
                         </h4>
-                        <p className="text-xs text-[#808285]/60 mb-2 line-clamp-2 font-light">
-                          {newsletter.description}
-                        </p>
-                        <span className="text-xs text-[#808285]/50 flex items-center">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {newsletter.date}
-                        </span>
+                        {!isExpanded && (
+                          <>
+                            <p className="text-xs text-[#808285]/60 mb-2 line-clamp-2 font-light">
+                              {newsletter.description}
+                            </p>
+                            <span className="text-xs text-[#808285]/50 flex items-center">
+                              <Calendar className="w-3 h-3 mr-1" />
+                              {newsletter.date}
+                            </span>
+                          </>
+                        )}
+
+                        {isExpanded && (
+                          <div className="mt-3 animate-in fade-in duration-300">
+                            <div className="flex flex-col gap-2 text-[#808285]/60 text-xs mb-3">
+                              <div className="flex items-center">
+                                <Calendar className="w-3 h-3 mr-2" />
+                                {newsletter.date}
+                              </div>
+                              <div className="flex items-center">
+                                <User className="w-3 h-3 mr-2" />
+                                {newsletter.author}
+                              </div>
+                            </div>
+                            <p className="text-[#808285] text-sm font-light leading-relaxed whitespace-pre-line mb-3">
+                              {newsletter.content}
+                            </p>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setExpandedId(null);
+                              }}
+                              className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors text-sm"
+                            >
+                              Cerrar
+                              <ArrowLeft className="w-3 h-3 ml-2" />
+                            </button>
+                          </div>
+                        )}
                       </div>
                     </article>
-
-                    {expandedId === newsletter.id && (
-                      <div className="mt-4 bg-white border border-[#EE202E] rounded-[20px] overflow-hidden shadow-lg animate-in slide-in-from-top duration-300">
-                        <div className="relative h-48 overflow-hidden">
-                          <img
-                            src={newsletter.image}
-                            alt={newsletter.title}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                        </div>
-                        <div className="p-6">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xs font-bold bg-[#EE202E] text-white px-3 py-1 rounded-full">
-                              {newsletter.category}
-                            </span>
-                          </div>
-                          <h3 className="text-xl font-bold text-[#808285] mb-3 tracking-tight">
-                            {newsletter.title}
-                          </h3>
-                          <div className="flex flex-col gap-2 text-[#808285]/60 text-xs mb-4">
-                            <div className="flex items-center">
-                              <Calendar className="w-3 h-3 mr-2" />
-                              {newsletter.date}
-                            </div>
-                            <div className="flex items-center">
-                              <User className="w-3 h-3 mr-2" />
-                              {newsletter.author}
-                            </div>
-                          </div>
-                          <p className="text-[#808285] text-sm font-light leading-relaxed whitespace-pre-line mb-4">
-                            {newsletter.content}
-                          </p>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setExpandedId(null);
-                            }}
-                            className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors text-sm"
-                          >
-                            Cerrar
-                            <ArrowLeft className="w-3 h-3 ml-2" />
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Call to Action Box */}
