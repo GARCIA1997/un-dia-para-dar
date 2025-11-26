@@ -105,7 +105,7 @@ export default function Boletin() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Newsletter (Right in desktop, first in mobile) */}
+          {/* Main Newsletter (Left in desktop, first in mobile) */}
           <div className="lg:col-span-2 order-1">
             <section>
               <div className="bg-white rounded-[20px] shadow-xl overflow-hidden border border-gray-100">
@@ -163,8 +163,8 @@ export default function Boletin() {
             </section>
           </div>
 
-          {/* Sidebar - Suggested Newsletters (Left in desktop, second in mobile) */}
-          <aside className="lg:col-span-1 order-2 lg:order-first">
+          {/* Sidebar - Suggested Newsletters (Right in desktop, second in mobile) */}
+          <aside className="lg:col-span-1 order-2">
             <div className="lg:sticky lg:top-24">
               <h3 className="text-2xl font-bold text-[#808285] mb-6 tracking-tight">
                 Más Boletines
