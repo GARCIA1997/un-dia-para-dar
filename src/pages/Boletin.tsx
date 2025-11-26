@@ -19,7 +19,7 @@ const newsletters: Newsletter[] = [
     title: '¡La Alegría de Dar Vuelve a Colima!',
     description: 'Invitación especial a la Rueda de Prensa de Un Día Para Dar Colima 2025',
     date: '28 de noviembre de 2025',
-    author: 'Fundación Carolita IAP',
+    author: 'Un Día Para Dar Colima',
     category: 'Prensa',
     content: `La Fundación Carolita, IAP te invita a la Rueda de Prensa donde revelaremos todos los detalles de #UnDíaParaDarColima 2025.
 
@@ -34,28 +34,14 @@ La Causa: Conoce las acciones que apoyan a jóvenes como los de la foto y a toda
 ¡Tu voz es clave para inspirar a Colima a dar!
 
 #UnDíaParaDarColima #DarEsAlegría #NoticiasColima #FundaciónCarolitaIAP #AyudaSocial`,
-    image: 'https://images.pexels.com/photos/6646922/pexels-photo-6646922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    id: 2,
-    title: 'Conoce nuestros beneficiarios: Historias de transformación',
-    description: 'Descubre cómo el apoyo comunitario ha cambiado vidas en Fundación Carolita.',
-    date: '15 de noviembre de 2025',
-    author: 'Equipo de Comunicación',
-    category: 'Historias',
-    content: `En Fundación Carolita IAP trabajamos cada día para transformar la vida de personas con discapacidad. A través de programas educativos, terapéuticos y culturales, brindamos oportunidades para que desarrollen su potencial y ejerzan plenamente sus derechos.
-
-Nuestros beneficiarios son el corazón de nuestra misión. Cada uno de ellos tiene una historia única de superación, aprendizaje y crecimiento. Sus logros son nuestra inspiración para continuar adelante.
-
-Si deseas conocer más sobre sus historias y el impacto de tu apoyo, te invitamos a visitarnos o contactarnos a través de nuestros canales de comunicación.`,
-    image: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    image: 'images/boletin/boletin.jpg'
   },
   {
     id: 3,
     title: 'Galletas Carolita: Apoyo desde la cocina',
     description: 'Conoce cómo nuestras galletas artesanales generan ingresos y oportunidades.',
     date: '10 de noviembre de 2025',
-    author: 'Área de Producción',
+    author: 'Un Día Para Dar Colima',
     category: 'Productos',
     content: `Las Galletas Carolita son mucho más que un producto delicioso. Son el resultado del esfuerzo, dedicación y talento de nuestros beneficiarios, quienes participan activamente en su elaboración.
 
@@ -64,7 +50,7 @@ Este proyecto de producción artesanal no solo genera ingresos para la fundació
 Cada galleta que compras apoya directamente a personas con discapacidad. Nuestras variedades incluyen chocolate, vainilla, avena y más. ¡Pruébalas y sé parte del cambio!
 
 Para hacer tu pedido, contáctanos por WhatsApp o visita nuestras redes sociales.`,
-    image: 'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    image: 'images/boletin/galletas.jpg'
   },
   {
     id: 4,
@@ -84,7 +70,7 @@ Entre nuestras principales necesidades están:
 • Equipos especializados para terapias
 
 Si deseas conocer en detalle cómo puedes apoyar alguna de estas necesidades, te invitamos a visitar nuestra página de Carolita o contactarnos directamente. Tu aporte, grande o pequeño, hace la diferencia.`,
-    image: 'https://images.pexels.com/photos/6646915/pexels-photo-6646915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    image: 'images/boletin/necesidades.jpg'
   }
 ];
 
@@ -125,7 +111,7 @@ export default function Boletin() {
               <div className="bg-white rounded-[20px] shadow-xl overflow-hidden border border-gray-100">
                 <div className="relative h-64 md:h-80 overflow-hidden">
                   <img
-                    src="https://images.pexels.com/photos/6646922/pexels-photo-6646922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={newsletters[0].image}
                     alt={newsletters[0].title}
                     className="w-full h-full object-cover"
                   />
