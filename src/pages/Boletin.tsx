@@ -250,13 +250,13 @@ export default function Boletin() {
               {/* Call to Action Box */}
               <div className="mt-6 bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-6 text-white">
                 <h4 className="text-lg font-bold mb-3 text-center">
-                  ¿Deseas recibir nuestro boletín?
+                  ¿Deseas recibir saber màs?
                 </h4>
                 <p className="text-sm text-white/90 mb-4 text-center font-light">
-                  Suscríbete para recibir actualizaciones
+                  Envioanos un WhatsApp
                 </p>
                 <a
-                  href="https://wa.me/5213121109700?text=Hola, me gustaría suscribirme al boletín informativo"
+                  href="https://wa.me/5213121109700?text=Hola, me gustaría recibir mas informacion sobre el boletín de Un Día Para Dar Colima."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-white text-[#14AC94] font-semibold py-2 px-4 rounded-full text-center hover:bg-gray-100 transition-all duration-300 text-sm"
