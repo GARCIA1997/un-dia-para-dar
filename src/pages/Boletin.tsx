@@ -16,24 +16,30 @@ interface Newsletter {
 const newsletters: Newsletter[] = [
   {
     id: 1,
-    title: '¡La Alegría de Dar Vuelve a Colima!',
-    description: 'Invitación especial a la Rueda de Prensa de Un Día Para Dar Colima 2025',
+    title: 'Beneficiará el movimiento global, este diciembre "Un Día para Dar", a sector vulnerable de Colima',
+    description: 'Movimiento internacional en Colima busca incentivar la generosidad a través de diversas actividades el próximo 02 de diciembre en el centro de la capital colimense',
     date: '28 de noviembre de 2025',
-    author: 'Un Día Para Dar Colima',
-    category: 'Prensa',
-    content: `La Fundación Carolita, IAP te invita a la Rueda de Prensa donde revelaremos todos los detalles de #UnDíaParaDarColima 2025.
+    author: 'Comité Organizador Un Día Para Dar Colima',
+    category: 'Comunicado Oficial',
+    content: `COLIMA, Col. – 28 de noviembre de 2025 – El comité organizador de "Un Día para Dar Colima" 2025 anuncia el lanzamiento oficial de su campaña anual de generosidad, en beneficio de la Fundación Carolita IAP. Se invita a todos los colimenses a sumarse con actos de generosidad a las distintas actividades que se llevarán a cabo en el Jardín Libertad. El objetivo es ambicioso; mejorar las condiciones de infraestructura y capacitación profesional de las instalaciones de dicha fundación dedicada a la atención y formación integral de personas con discapacidad en situación de vulnerabilidad.
 
-Queremos compartir contigo el espíritu, las historias y las formas en las que puedes participar en esta jornada global de generosidad.
+Bajo el lema "Un día para transformar vidas. Únete y sé parte del cambio", Claudia Razo Morales, Directora del Comité Organizador de "Un día para Dar Colima" explica -Este año, no solo queremos invitar a la gente a donar, queremos crear un verdadero viaje de generosidad que una a nuestra comunidad-. Por ello, el comité ha planeado incentivar a que se sumen familias, empresas y amigos para conocer la nueva administración de la Fundación Carolita IAP, para concientizar y lograr generar un impacto real y visible en la vida de los jóvenes y adultos a los que sirve la fundación. Claudia Razo concluye -Nuestra meta es ambiciosa, pero sabemos que el corazón de Colima es aún más grande-.
 
-Únete a nosotros:
+Con este evento se sumará Colima a más de 80 países para celebrar el Día para Dar (Giving Tuesday). Como parte de la estrategia de "Un Día para Dar Colima" en beneficio de la Fundación Carolita I.A.P., se ha dispuesto la instalación de stands ubicados estratégicamente en el Jardín Libertad en Colima, Colima.
 
-Rueda de Prensa: 28 de Noviembre | 8:00 AM | INTERESELAR
+Estos módulos de generosidad concentrarán diversas actividades de apoyo. Habrá espacios dedicados a la venta de productos con causa, incluyendo galletas elaboradas por la Fundación Carolita I.A.P. y ropa. Adicionalmente, el público podrá acceder a distintos servicios de Casa Macehual, por ejemplo masajes relajantes, y se recibirán ahí mismo donaciones en especie para la Fundación. Finalmente, un módulo informativo proporcionará detalles sobre el movimiento "Un Día para Dar Colima".
 
-La Causa: Conoce las acciones que apoyan a jóvenes como los de la foto y a toda nuestra comunidad.
+Cabe destacar que el comité organizador garantiza que la totalidad de los recursos obtenidos mediante la venta de estos productos será destinada íntegramente a la recaudación de fondos para la Fundación Carolita I.A.P., así como un stand de AMANC Colima; asociación invitada con venta de donas con causa.
 
-¡Tu voz es clave para inspirar a Colima a dar!
+"Para la familia de Fundación Carolita, ser los beneficiarios de "Un Día para Dar Colima" es un honor y una oportunidad inmensa", comentó Cristina Delgado Cárdenas, Presidenta de Fundación Carolita IAP. "Alcanzar la meta de recaudación nos permitirá expandir nuestras terapias especializadas, talleres de desarrollo de habilidades y mejorar las instalaciones, ofreciendo un futuro más brillante y autónomo a nuestros jóvenes. La comunidad es nuestro motor, y esta campaña lo demuestra".
 
-#UnDíaParaDarColima #DarEsAlegría #NoticiasColima #FundaciónCarolitaIAP #AyudaSocial`,
+Se invita a toda la ciudadanía, empresas y organizaciones a sumarse a la causa donando, participando como voluntarios o asistiendo al evento el 2 de diciembre. Toda la información se encuentra en el sitio https://un-dia-para-dar-colima.spartans-dev.io/ y en la página de Facebook: Un Día para Dar Colima.
+
+Un Día para Dar Colima
+Es la iniciativa local del movimiento global #UnDíaParaDar #GivingTuesday, que busca incentivar y celebrar la generosidad en todo el mundo. Desde su implementación en Colima, desde 2016 ha movilizado a miles de personas y ha sido un catalizador de apoyo para diversas causas sociales en el estado.
+
+Fundación Carolita I.A.P.
+Es la nueva administración de la institución de asistencia privada sin fines de lucro, comprometida con el desarrollo integral de personas con discapacidad en Colima. A través de sus programas educativos, terapéuticos y culturales, busca promover la autonomía, la inclusión y mejorar la calidad de vida de sus beneficiarios y sus familias.`,
     image: 'images/boletin/boletin.jpg'
   },
   {
@@ -267,6 +273,128 @@ export default function Boletin() {
             </div>
           </aside>
         </div>
+
+        {/* Necesidades de Carolita Section */}
+        <section className="mt-20 pt-16 border-t border-gray-200">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-4 tracking-tight">
+              Necesidades de Carolita
+            </h2>
+            <p className="text-lg text-[#808285]/70 font-light max-w-2xl mx-auto">
+              Conoce las áreas donde tu apoyo puede generar un impacto significativo en la vida de nuestros beneficiarios
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Terapias especializadas"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Terapias Especializadas</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/8612994/pexels-photo-8612994.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Materiales didácticos"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Materiales Didácticos</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/8923187/pexels-photo-8923187.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Equipamiento"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Equipamiento Especializado</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/7551662/pexels-photo-7551662.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Infraestructura"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Mejora de Instalaciones</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Capacitación"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Capacitación Profesional</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Transporte"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Transporte y Movilidad</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/8923039/pexels-photo-8923039.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Desarrollo de habilidades"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Talleres de Desarrollo</p>
+              </div>
+            </div>
+
+            <div className="relative h-64 rounded-[20px] overflow-hidden group">
+              <img
+                src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Inclusión social"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-sm">Programas de Inclusión</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="https://wa.me/5213121109700?text=Hola, me gustaría conocer más sobre cómo puedo apoyar las necesidades de Fundación Carolita"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-[#EE202E] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#d11c29] transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              ¿Cómo puedo ayudar?
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+          </div>
+        </section>
       </main>
 
             {/* Footer */}
