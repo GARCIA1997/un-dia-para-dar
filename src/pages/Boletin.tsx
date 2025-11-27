@@ -159,9 +159,131 @@ export default function Boletin() {
                   </button>
                   {expandedId === newsletters[0].id && (
                     <div className="mt-8 pt-8 border-t border-gray-200">
-                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line">
+                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line mb-12">
                         {newsletters[0].content}
                       </p>
+
+                      {/* Necesidades de Carolita dentro del boletín */}
+                      <div className="mt-12 pt-12 border-t border-gray-200">
+                        <div className="text-center mb-8">
+                          <h3 className="text-3xl md:text-4xl font-bold text-[#808285] mb-4 tracking-tight">
+                            Necesidades de Carolita
+                          </h3>
+                          <p className="text-base text-[#808285]/70 font-light">
+                            Conoce las áreas donde tu apoyo puede generar un impacto significativo
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Terapias especializadas"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Terapias Especializadas</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/8612994/pexels-photo-8612994.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Materiales didácticos"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Materiales Didácticos</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/8923187/pexels-photo-8923187.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Equipamiento"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Equipamiento Especializado</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/7551662/pexels-photo-7551662.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Infraestructura"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Mejora de Instalaciones</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Capacitación"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Capacitación Profesional</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Transporte"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Transporte y Movilidad</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/8923039/pexels-photo-8923039.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Desarrollo de habilidades"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Talleres de Desarrollo</p>
+                            </div>
+                          </div>
+
+                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
+                            <img
+                              src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800"
+                              alt="Inclusión social"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-3 left-3 right-3">
+                              <p className="text-white font-semibold text-xs">Programas de Inclusión</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="mt-8 text-center">
+                          <a
+                            href="https://wa.me/5213121109700?text=Hola, me gustaría conocer más sobre cómo puedo apoyar las necesidades de Fundación Carolita"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center bg-[#14AC94] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0f9582] transition-all duration-300 hover:scale-105 shadow-lg"
+                          >
+                            ¿Cómo puedo ayudar?
+                            <ArrowRight className="w-5 h-5 ml-2" />
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -273,128 +395,6 @@ export default function Boletin() {
             </div>
           </aside>
         </div>
-
-        {/* Necesidades de Carolita Section */}
-        <section className="mt-20 pt-16 border-t border-gray-200">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-4 tracking-tight">
-              Necesidades de Carolita
-            </h2>
-            <p className="text-lg text-[#808285]/70 font-light max-w-2xl mx-auto">
-              Conoce las áreas donde tu apoyo puede generar un impacto significativo en la vida de nuestros beneficiarios
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Terapias especializadas"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Terapias Especializadas</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/8612994/pexels-photo-8612994.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Materiales didácticos"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Materiales Didácticos</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/8923187/pexels-photo-8923187.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Equipamiento"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Equipamiento Especializado</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/7551662/pexels-photo-7551662.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Infraestructura"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Mejora de Instalaciones</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Capacitación"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Capacitación Profesional</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Transporte"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Transporte y Movilidad</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/8923039/pexels-photo-8923039.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Desarrollo de habilidades"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Talleres de Desarrollo</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-[20px] overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Inclusión social"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-sm">Programas de Inclusión</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <a
-              href="https://wa.me/5213121109700?text=Hola, me gustaría conocer más sobre cómo puedo apoyar las necesidades de Fundación Carolita"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#EE202E] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#d11c29] transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              ¿Cómo puedo ayudar?
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </a>
-          </div>
-        </section>
       </main>
 
             {/* Footer */}
