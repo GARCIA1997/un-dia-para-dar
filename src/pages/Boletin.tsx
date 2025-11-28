@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, User, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Calendar, User, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -16,24 +16,30 @@ interface Newsletter {
 const newsletters: Newsletter[] = [
   {
     id: 1,
-    title: '¡La Alegría de Dar Vuelve a Colima!',
-    description: 'Invitación especial a la Rueda de Prensa de Un Día Para Dar Colima 2025',
+    title: 'Beneficiará el movimiento global, este diciembre "Un Día para Dar", a sector vulnerable de Colima',
+    description: 'Movimiento internacional en Colima busca incentivar la generosidad a través de diversas actividades el próximo 02 de diciembre en el centro de la capital colimense',
     date: '28 de noviembre de 2025',
-    author: 'Un Día Para Dar Colima',
-    category: 'Prensa',
-    content: `La Fundación Carolita, IAP te invita a la Rueda de Prensa donde revelaremos todos los detalles de #UnDíaParaDarColima 2025.
+    author: 'Comité Organizador Un Día Para Dar Colima',
+    category: 'Comunicado Oficial',
+    content: `COLIMA, Col. – 28 de noviembre de 2025 – El comité organizador de "Un Día para Dar Colima" 2025 anuncia el lanzamiento oficial de su campaña anual de generosidad, en beneficio de la Fundación Carolita IAP. Se invita a todos los colimenses a sumarse con actos de generosidad a las distintas actividades que se llevarán a cabo en el Jardín Libertad. El objetivo es ambicioso; mejorar las condiciones de infraestructura y capacitación profesional de las instalaciones de dicha fundación dedicada a la atención y formación integral de personas con discapacidad en situación de vulnerabilidad.
 
-Queremos compartir contigo el espíritu, las historias y las formas en las que puedes participar en esta jornada global de generosidad.
+Bajo el lema "Un día para transformar vidas. Únete y sé parte del cambio", Claudia Razo Morales, Directora del Comité Organizador de "Un día para Dar Colima" explica -Este año, no solo queremos invitar a la gente a donar, queremos crear un verdadero viaje de generosidad que una a nuestra comunidad-. Por ello, el comité ha planeado incentivar a que se sumen familias, empresas y amigos para conocer la nueva administración de la Fundación Carolita IAP, para concientizar y lograr generar un impacto real y visible en la vida de los jóvenes y adultos a los que sirve la fundación. Claudia Razo concluye -Nuestra meta es ambiciosa, pero sabemos que el corazón de Colima es aún más grande-.
 
-Únete a nosotros:
+Con este evento se sumará Colima a más de 80 países para celebrar el Día para Dar (Giving Tuesday). Como parte de la estrategia de "Un Día para Dar Colima" en beneficio de la Fundación Carolita I.A.P., se ha dispuesto la instalación de stands ubicados estratégicamente en el Jardín Libertad en Colima, Colima.
 
-Rueda de Prensa: 28 de Noviembre | 8:00 AM | INTERESELAR
+Estos módulos de generosidad concentrarán diversas actividades de apoyo. Habrá espacios dedicados a la venta de productos con causa, incluyendo galletas elaboradas por la Fundación Carolita I.A.P. y ropa. Adicionalmente, el público podrá acceder a distintos servicios de Casa Macehual, por ejemplo masajes relajantes, y se recibirán ahí mismo donaciones en especie para la Fundación. Finalmente, un módulo informativo proporcionará detalles sobre el movimiento "Un Día para Dar Colima".
 
-La Causa: Conoce las acciones que apoyan a jóvenes como los de la foto y a toda nuestra comunidad.
+Cabe destacar que el comité organizador garantiza que la totalidad de los recursos obtenidos mediante la venta de estos productos será destinada íntegramente a la recaudación de fondos para la Fundación Carolita I.A.P., así como un stand de AMANC Colima; asociación invitada con venta de donas con causa.
 
-¡Tu voz es clave para inspirar a Colima a dar!
+"Para la familia de Fundación Carolita, ser los beneficiarios de "Un Día para Dar Colima" es un honor y una oportunidad inmensa", comentó Cristina Delgado Cárdenas, Presidenta de Fundación Carolita IAP. "Alcanzar la meta de recaudación nos permitirá expandir nuestras terapias especializadas, talleres de desarrollo de habilidades y mejorar las instalaciones, ofreciendo un futuro más brillante y autónomo a nuestros jóvenes. La comunidad es nuestro motor, y esta campaña lo demuestra".
 
-#UnDíaParaDarColima #DarEsAlegría #NoticiasColima #FundaciónCarolitaIAP #AyudaSocial`,
+Se invita a toda la ciudadanía, empresas y organizaciones a sumarse a la causa donando, participando como voluntarios o asistiendo al evento el 2 de diciembre. Toda la información se encuentra en el sitio https://un-dia-para-dar-colima.spartans-dev.io/ y en la página de Facebook: Un Día para Dar Colima.
+
+Un Día para Dar Colima
+Es la iniciativa local del movimiento global #UnDíaParaDar #GivingTuesday, que busca incentivar y celebrar la generosidad en todo el mundo. Desde su implementación en Colima, desde 2016 ha movilizado a miles de personas y ha sido un catalizador de apoyo para diversas causas sociales en el estado.
+
+Fundación Carolita I.A.P.
+Es la nueva administración de la institución de asistencia privada sin fines de lucro, comprometida con el desarrollo integral de personas con discapacidad en Colima. A través de sus programas educativos, terapéuticos y culturales, busca promover la autonomía, la inclusión y mejorar la calidad de vida de sus beneficiarios y sus familias.`,
     image: 'images/boletin/boletin.jpg'
   },
   {
@@ -74,11 +80,43 @@ Si deseas conocer en detalle cómo puedes apoyar alguna de estas necesidades, te
   }
 ];
 
+const needsImages = [
+  { src: 'images/boletin/boletint4.jpg', title: 'Remodelación y adaptación de baños', description: 'Mejora de la infraestructura sanitaria para mayor accesibilidad' },
+  { src: 'images/boletin/boletin5.jpg', title: 'Taller de repostería', description: 'Desarrollo de habilidades culinarias y autonomía' },
+  { src: 'images/boletin/boletin6.jpg', title: 'Pintura de instalaciones', description: 'Mantenimiento y embellecimiento de espacios' },
+  { src: 'images/boletin/boletin7.jpg', title: 'Materiales didácticos y educativos', description: 'Recursos para el aprendizaje continuo' },
+  { src: 'images/boletin/boletin8.jpg', title: 'Instalaciones eléctricas', description: 'Mejoras en seguridad y eficiencia energética' },
+  { src: 'images/boletin/boletin9.jpg', title: 'Equipamiento de movimiento y fisioterapia', description: 'Herramientas para terapias especializadas' },
+  { src: 'images/boletin/boletin10.jpg', title: 'Impermeabilización y reparación de techos', description: 'Protección de instalaciones y bienestar' },
+  { src: 'images/boletin/boletin11.jpg', title: 'Becas y uniformes', description: 'Apoyo educativo integral para beneficiarios' },
+];
+
 export default function Boletin() {
   const [expandedId, setExpandedId] = useState<string | number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const toggleExpand = (id: string | number) => {
     setExpandedId(expandedId === id ? null : id);
+  };
+
+  const openCarousel = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeCarousel = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const nextImage = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex + 1) % needsImages.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex - 1 + needsImages.length) % needsImages.length);
+    }
   };
 
   return (
@@ -153,9 +191,54 @@ export default function Boletin() {
                   </button>
                   {expandedId === newsletters[0].id && (
                     <div className="mt-8 pt-8 border-t border-gray-200">
-                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line">
+                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line mb-12">
                         {newsletters[0].content}
                       </p>
+
+                      {/* Necesidades de Carolita dentro del boletín */}
+                      <div className="mt-12 pt-12 border-t border-gray-200">
+                        <div className="text-center mb-10">
+                          <h3 className="text-3xl md:text-4xl font-bold text-[#808285] mb-4 tracking-tight">
+                            Necesidades de Carolita
+                          </h3>
+                          <p className="text-base text-[#808285]/70 font-light max-w-2xl mx-auto">
+                            Conoce las áreas donde tu apoyo puede generar un impacto significativo en la vida de nuestros beneficiarios
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                          {needsImages.map((image, index) => (
+                            <div
+                              key={index}
+                              onClick={() => openCarousel(index)}
+                              className="relative h-56 rounded-[20px] overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
+                            >
+                              <img
+                                src={image.src}
+                                alt={image.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                              <div className="absolute bottom-4 left-4 right-4">
+                                <p className="text-white font-bold text-sm mb-1">{image.title}</p>
+                              </div>
+                              <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#EE202E] rounded-[20px] transition-all duration-300"></div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="mt-8 text-center">
+                          <a
+                            href="https://wa.me/5213121109700?text=Hola, me gustaría conocer más sobre cómo puedo apoyar las necesidades de Fundación Carolita"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center bg-[#14AC94] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0f9582] transition-all duration-300 hover:scale-105 shadow-lg"
+                          >
+                            ¿Cómo puedo ayudar?
+                            <ArrowRight className="w-5 h-5 ml-2" />
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -246,24 +329,6 @@ export default function Boletin() {
                   );
                 })}
               </div>
-
-              {/* Call to Action Box */}
-              <div className="mt-6 bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-6 text-white">
-                <h4 className="text-lg font-bold mb-3 text-center">
-                  ¿Deseas recibir saber màs?
-                </h4>
-                <p className="text-sm text-white/90 mb-4 text-center font-light">
-                  Envioanos un WhatsApp
-                </p>
-                <a
-                  href="https://wa.me/5213121109700?text=Hola, me gustaría recibir mas informacion sobre el boletín de Un Día Para Dar Colima."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-white text-[#14AC94] font-semibold py-2 px-4 rounded-full text-center hover:bg-gray-100 transition-all duration-300 text-sm"
-                >
-                  Suscribirse
-                </a>
-              </div>
             </div>
           </aside>
         </div>
@@ -286,6 +351,67 @@ export default function Boletin() {
           </p>
         </div>
       </footer>
+
+      {/* Carousel Modal */}
+      {selectedImageIndex !== null && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={closeCarousel}>
+          <button
+            onClick={closeCarousel}
+            className="absolute top-4 right-4 text-white hover:text-[#EE202E] transition-colors z-10"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-4 text-white hover:text-[#EE202E] transition-colors z-10"
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-4 text-white hover:text-[#EE202E] transition-colors z-10"
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
+
+          <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="relative">
+              <img
+                src={needsImages[selectedImageIndex].src}
+                alt={needsImages[selectedImageIndex].title}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-[20px]"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 rounded-b-[20px]">
+                <h4 className="text-white text-2xl font-bold mb-2">
+                  {needsImages[selectedImageIndex].title}
+                </h4>
+                <p className="text-white/90 text-base font-light">
+                  {needsImages[selectedImageIndex].description}
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center mt-4 gap-2">
+              {needsImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImageIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === selectedImageIndex ? 'bg-[#EE202E] w-8' : 'bg-white/50 hover:bg-white/80'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
