@@ -177,97 +177,97 @@ export default function Boletin() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Terapias especializadas"
+                              src="images/boletin/boletint4.jpg"
+                              alt="Remodelación y adaptaciónes de baños"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Terapias Especializadas</p>
+                              <p className="text-white font-semibold text-xs">Remodelación y adaptaciónes de baños</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/8612994/pexels-photo-8612994.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Materiales didácticos"
+                              src="images/boletin/boletin5.jpg"
+                              alt="Taller de repostería"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Materiales Didácticos</p>
+                              <p className="text-white font-semibold text-xs">Taller de repostería</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/8923187/pexels-photo-8923187.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Equipamiento"
+                              src="images/boletin/boletin6.jpg"
+                              alt="Pintura de instalaciones"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Equipamiento Especializado</p>
+                              <p className="text-white font-semibold text-xs">Pintura de instalaciones</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/7551662/pexels-photo-7551662.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Infraestructura"
+                              src="images/boletin/boletin7.jpg"
+                              alt="Materiales didácticos y educativos"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Mejora de Instalaciones</p>
+                              <p className="text-white font-semibold text-xs">Materiales didácticos y educativos</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Capacitación"
+                              src="images/boletin/boletin8.jpg"
+                              alt="Instalaciones electricas"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Capacitación Profesional</p>
+                              <p className="text-white font-semibold text-xs">Instalación electricas</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Transporte"
+                              src="images/boletin/boletin9.jpg"
+                              alt="Equipamiento de movimiento y fisioterapia"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Transporte y Movilidad</p>
+                              <p className="text-white font-semibold text-xs">Equipamiento de movimiento y fisioterapia</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/8923039/pexels-photo-8923039.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Desarrollo de habilidades"
+                              src="images/boletin/boletin10.jpg"
+                              alt="Impermeabilización y reparación de techos"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Talleres de Desarrollo</p>
+                              <p className="text-white font-semibold text-xs">Impermeabilización y reparación de techos</p>
                             </div>
                           </div>
 
                           <div className="relative h-48 rounded-[16px] overflow-hidden group">
                             <img
-                              src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              alt="Inclusión social"
+                              src="images/boletin/boletin11.jpg"
+                              alt="Becas y uniformes"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Programas de Inclusión</p>
+                              <p className="text-white font-semibold text-xs">Becas y uniformes</p>
                             </div>
                           </div>
                         </div>
@@ -373,24 +373,6 @@ export default function Boletin() {
                     </article>
                   );
                 })}
-              </div>
-
-              {/* Call to Action Box */}
-              <div className="mt-6 bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-6 text-white">
-                <h4 className="text-lg font-bold mb-3 text-center">
-                  ¿Deseas recibir saber màs?
-                </h4>
-                <p className="text-sm text-white/90 mb-4 text-center font-light">
-                  Envioanos un WhatsApp
-                </p>
-                <a
-                  href="https://wa.me/5213121109700?text=Hola, me gustaría recibir mas informacion sobre el boletín de Un Día Para Dar Colima."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-white text-[#14AC94] font-semibold py-2 px-4 rounded-full text-center hover:bg-gray-100 transition-all duration-300 text-sm"
-                >
-                  Suscribirse
-                </a>
               </div>
             </div>
           </aside>
