@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, User, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Calendar, User, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -80,11 +80,43 @@ Si deseas conocer en detalle cómo puedes apoyar alguna de estas necesidades, te
   }
 ];
 
+const needsImages = [
+  { src: 'images/boletin/boletint4.jpg', title: 'Remodelación y adaptación de baños', description: 'Mejora de la infraestructura sanitaria para mayor accesibilidad' },
+  { src: 'images/boletin/boletin5.jpg', title: 'Taller de repostería', description: 'Desarrollo de habilidades culinarias y autonomía' },
+  { src: 'images/boletin/boletin6.jpg', title: 'Pintura de instalaciones', description: 'Mantenimiento y embellecimiento de espacios' },
+  { src: 'images/boletin/boletin7.jpg', title: 'Materiales didácticos y educativos', description: 'Recursos para el aprendizaje continuo' },
+  { src: 'images/boletin/boletin8.jpg', title: 'Instalaciones eléctricas', description: 'Mejoras en seguridad y eficiencia energética' },
+  { src: 'images/boletin/boletin9.jpg', title: 'Equipamiento de movimiento y fisioterapia', description: 'Herramientas para terapias especializadas' },
+  { src: 'images/boletin/boletin10.jpg', title: 'Impermeabilización y reparación de techos', description: 'Protección de instalaciones y bienestar' },
+  { src: 'images/boletin/boletin11.jpg', title: 'Becas y uniformes', description: 'Apoyo educativo integral para beneficiarios' },
+];
+
 export default function Boletin() {
   const [expandedId, setExpandedId] = useState<string | number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const toggleExpand = (id: string | number) => {
     setExpandedId(expandedId === id ? null : id);
+  };
+
+  const openCarousel = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeCarousel = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const nextImage = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex + 1) % needsImages.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex - 1 + needsImages.length) % needsImages.length);
+    }
   };
 
   return (
@@ -165,111 +197,35 @@ export default function Boletin() {
 
                       {/* Necesidades de Carolita dentro del boletín */}
                       <div className="mt-12 pt-12 border-t border-gray-200">
-                        <div className="text-center mb-8">
+                        <div className="text-center mb-10">
                           <h3 className="text-3xl md:text-4xl font-bold text-[#808285] mb-4 tracking-tight">
                             Necesidades de Carolita
                           </h3>
-                          <p className="text-base text-[#808285]/70 font-light">
-                            Conoce las áreas donde tu apoyo puede generar un impacto significativo
+                          <p className="text-base text-[#808285]/70 font-light max-w-2xl mx-auto">
+                            Conoce las áreas donde tu apoyo puede generar un impacto significativo en la vida de nuestros beneficiarios
                           </p>
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletint4.jpg"
-                              alt="Remodelación y adaptaciónes de baños"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Remodelación y adaptaciónes de baños</p>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                          {needsImages.map((image, index) => (
+                            <div
+                              key={index}
+                              onClick={() => openCarousel(index)}
+                              className="relative h-56 rounded-[20px] overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
+                            >
+                              <img
+                                src={image.src}
+                                alt={image.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                              <div className="absolute bottom-4 left-4 right-4">
+                                <p className="text-white font-bold text-sm mb-1">{image.title}</p>
+                                <p className="text-white/80 text-xs font-light">{image.description}</p>
+                              </div>
+                              <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#EE202E] rounded-[20px] transition-all duration-300"></div>
                             </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin5.jpg"
-                              alt="Taller de repostería"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Taller de repostería</p>
-                            </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin6.jpg"
-                              alt="Pintura de instalaciones"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Pintura de instalaciones</p>
-                            </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin7.jpg"
-                              alt="Materiales didácticos y educativos"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Materiales didácticos y educativos</p>
-                            </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin8.jpg"
-                              alt="Instalaciones electricas"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Instalación electricas</p>
-                            </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin9.jpg"
-                              alt="Equipamiento de movimiento y fisioterapia"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Equipamiento de movimiento y fisioterapia</p>
-                            </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin10.jpg"
-                              alt="Impermeabilización y reparación de techos"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Impermeabilización y reparación de techos</p>
-                            </div>
-                          </div>
-
-                          <div className="relative h-48 rounded-[16px] overflow-hidden group">
-                            <img
-                              src="images/boletin/boletin11.jpg"
-                              alt="Becas y uniformes"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-3 left-3 right-3">
-                              <p className="text-white font-semibold text-xs">Becas y uniformes</p>
-                            </div>
-                          </div>
+                          ))}
                         </div>
 
                         <div className="mt-8 text-center">
@@ -396,6 +352,67 @@ export default function Boletin() {
           </p>
         </div>
       </footer>
+
+      {/* Carousel Modal */}
+      {selectedImageIndex !== null && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={closeCarousel}>
+          <button
+            onClick={closeCarousel}
+            className="absolute top-4 right-4 text-white hover:text-[#EE202E] transition-colors z-10"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-4 text-white hover:text-[#EE202E] transition-colors z-10"
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-4 text-white hover:text-[#EE202E] transition-colors z-10"
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
+
+          <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="relative">
+              <img
+                src={needsImages[selectedImageIndex].src}
+                alt={needsImages[selectedImageIndex].title}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-[20px]"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 rounded-b-[20px]">
+                <h4 className="text-white text-2xl font-bold mb-2">
+                  {needsImages[selectedImageIndex].title}
+                </h4>
+                <p className="text-white/90 text-base font-light">
+                  {needsImages[selectedImageIndex].description}
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center mt-4 gap-2">
+              {needsImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImageIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === selectedImageIndex ? 'bg-[#EE202E] w-8' : 'bg-white/50 hover:bg-white/80'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
