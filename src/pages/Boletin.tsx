@@ -221,7 +221,6 @@ export default function Boletin() {
                               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                               <div className="absolute bottom-4 left-4 right-4">
                                 <p className="text-white font-bold text-sm mb-1">{image.title}</p>
-                                <p className="text-white/80 text-xs font-light">{image.description}</p>
                               </div>
                               <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#EE202E] rounded-[20px] transition-all duration-300"></div>
                             </div>
