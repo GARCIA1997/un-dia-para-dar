@@ -11,10 +11,13 @@ interface Sponsor {
 
 const SponsorsCarousel: React.FC = () => {
   const sponsors: Sponsor[] = [
-    { id: '1', name: 'Spartans Dev', logo: '/spartansdevio-high-resolution-logo-color-on-transparent-background.png', url: 'https://spartans-dev.io' },
-    { id: '2', name: 'Razo', logo: '/razo.png' },
-    { id: '3', name: 'Macehual', logo: '/macehual.png' },
-    { id: '4', name: 'Artecultores', logo: '/artecultores.png' },
+    { id: '1', name: 'Spartans Dev', logo: 'images/sponsors/spartansdevio.png', url: 'https://spartans-dev.io' },
+    { id: '2', name: 'Razo', logo: 'images/sponsors/razo.png' },
+    { id: '3', name: 'Coparmex', logo: 'images/sponsors/coparmex.png' },
+    { id: '3', name: 'Macehual', logo: 'images/sponsors/macehual.png' },
+    { id: '4', name: 'Artecultores', logo: 'images/sponsors/artecultores.png' },
+    { id: '5', name: 'Cmic', logo: 'images/sponsors/cmic.png' },
+    { id: '6', name: 'Interestelar', logo: 'images/sponsors/interestelar.png' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -171,10 +174,10 @@ const SponsorsCarousel: React.FC = () => {
           {/* Carousel Container - STRICT: Single row per step */}
           <div className={`relative mb-10 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-            <div className="overflow-hidden mx-4 md:mx-8">
+            <div className="overflow-hidden mx-4 md:mx-8 py-4">
               <div
                 ref={carouselRef}
-                className="flex transition-transform duration-500 ease-in-out cursor-grab active:cursor-grabbing"
+                className="flex transition-transform duration-500 ease-in-out cursor-grab active:cursor-grabbing "
                 style={{
                   transform: `translateX(-${currentIndex * 100}%)`
                 }}
@@ -256,13 +259,13 @@ const SponsorsCarousel: React.FC = () => {
               <>
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
+                  className="absolute left-0 top-14 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
                 >
                   <ChevronLeft className="w-5 h-5 text-[#808285]" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
+                  className="absolute right-0 top-14 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
                 >
                   <ChevronRight className="w-5 h-5 text-[#808285]" />
                 </button>
