@@ -1,96 +1,89 @@
 import {
-  Book,
-  Briefcase,
   Calendar,
-  Car,
-  Clock,
-  Cookie,
-  Facebook,
-  GraduationCap,
   Heart,
-  HomeIcon,
+  Send,
+  Facebook,
   Instagram,
-  MapPin,
-  Share2,
-  Stethoscope,
   Users,
+  ArrowRight,
 } from "lucide-react";
-import { useEffect } from "react";
-import CountdownTimer from "../components/CountdownTimer";
-import WhatsAppButton from "../components/WhatsAppButton";
-import ImpactStats from "../components/ImpactStats";
+import { useState } from "react";
 import SponsorsCarousel from "../components/SponsorsCarousel";
-import StudentCarousel from "../components/StudentCarousel";
-import NeedsCta from "../components/NeedsCta";
 
 export default function Home() {
-  const shareEvent = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Fundación Carolita IAP – Un Día para Dar Colima 2025",
-        text: "Un día para transformar vidas. Únete y sé parte del cambio.",
-        url: window.location.href,
-      });
-    } else {
-      // Fallback for browsers that don't support Web Share API
-      const url = encodeURIComponent(window.location.href);
-      const text = encodeURIComponent(
-        "Un día para transformar vidas. Únete y sé parte del cambio."
-      );
-      window.open(
-        `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`,
-        "_blank"
-      );
-    }
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    foundation: "",
+    reason: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = `Hola, quiero sugerir una fundación para Un Día para Dar:\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nFundación sugerida: ${formData.foundation}\nRazón: ${formData.reason}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/523122459294?text=${encodedMessage}`, "_blank");
   };
 
-  const downloadCalendar = () => {
-    const event = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Fundación Carolita IAP – Un Día para Dar México 2025//ES
-BEGIN:VEVENT
-UID:undiaparadar2025@fundacioncarolita.org
-DTSTAMP:20241201T000000Z
-DTSTART:20251202T180000Z
-DTEND:20251202T220000Z
-SUMMARY:Un Día para Dar México 2025
-DESCRIPTION:Un día para transformar vidas. Únete y sé parte del cambio.
-LOCATION:Por confirmar
-END:VEVENT
-END:VCALENDAR`;
-
-    const blob = new Blob([event], { type: "text/calendar" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "un-dia-para-dar-2025.ics";
-    link.click();
-    URL.revokeObjectURL(url);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.substring(1);
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [window.location.hash]);
+  const pastEvents = [
+    {
+      year: "2021",
+      foundation: "Fundación ABC",
+      description: "Apoyamos con recursos educativos para niños vulnerables",
+      impact: "150 niños beneficiados",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      year: "2022",
+      foundation: "Casa Hogar XYZ",
+      description: "Mejoramos las instalaciones y equipamiento del hogar",
+      impact: "80 personas apoyadas",
+      color: "from-green-500 to-green-600",
+    },
+    {
+      year: "2023",
+      foundation: "Fundación Salud",
+      description: "Financiamos tratamientos médicos especializados",
+      impact: "200 consultas realizadas",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      year: "2024",
+      foundation: "Educación para Todos",
+      description: "Becas y material escolar para estudiantes de escasos recursos",
+      impact: "300 estudiantes becados",
+      color: "from-orange-500 to-orange-600",
+    },
+    {
+      year: "2025",
+      foundation: "Fundación Carolita IAP",
+      description:
+        "Atención integral a personas con discapacidad, programas educativos y terapéuticos",
+      impact: "Infraestructura, equipamiento y apoyo directo a beneficiarios",
+      color: "from-red-500 to-red-600",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section
-        className="relative bg-gradient-to-br from-[#EE202E] via-[#EE202E] to-[#d11c29] text-white overflow-hidden"
-        id="home"
-      >
+      {/* Hero Section - Coming Soon */}
+      <section className="relative bg-gradient-to-br from-[#EE202E] via-[#EE202E] to-[#d11c29] text-white overflow-hidden min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-6 py-20 md:py-32">
-          <div className="text-center max-w-5xl mx-auto">
-            {/* Logos */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        </div>
+
+        <div className="relative container mx-auto px-6 py-20 text-center">
+          <div className="max-w-5xl mx-auto">
             <div className="flex justify-center items-center space-x-12 mb-12">
-              <div className="bg-white/20 backdrop-blur-sm rounded-[20px] w-28 h-28 flex items-center justify-center shadow-lg">
+              <div className="bg-white/20 backdrop-blur-sm rounded-3xl w-40 h-40 flex items-center justify-center shadow-2xl">
                 <img
                   src="/LOGO_UDPD_COLIMA.png"
                   alt="Logo Un Día para Dar Colima"
@@ -98,359 +91,213 @@ END:VCALENDAR`;
                 />
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
-              Un día para dar Colima 2025
+
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight tracking-tight animate-fade-in">
+              Un Día para Dar
             </h1>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-[#FFFFFF] tracking-tight animate-fade-in-up">
-              Fundación Carolita IAP
+            <h2 className="text-4xl md:text-6xl font-semibold mb-12 text-white/95 tracking-tight">
+              Colima 2026
             </h2>
-            <p className="text-2xl md:text-3xl mb-12 text-white/95 leading-relaxed font-light max-w-4xl mx-auto">
-              "Un día para transformar vidas. Únete y sé parte del cambio."
-            </p>
-            <div className="flex items-center justify-center space-x-3 mb-10 text-xl md:text-2xl font-medium">
-              <Calendar className="w-7 h-7" />
-              <span>Martes 2 de diciembre de 2025</span>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 mb-12 shadow-2xl border border-white/20">
+              <p className="text-3xl md:text-4xl mb-6 font-light">
+                Próximamente
+              </p>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+                Estamos preparando algo especial para 2026. Juntos seguiremos transformando vidas y construyendo un futuro mejor para nuestra comunidad.
+              </p>
             </div>
 
-            <CountdownTimer />
-
-            {/* Action buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16 max-w-3xl mx-auto">
-              <WhatsAppButton
-                message="Hola, quiero apoyar con una donación para Fundación Carolita IAP."
-                variant="secondary"
-                className="w-full sm:w-auto text-lg px-8 py-4 shadow-xl"
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a
+                href="#history"
+                className="inline-flex items-center bg-white text-[#EE202E] font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-lg"
               >
-                Donar
-              </WhatsAppButton>
-              <WhatsAppButton
-                message="Hola, quiero comprar galletas para apoyar a Fundación Carolita IAP."
-                variant="outline"
-                className="w-full sm:w-auto bg-white/10 border-white text-white hover:bg-white hover:text-[#EE202E] text-lg px-8 py-4 shadow-xl"
+                Ver ediciones anteriores
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+              <a
+                href="#suggest"
+                className="inline-flex items-center bg-white/10 backdrop-blur-sm border-2 border-white text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20 shadow-xl hover:shadow-2xl text-lg"
               >
-                Comprar Galletas
-              </WhatsAppButton>
-            </div>
-
-            {/* Share buttons */}
-            <div className="flex justify-center space-x-6 mt-12">
-              <button
-                onClick={shareEvent}
-                className="bg-white/20 backdrop-blur-sm rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
-              >
-                <Share2 className="w-6 h-6" />
-              </button>
-              <button
-                onClick={downloadCalendar}
-                className="bg-white/20 backdrop-blur-sm rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
-              >
-                <Calendar className="w-6 h-6" />
-              </button>
+                Sugerir fundación
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* What is Un Día para Dar */}
-      <section className="py-20 md:py-32 bg-white" id="description">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
-              ¿Qué es "Un día para dar"?
+              ¿Qué es Un Día para Dar?
             </h2>
+            <p className="text-xl md:text-2xl text-[#808285] leading-relaxed font-light mb-8">
+              Un Día para Dar es un movimiento global que promueve la solidaridad y la generosidad. Cada año, millones de personas se unen para donar su tiempo, recursos y apoyo a causas que lo necesitan.
+            </p>
             <p className="text-xl md:text-2xl text-[#808285] leading-relaxed font-light">
-              "Un día para dar es un movimiento global que promueve la
-              solidaridad y la generosidad. Cada año, millones de personas se
-              unen para donar su tiempo, recursos y apoyo a causas que lo
-              necesitan. Este 2025 unimos esfuerzos de corazón para apoyar a la
-              Fundación Carolita, que hoy está en proceso de transformación."
+              En Colima, nos sumamos a este movimiento apoyando a fundaciones locales que trabajan incansablemente por mejorar la vida de quienes más lo necesitan.
             </p>
           </div>
         </div>
       </section>
 
-      {/* About Foundation */}
-      <section className="py-20 md:py-32 bg-gray-50" id="about">
+      {/* Historical Section */}
+      <section className="py-20 md:py-32 bg-gray-50" id="history">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
-                ¿Quién es la Fundación Carolita IAP?
+              <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-6 tracking-tight">
+                Nuestro Impacto a Través de los Años
               </h2>
-              <p className="text-xl md:text-2xl text-[#808285] leading-relaxed max-w-5xl mx-auto font-light">
-                "Nuestra asociación tiene como propósito brindar atención,
-                formación y acompañamiento integral a personas con discapacidad
-                en situación de vulnerabilidad. Lo hacemos a través de programas
-                educativos, terapéuticos, culturales y de desarrollo personal
-                que fomentan su inclusión, fortalecen su autonomía y mejoran su
-                calidad de vida."
+              <p className="text-xl md:text-2xl text-[#808285] leading-relaxed max-w-4xl mx-auto font-light">
+                Desde 2021, hemos apoyado a diferentes fundaciones de Colima, generando un impacto positivo en miles de vidas.
               </p>
             </div>
 
-            {/* Mission and Vision Layout */}
-            <div className="grid lg:grid-cols-2 gap-10 mb-16">
-              {/* Mission - Orange Background */}
-              <div className="bg-gradient-to-br from-[#f97316] to-[#ea580c] rounded-[20px] p-10 text-white transform transition-all duration-700 hover:scale-105 shadow-xl">
-                <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mr-5">
-                    <Heart className="w-7 h-7 text-white" />
+            <div className="space-y-8">
+              {pastEvents.map((event, index) => (
+                <div
+                  key={event.year}
+                  className="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="md:flex">
+                    <div className={`md:w-1/4 bg-gradient-to-br ${event.color} p-8 flex flex-col justify-center items-center text-white`}>
+                      <Calendar className="w-16 h-16 mb-4" />
+                      <p className="text-5xl font-bold mb-2">{event.year}</p>
+                      <p className="text-lg font-semibold">Un Día para Dar</p>
+                    </div>
+                    <div className="md:w-3/4 p-8 md:p-12">
+                      <h3 className="text-3xl font-bold text-[#808285] mb-4">
+                        {event.foundation}
+                      </h3>
+                      <p className="text-xl text-[#808285] leading-relaxed mb-6 font-light">
+                        {event.description}
+                      </p>
+                      <div className="flex items-center bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border-l-4 border-green-500">
+                        <Heart className="w-6 h-6 text-green-600 mr-3" />
+                        <span className="text-lg font-semibold text-green-800">
+                          Impacto: {event.impact}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-3xl font-bold tracking-tight">Misión</h3>
                 </div>
-                <p className="text-white/95 leading-relaxed text-xl font-light">
-                  "Brindar atención, formación y acompañamiento integral a
-                  personas con discapacidad en situación de vulnerabilidad, a
-                  través de programas educativos, terapéuticos, culturales y de
-                  desarrollo personal que fortalezcan su inclusión, autonomía y
-                  calidad de vida, en un entorno de respeto, calidez y
-                  dignidad."
-                </p>
-              </div>
-
-              {/* Vision - White Background */}
-              <div className="bg-white rounded-[20px] p-10 shadow-xl border border-gray-100 transform transition-all duration-700 hover:scale-105">
-                <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-[#14AC94]/10 rounded-full flex items-center justify-center mr-5">
-                    <Users className="w-7 h-7 text-[#14AC94]" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-[#808285] tracking-tight">
-                    Visión
-                  </h3>
-                </div>
-                <p className="text-[#808285] leading-relaxed text-xl font-light">
-                  "Ser un referente regional en la atención integral a personas
-                  con discapacidad, reconocida por su enfoque humano, inclusivo
-                  y transformador, donde cada persona sea valorada, desarrolle
-                  su potencial y ejerza plenamente sus derechos como parte
-                  activa de la sociedad."
-                </p>
-              </div>
-            </div>
-
-            {/* Values - Three Blue Cards */}
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-8 text-white transform transition-all duration-700 hover:scale-105 shadow-xl">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold tracking-tight">
-                    Inclusión social y vida independiente
-                  </h4>
-                </div>
-              </div>
-              <div
-                className="bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-8 text-white transform transition-all duration-700 hover:scale-105 shadow-xl"
-                style={{ animationDelay: "200ms" }}
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                    <Heart className="w-6 h-6 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold tracking-tight">
-                    Desarrollo personal y expresión
-                  </h4>
-                </div>
-              </div>
-              <div
-                className="bg-gradient-to-br from-[#14AC94] to-[#0f9582] rounded-[20px] p-8 text-white transform transition-all duration-700 hover:scale-105 shadow-xl"
-                style={{ animationDelay: "400ms" }}
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                    <GraduationCap className="w-6 h-6 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold tracking-tight">
-                    Formación y educación inclusiva
-                  </h4>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Foundation Activities */}
-      <section className="py-20 md:py-32 bg-white" id="activities">
+      {/* Foundation Suggestion Section */}
+      <section className="py-20 md:py-32 bg-white" id="suggest">
         <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#808285] text-center mb-16 tracking-tight">
-              ¿Qué realiza la Fundación Carolita IAP?
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-              <div className="bg-white rounded-[20px] p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 shadow-lg border border-gray-100">
-                <div className="w-20 h-20 bg-[#EE202E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Briefcase className="w-10 h-10 text-[#EE202E]" />
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-6 tracking-tight">
+                ¿Conoces una fundación que merece apoyo?
+              </h2>
+              <p className="text-xl md:text-2xl text-[#808285] leading-relaxed font-light">
+                Tu voz importa. Ayúdanos a identificar organizaciones que están haciendo una diferencia en nuestra comunidad.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-lg font-semibold text-[#808285] mb-2">
+                    Tu nombre
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#EE202E] focus:outline-none text-lg transition-colors"
+                    placeholder="Escribe tu nombre"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-[#808285] mb-4 tracking-tight">
-                  ⁠Habilidades adaptativas
-                </h3>
-                <p className="text-[#808285] text-base leading-relaxed font-light">
-                  Desarrollo de hábitos de independencia.
-                </p>
-              </div>
-              <div className="bg-white rounded-[20px] p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 shadow-lg border border-gray-100">
-                <div className="w-20 h-20 bg-[#EE202E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Stethoscope className="w-10 h-10 text-[#EE202E]" />
+
+                <div>
+                  <label htmlFor="email" className="block text-lg font-semibold text-[#808285] mb-2">
+                    Tu correo electrónico
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#EE202E] focus:outline-none text-lg transition-colors"
+                    placeholder="tu@email.com"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-[#808285] mb-4 tracking-tight">
-                  Terapias ocupacionales
-                </h3>
-                <p className="text-[#808285] text-base leading-relaxed font-light">
-                  Programas individuales de rehabilitación y desarrollo.
-                </p>
-              </div>
-              <div className="bg-white rounded-[20px] p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 shadow-lg border border-gray-100">
-                <div className="w-20 h-20 bg-[#EE202E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Cookie className="w-10 h-10 text-[#EE202E]" />
+
+                <div>
+                  <label htmlFor="foundation" className="block text-lg font-semibold text-[#808285] mb-2">
+                    Nombre de la fundación
+                  </label>
+                  <input
+                    type="text"
+                    id="foundation"
+                    name="foundation"
+                    required
+                    value={formData.foundation}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#EE202E] focus:outline-none text-lg transition-colors"
+                    placeholder="Nombre de la organización"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-[#808285] mb-4 tracking-tight">
-                  Producción de galletas artesanales
-                </h3>
-                <p className="text-[#808285] text-base leading-relaxed font-light">
-                  Elaboradas por los beneficiarios como fuente de ingreso.
-                </p>
-              </div>
-              <div className="bg-white rounded-[20px] p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 shadow-lg border border-gray-100">
-                <div className="w-20 h-20 bg-[#EE202E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-10 h-10 text-[#EE202E]" />
+
+                <div>
+                  <label htmlFor="reason" className="block text-lg font-semibold text-[#808285] mb-2">
+                    ¿Por qué deberíamos apoyarla?
+                  </label>
+                  <textarea
+                    id="reason"
+                    name="reason"
+                    required
+                    value={formData.reason}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#EE202E] focus:outline-none text-lg transition-colors resize-none"
+                    placeholder="Cuéntanos sobre el impacto y trabajo de esta fundación..."
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-[#808285] mb-4 tracking-tight">
-                  Eventos comunitarios
-                </h3>
-                <p className="text-[#808285] text-base leading-relaxed font-light">
-                  Actividades para sensibilizar e integrar a la comunidad.
-                </p>
-              </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-[#EE202E] to-[#d11c29] text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl text-lg flex items-center justify-center"
+                >
+                  <Send className="w-6 h-6 mr-3" />
+                  Enviar sugerencia
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        className="py-20 md:py-32 bg-gradient-to-br from-[#14AC94] to-[#0f9582] text-white"
-        id="needs"
-      >
-        {/* Needs */}
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">
-              Necesidades de la Fundación Carolita IAP
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-              <div className="bg-white/10 backdrop-blur-sm rounded-[20px] p-8 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg">
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <GraduationCap className="w-10 h-10 text-white" />
-                </div>
-                <p className="font-semibold text-lg tracking-tight">
-                  Becas para capacitación
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-[20px] p-8 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg">
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Book className="w-10 h-10 text-white" />
-                </div>
-                <p className="font-semibold text-lg tracking-tight">
-                  Materiales didácticos
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-[20px] p-8 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg">
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <HomeIcon className="w-10 h-10 text-white" />
-                </div>
-                <p className="font-semibold text-lg tracking-tight">
-                  Mejora de instalaciones
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-[20px] p-8 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg">
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Car className="w-10 h-10 text-white" />
-                </div>
-                <p className="font-semibold text-lg tracking-tight">
-                  Recursos para transporte
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <ImpactStats />
-
-      {/* Students Carousel  */}
-      <StudentCarousel />
-
-      {/* Needs CTA Section */}
-      <NeedsCta />
-
-      {/* Fundraising Events 
-      <FundraisingEvents />
-      */}
       {/* Sponsors Carousel */}
       <SponsorsCarousel />
 
-      {/* Call to Action */}
-      <section className="py-20 md:py-32 bg-white" id="cta">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#808285] mb-12 tracking-tight">
-              Llamado a la acción para asistir y ayudar
-            </h2>
-            <p className="text-xl md:text-2xl text-[#808285] leading-relaxed mb-12 font-light">
-              "Este año, tu participación puede marcar la diferencia. Ven,
-              conoce nuestra labor y ayúdanos comprando nuestras galletas,
-              realizando una donación o apadrinando a una persona joven."
-            </p>
-
-            <div className="bg-white rounded-[20px] p-10 mb-12 shadow-xl border border-gray-100">
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 text-[#808285]">
-                <div className="flex flex-col items-center gap-2">
-                  <Calendar className="w-8 h-8 text-[#EE202E]" />
-                  <span className="font-semibold text-lg text-center">
-                    Fecha: Martes 2 de diciembre de 2025
-                  </span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Clock className="w-8 h-8 text-[#EE202E]" />
-                  <span className="font-semibold text-lg text-center">
-                    Hora: 9:00 AM - 8:00 PM
-                  </span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <MapPin className="w-8 h-8 text-[#EE202E]" />
-                  <span className="font-semibold text-lg text-center">
-                    Lugar: Jardín Libertad, Colima, México
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-[#808285] text-white py-16" id="footer">
+      <footer className="bg-[#808285] text-white py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-12">
               <h3 className="text-3xl font-bold mb-6 tracking-tight">
-                Fundación Carolita IAP
+                Un Día para Dar Colima
               </h3>
               <div className="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-12 text-white/90 text-lg">
                 <div className="flex items-center">
-                  <span>📞 52 13 121 109 700 | 52 13 121 437 460</span>
-                </div>
-                <div className="flex items-center">
                   <span>✉️ undiaparadarcolima@gmail.com</span>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-12 text-white/90 text-lg mt-3">
-                <div className="flex items-center">
-                  <span>✉️ fundacioncarolita1@gmail.com</span>
-                </div>
-                <div className="flex items-center">
-                  <span>🌐 www.fundacioncarolita.org</span>
                 </div>
               </div>
             </div>
@@ -458,32 +305,32 @@ END:VCALENDAR`;
             <div className="flex justify-center space-x-8 mb-12">
               <a
                 href="https://www.facebook.com/share/1BfmYrV77r/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Facebook className="w-7 h-7" />
               </a>
               <a
                 href="https://www.instagram.com/fundacioncarolita_?igsh=NHZndGF2OXB2NzBl"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Instagram className="w-7 h-7" />
               </a>
-              <a
-                href="#"
-                className="bg-white/20 rounded-full p-4 hover:bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
-              >
-                <Users className="w-7 h-7" />
-              </a>
             </div>
 
             <div className="text-white/80 mb-6">
-              <p className="font-semibold text-lg">
-                #UnDiaParaDarMX #FundaciónCarolita
-              </p>
+              <p className="font-semibold text-lg">#UnDíaParaDarMX #Colima</p>
             </div>
 
-            <div className="text-white/90 italic text-xl font-light">
-              "La solidaridad es el lenguaje universal que todos entendemos."
+            <div className="text-white/90 italic text-xl font-light mb-6">
+              La solidaridad es el lenguaje universal que todos entendemos
+            </div>
+
+            <div className="text-white/70 text-sm">
+              © {new Date().getFullYear()} Un Día para Dar Colima. Todos los derechos reservados.
             </div>
           </div>
         </div>
