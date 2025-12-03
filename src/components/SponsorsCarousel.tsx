@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import WhatsAppButton from './WhatsAppButton';
+import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 
 interface Sponsor {
   id: string;
@@ -291,13 +290,16 @@ const SponsorsCarousel: React.FC = () => {
           {/* CTA Button */}
           <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-            <WhatsAppButton
-              message="Hola, quiero ser donador o patrocinador de Fundación Carolita IAP."
-              variant="outline"
-              className="text-sm px-6 py-3 border-[#14AC94] text-[#14AC94] hover:bg-[#14AC94] hover:text-white"
+            <button
+              onClick={() => {
+                const message = encodeURIComponent("Hola, quiero ser donador o patrocinador de Fundación Carolita IAP.");
+                window.open(`https://wa.me/523122459294?text=${message}`, "_blank");
+              }}
+              className="inline-flex items-center gap-2 text-sm px-6 py-3 border-2 border-[#14AC94] text-[#14AC94] hover:bg-[#14AC94] hover:text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
             >
+              <MessageCircle className="w-5 h-5" />
               Únete como patrocinador
-            </WhatsAppButton>
+            </button>
           </div>
         </div>
       </div>
