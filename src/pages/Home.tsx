@@ -71,7 +71,7 @@ export default function Home() {
         "Atención integral a personas con discapacidad, programas educativos y terapéuticos",
       impact: "Infraestructura, equipamiento y apoyo directo a beneficiarios",
       color: "from-red-500 to-red-600",
-      image: "https://images.pexels.com/photos/8612990/pexels-photo-8612990.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "/public/images/historico/carolita.jpg",
     },
   ];
 
