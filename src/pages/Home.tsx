@@ -38,6 +38,7 @@ export default function Home() {
       description: "Apoyamos con recursos educativos para niños vulnerables",
       impact: "150 niños beneficiados",
       color: "from-blue-500 to-blue-600",
+      image: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
       year: "2022",
@@ -45,6 +46,7 @@ export default function Home() {
       description: "Mejoramos las instalaciones y equipamiento del hogar",
       impact: "80 personas apoyadas",
       color: "from-green-500 to-green-600",
+      image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
       year: "2023",
@@ -52,6 +54,7 @@ export default function Home() {
       description: "Financiamos tratamientos médicos especializados",
       impact: "200 consultas realizadas",
       color: "from-purple-500 to-purple-600",
+      image: "https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
       year: "2024",
@@ -59,6 +62,7 @@ export default function Home() {
       description: "Becas y material escolar para estudiantes de escasos recursos",
       impact: "300 estudiantes becados",
       color: "from-orange-500 to-orange-600",
+      image: "https://images.pexels.com/photos/8923157/pexels-photo-8923157.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
       year: "2025",
@@ -67,6 +71,7 @@ export default function Home() {
         "Atención integral a personas con discapacidad, programas educativos y terapéuticos",
       impact: "Infraestructura, equipamiento y apoyo directo a beneficiarios",
       color: "from-red-500 to-red-600",
+      image: "https://images.pexels.com/photos/8612990/pexels-photo-8612990.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
   ];
 
@@ -164,13 +169,20 @@ export default function Home() {
                   className="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="md:flex">
-                    <div className={`md:w-1/4 bg-gradient-to-br ${event.color} p-8 flex flex-col justify-center items-center text-white`}>
-                      <Calendar className="w-16 h-16 mb-4" />
-                      <p className="text-5xl font-bold mb-2">{event.year}</p>
-                      <p className="text-lg font-semibold">Un Día para Dar</p>
+                  <div className="grid md:grid-cols-3 gap-0">
+                    <div className="relative h-64 md:h-auto overflow-hidden">
+                      <img
+                        src={event.image}
+                        alt={`${event.foundation} ${event.year}`}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${event.color} opacity-20`}></div>
+                      <div className={`absolute top-4 left-4 bg-gradient-to-br ${event.color} rounded-2xl p-4 shadow-lg`}>
+                        <Calendar className="w-8 h-8 text-white mb-1" />
+                        <p className="text-3xl font-bold text-white">{event.year}</p>
+                      </div>
                     </div>
-                    <div className="md:w-3/4 p-8 md:p-12">
+                    <div className="md:col-span-2 p-8 md:p-12">
                       <h3 className="text-3xl font-bold text-[#808285] mb-4">
                         {event.foundation}
                       </h3>
