@@ -2,7 +2,7 @@
  * Fuente única de verdad del evento. Cambiar aquí se refleja en toda la página
  * (hero, cuenta regresiva, .ics, datos estructurados y meta tags).
  */
-export const SITE_URL = "https://un-dia-para-dar-colima.spartans-dev.io";
+export const SITE_URL = "https://udpd.spartans-dev.io";
 
 export const EVENT = {
   edition: 2026,
