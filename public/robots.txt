@@ -5,4 +5,4 @@ Disallow: /admin
 Disallow: /api/private
 Disallow: /src/
 
-Sitemap: https://un-dia-para-dar-colima.spartans-dev.io/sitemap.xml
+Sitemap: https://udpd.spartans-dev.io/sitemap.xml
