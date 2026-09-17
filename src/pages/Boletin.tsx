@@ -1,26 +1,116 @@
-import { ArrowLeft, Calendar, User, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import {
+  Calendar,
+  User,
+  ArrowRight,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  Lock,
+  Handshake,
+  Archive,
+  type LucideIcon,
+} from "lucide-react";
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Seo from "../components/Seo";
+import { useReveal } from "../hooks/useReveal";
+import { EVENT, SITE_URL } from "../config/event";
 
 interface Newsletter {
   id: string;
+  edition: 2026 | 2025;
   title: string;
   description: string;
   date: string;
+  isoDate: string;
   author: string;
   category: string;
   content: string;
+  /** Comunicados 2025: foto real del evento. Comunicados 2026: tarjeta gráfica. */
   image?: string;
+  icon?: LucideIcon;
+  accent?: string;
 }
 
 const newsletters: Newsletter[] = [
+  // ---------- Edición 2026 ----------
   {
-    id: 1,
-    title: 'Beneficiará el movimiento global, este diciembre "Un Día para Dar", a sector vulnerable de Colima',
-    description: 'Movimiento internacional en Colima busca incentivar la generosidad a través de diversas actividades el próximo 02 de diciembre en el centro de la capital colimense',
-    date: '28 de noviembre de 2025',
-    author: 'Comité Organizador Un Día Para Dar Colima',
-    category: 'Comunicado Oficial',
+    id: "2026-lanzamiento",
+    edition: 2026,
+    title: "Un Día para Dar Colima 2026 estrena los Círculos de Dar",
+    description:
+      "La campaña cambia de dinámica: en vez de una sola causa, este año tres organizaciones colimenses se benefician a la vez, elegidas por la propia comunidad.",
+    date: "16 de septiembre de 2026",
+    isoDate: "2026-09-16",
+    author: "Comité Organizador Un Día Para Dar Colima",
+    category: "Comunicado Oficial",
+    icon: Sparkles,
+    accent: "from-brand-red to-brand-orange",
+    content: `COLIMA, Col. – 16 de septiembre de 2026 – El comité organizador de "Un Día para Dar Colima" anuncia el arranque de su edición ${EVENT.edition} bajo un formato inédito en la ciudad: los Círculos de Dar. A diferencia de años anteriores, en los que la campaña se organizaba alrededor de una sola institución beneficiaria, este año grupos de personas, familias y empresas podrán formar sus propios círculos, aportar tiempo, talento o recursos, y decidir en conjunto a cuál causa apoyar.
+
+"Queremos que dar deje de ser un acto individual y se vuelva una decisión colectiva", explicó el comité organizador. "Cada círculo tiene voz propia: no les decimos a quién ayudar, ellos lo deciden entre todos".
+
+Como parte de esta edición, serán tres las organizaciones colimenses beneficiarias — un salto respecto a la edición anterior, enfocada únicamente en la Fundación Carolita IAP. Sus nombres se mantendrán en reserva hasta el destape oficial, programado para el 24 de noviembre de 2026, semana previa al evento central.
+
+La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabel}, en el ${EVENT.place}, coincidiendo una vez más con el movimiento global Giving Tuesday.
+
+Un Día para Dar Colima
+Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, que desde 2016 ha movilizado a miles de colimenses en actos de generosidad. La edición ${EVENT.edition} suma la mecánica de Círculos de Dar como su principal novedad.`,
+  },
+  {
+    id: "2026-misterio",
+    edition: 2026,
+    title: '"Ya las elegimos, pero no lo podemos contar": el misterio de las 3 organizaciones',
+    description:
+      "El comité confirma que las tres organizaciones beneficiarias de este año ya fueron seleccionadas. Sus nombres se revelan hasta el 24 de noviembre.",
+    date: "20 de septiembre de 2026",
+    isoDate: "2026-09-20",
+    author: "Comité Organizador Un Día Para Dar Colima",
+    category: "Detrás de cámaras",
+    icon: Lock,
+    accent: "from-brand-amber to-brand-lime",
+    content: `COLIMA, Col. – 20 de septiembre de 2026 – Contrario a lo que se podría pensar, el proceso de selección de las tres organizaciones beneficiarias de "Un Día para Dar Colima ${EVENT.edition}" ya concluyó. El comité organizador confirmó que las causas fueron evaluadas y elegidas durante el verano, pero se mantendrán en secreto hasta el día del destape.
+
+"No es un truco de mercadotecnia, es parte de la mecánica de los Círculos de Dar", aclaró el comité. "Queremos que la gente se sume a un círculo por confianza en el movimiento, no solo porque ya sabe a quién va a ayudar. Esa es la diferencia con años anteriores".
+
+Mientras tanto, en el sitio oficial se han publicado pistas sobre el trabajo de cada organización, sin revelar nombres ni logotipos. El destape en vivo se realizará el 24 de noviembre de 2026 y será transmitido a los círculos ya registrados antes de darse a conocer públicamente.
+
+Quienes deseen enterarse primero pueden registrar su interés directamente por WhatsApp desde la sección "Las 3 causas" del sitio oficial.`,
+  },
+  {
+    id: "2026-patrocinadores",
+    edition: 2026,
+    title: "Empresas colimenses se suman como patrocinadoras del círculo 2026",
+    description:
+      "Spartans Dev, Razo, Casa Macehual y La Bestia Grupera confirman su respaldo a la edición de este año.",
+    date: "25 de septiembre de 2026",
+    isoDate: "2026-09-25",
+    author: "Comité Organizador Un Día Para Dar Colima",
+    category: "Patrocinadores",
+    icon: Handshake,
+    accent: "from-brand-teal to-brand-lime",
+    content: `COLIMA, Col. – 25 de septiembre de 2026 – El comité organizador de "Un Día para Dar Colima ${EVENT.edition}" dio a conocer a las primeras empresas confirmadas como patrocinadoras de esta edición: Spartans Dev, Razo, Casa Macehual y La Bestia Grupera.
+
+Cada patrocinador aporta algo distinto al movimiento: desde el desarrollo del sitio oficial y la plataforma digital de los Círculos de Dar, hasta presencia en medios, servicios de bienestar en el Jardín Libertad y difusión en radio.
+
+"Patrocinar este año significa sumarse a las tres causas al mismo tiempo, no solo a una", señaló el comité. "Es una manera de multiplicar el impacto sin tener que elegir a cuál organización apoyar".
+
+El comité invitó a más empresas e instituciones colimenses a sumarse como patrocinadoras antes del 1 de diciembre, con presencia garantizada en el evento, en la campaña digital y en este boletín de prensa.`,
+  },
+  // ---------- Archivo 2025 ----------
+  {
+    id: "2025-lanzamiento",
+    edition: 2025,
+    title:
+      'Beneficiará el movimiento global, este diciembre "Un Día para Dar", a sector vulnerable de Colima',
+    description:
+      "Movimiento internacional en Colima busca incentivar la generosidad a través de diversas actividades el próximo 02 de diciembre en el centro de la capital colimense",
+    date: "28 de noviembre de 2025",
+    isoDate: "2025-11-28",
+    author: "Comité Organizador Un Día Para Dar Colima",
+    category: "Comunicado Oficial",
     content: `COLIMA, Col. – 28 de noviembre de 2025 – El comité organizador de "Un Día para Dar Colima" 2025 anuncia el lanzamiento oficial de su campaña anual de generosidad, en beneficio de la Fundación Carolita IAP. Se invita a todos los colimenses a sumarse con actos de generosidad a las distintas actividades que se llevarán a cabo en el Jardín Libertad. El objetivo es ambicioso; mejorar las condiciones de infraestructura y capacitación profesional de las instalaciones de dicha fundación dedicada a la atención y formación integral de personas con discapacidad en situación de vulnerabilidad.
 
 Bajo el lema "Un día para transformar vidas. Únete y sé parte del cambio", Claudia Razo Morales, Directora del Comité Organizador de "Un día para Dar Colima" explica -Este año, no solo queremos invitar a la gente a donar, queremos crear un verdadero viaje de generosidad que una a nuestra comunidad-. Por ello, el comité ha planeado incentivar a que se sumen familias, empresas y amigos para conocer la nueva administración de la Fundación Carolita IAP, para concientizar y lograr generar un impacto real y visible en la vida de los jóvenes y adultos a los que sirve la fundación. Claudia Razo concluye -Nuestra meta es ambiciosa, pero sabemos que el corazón de Colima es aún más grande-.
@@ -40,15 +130,18 @@ Es la iniciativa local del movimiento global #UnDíaParaDar #GivingTuesday, que 
 
 Fundación Carolita I.A.P.
 Es la nueva administración de la institución de asistencia privada sin fines de lucro, comprometida con el desarrollo integral de personas con discapacidad en Colima. A través de sus programas educativos, terapéuticos y culturales, busca promover la autonomía, la inclusión y mejorar la calidad de vida de sus beneficiarios y sus familias.`,
-    image: 'images/boletin/boletin.jpg'
+    image: "/images/boletin/boletin.jpg",
   },
   {
-    id: 3,
-    title: 'Galletas Carolita: Apoyo desde la cocina',
-    description: 'Conoce cómo nuestras galletas artesanales generan ingresos y oportunidades.',
-    date: '10 de noviembre de 2025',
-    author: 'Un Día Para Dar Colima',
-    category: 'Productos',
+    id: "2025-galletas",
+    edition: 2025,
+    title: "Galletas Carolita: Apoyo desde la cocina",
+    description:
+      "Conoce cómo nuestras galletas artesanales generan ingresos y oportunidades.",
+    date: "10 de noviembre de 2025",
+    isoDate: "2025-11-10",
+    author: "Un Día Para Dar Colima",
+    category: "Productos",
     content: `Las Galletas Carolita son mucho más que un producto delicioso. Son el resultado del esfuerzo, dedicación y talento de nuestros beneficiarios, quienes participan activamente en su elaboración.
 
 Este proyecto de producción artesanal no solo genera ingresos para la fundación, sino que también proporciona oportunidades de capacitación, desarrollo de habilidades y generación de ingresos para nuestros beneficiarios.
@@ -56,15 +149,18 @@ Este proyecto de producción artesanal no solo genera ingresos para la fundació
 Cada galleta que compras apoya directamente a personas con discapacidad. Nuestras variedades incluyen chocolate, vainilla, avena y más. ¡Pruébalas y sé parte del cambio!
 
 Para hacer tu pedido, contáctanos por WhatsApp o visita nuestras redes sociales.`,
-    image: 'images/boletin/galletas.jpg'
+    image: "/images/boletin/galletas.jpg",
   },
   {
-    id: 4,
-    title: 'Necesidades prioritarias: Cómo puedes ayudar',
-    description: 'Te contamos las necesidades actuales que requieren tu apoyo solidario.',
-    date: '5 de noviembre de 2025',
-    author: 'Dirección General',
-    category: 'Necesidades',
+    id: "2025-necesidades",
+    edition: 2025,
+    title: "Necesidades prioritarias: Cómo puedes ayudar",
+    description:
+      "Te contamos las necesidades actuales que requieren tu apoyo solidario.",
+    date: "5 de noviembre de 2025",
+    isoDate: "2025-11-05",
+    author: "Dirección General",
+    category: "Necesidades",
     content: `Para continuar brindando atención de calidad a nuestros beneficiarios, enfrentamos algunas necesidades prioritarias que requieren el apoyo de la comunidad.
 
 Entre nuestras principales necesidades están:
@@ -76,335 +172,314 @@ Entre nuestras principales necesidades están:
 • Equipos especializados para terapias
 
 Si deseas conocer en detalle cómo puedes apoyar alguna de estas necesidades, te invitamos a visitar nuestra página de Carolita o contactarnos directamente. Tu aporte, grande o pequeño, hace la diferencia.`,
-    image: 'images/boletin/necesidades.jpg'
-  }
+    image: "/images/boletin/necesidades.jpg",
+  },
 ];
 
 const needsImages = [
-  { src: 'images/boletin/boletint4.jpg', title: 'Remodelación y adaptación de baños', description: 'Mejora de la infraestructura sanitaria para mayor accesibilidad' },
-  { src: 'images/boletin/boletin5.jpg', title: 'Taller de repostería', description: 'Desarrollo de habilidades culinarias y autonomía' },
-  { src: 'images/boletin/boletin6.jpg', title: 'Pintura de instalaciones', description: 'Mantenimiento y embellecimiento de espacios' },
-  { src: 'images/boletin/boletin7.jpg', title: 'Materiales didácticos y educativos', description: 'Recursos para el aprendizaje continuo' },
-  { src: 'images/boletin/boletin8.jpg', title: 'Instalaciones eléctricas', description: 'Mejoras en seguridad y eficiencia energética' },
-  { src: 'images/boletin/boletin9.jpg', title: 'Equipamiento de movimiento y fisioterapia', description: 'Herramientas para terapias especializadas' },
-  { src: 'images/boletin/boletin10.jpg', title: 'Impermeabilización y reparación de techos', description: 'Protección de instalaciones y bienestar' },
-  { src: 'images/boletin/boletin11.jpg', title: 'Becas y uniformes', description: 'Apoyo educativo integral para beneficiarios' },
+  { src: "/images/boletin/boletint4.jpg", title: "Remodelación y adaptación de baños", description: "Mejora de la infraestructura sanitaria para mayor accesibilidad" },
+  { src: "/images/boletin/boletin5.jpg", title: "Taller de repostería", description: "Desarrollo de habilidades culinarias y autonomía" },
+  { src: "/images/boletin/boletin6.jpg", title: "Pintura de instalaciones", description: "Mantenimiento y embellecimiento de espacios" },
+  { src: "/images/boletin/boletin7.jpg", title: "Materiales didácticos y educativos", description: "Recursos para el aprendizaje continuo" },
+  { src: "/images/boletin/boletin8.jpg", title: "Instalaciones eléctricas", description: "Mejoras en seguridad y eficiencia energética" },
+  { src: "/images/boletin/boletin9.jpg", title: "Equipamiento de movimiento y fisioterapia", description: "Herramientas para terapias especializadas" },
+  { src: "/images/boletin/boletin10.jpg", title: "Impermeabilización y reparación de techos", description: "Protección de instalaciones y bienestar" },
+  { src: "/images/boletin/boletin11.jpg", title: "Becas y uniformes", description: "Apoyo educativo integral para beneficiarios" },
 ];
 
+const BOLETIN_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Sala de prensa · Un Día para Dar Colima",
+  description:
+    "Comunicados oficiales de Un Día para Dar Colima: la edición 2026 con los Círculos de Dar y el archivo de comunicados de la edición 2025.",
+  url: `${SITE_URL}/boletin`,
+  hasPart: newsletters.map((n) => ({
+    "@type": "NewsArticle",
+    headline: n.title,
+    description: n.description,
+    datePublished: n.isoDate,
+    author: { "@type": "Organization", name: n.author },
+  })),
+};
+
+/** Portada del comunicado: foto real (2025) o tarjeta gráfica de marca (2026, sin fotografía aún). */
+function NewsletterCover({ item, className = "" }: { item: Newsletter; className?: string }) {
+  if (item.image) {
+    return (
+      <img
+        src={item.image}
+        alt={item.title}
+        loading="lazy"
+        className={`h-full w-full object-cover ${className}`}
+      />
+    );
+  }
+  const Icon = item.icon ?? Sparkles;
+  return (
+    <div
+      className={`grid h-full w-full place-items-center bg-gradient-to-br ${
+        item.accent ?? "from-brand-red to-brand-teal"
+      } ${className}`}
+    >
+      <Icon className="h-12 w-12 text-white/90" strokeWidth={1.5} />
+    </div>
+  );
+}
+
 export default function Boletin() {
-  const [expandedId, setExpandedId] = useState<string | number | null>(null);
+  useReveal([]);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
-  const toggleExpand = (id: string | number) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
+  const toggleExpand = (id: string) => setExpandedId(expandedId === id ? null : id);
+  const openCarousel = (index: number) => setSelectedImageIndex(index);
+  const closeCarousel = () => setSelectedImageIndex(null);
+  const nextImage = () =>
+    setSelectedImageIndex((i) => (i === null ? null : (i + 1) % needsImages.length));
+  const prevImage = () =>
+    setSelectedImageIndex((i) => (i === null ? null : (i - 1 + needsImages.length) % needsImages.length));
 
-  const openCarousel = (index: number) => {
-    setSelectedImageIndex(index);
-  };
-
-  const closeCarousel = () => {
-    setSelectedImageIndex(null);
-  };
-
-  const nextImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex + 1) % needsImages.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex - 1 + needsImages.length) % needsImages.length);
-    }
-  };
+  const [featured, ...rest] = newsletters;
+  const restEdicion2026 = rest.filter((n) => n.edition === 2026);
+  const archivo2025 = rest.filter((n) => n.edition === 2025);
+  const expandedItem = newsletters.find((n) => n.id === expandedId);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-ink-900">
+      <Seo
+        title="Sala de prensa · Un Día para Dar Colima 2026"
+        description="Comunicados oficiales de Un Día para Dar Colima: el lanzamiento de los Círculos de Dar, el misterio de las 3 organizaciones 2026 y el archivo de comunicados de la edición 2025."
+        path="/boletin"
+        jsonLd={BOLETIN_JSONLD}
+      />
+      <Navbar />
+
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <Link
-            to="/"
-            className="inline-flex items-center text-[#808285] hover:text-[#EE202E] transition-colors mb-6 font-semibold"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Volver al inicio
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#808285] tracking-tight">
-            Boletín Informativo
+      <header className="grain relative overflow-hidden bg-ink-900 pt-32 pb-16 md:pt-40 md:pb-20">
+        <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
+        <div
+          aria-hidden
+          className="absolute left-1/2 top-0 h-72 w-[50rem] -translate-x-1/2 rounded-full bg-brand-red/15 blur-[140px]"
+        />
+        <div className="container relative mx-auto px-5 md:px-8">
+          <p className="eyebrow mb-6">Sala de prensa</p>
+          <h1 className="display text-balance text-[clamp(2rem,6vw,3.75rem)]">
+            Boletín <span className="text-gradient">informativo</span>
           </h1>
-          <p className="text-lg text-[#808285]/70 mt-3 font-light">
-            Mantente informado sobre las actividades y noticias de Fundación Carolita IAP
+          <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-white/70">
+            Comunicados oficiales de la edición {EVENT.edition} y el archivo completo de la
+            campaña 2025 en beneficio de la Fundación Carolita IAP.
           </p>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Newsletter (Left in desktop, first in mobile) */}
-          <div className="lg:col-span-2 order-1">
-            <section>
-              <div className="bg-white rounded-[20px] shadow-xl overflow-hidden border border-gray-100">
-                <div className="relative h-80 md:h-96 overflow-hidden">
-                  <img
-                    src={newsletters[0].image}
-                    alt={newsletters[0].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-[#EE202E] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                      Destacado
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-white/90 text-sm font-medium bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full inline-block">
-                      {newsletters[0].category}
-                    </span>
-                  </div>
+      <main className="container mx-auto px-5 py-16 md:px-8 md:py-24">
+        <div className="grid gap-8 lg:grid-cols-3">
+          {/* Comunicado destacado */}
+          <div className="order-1 lg:col-span-2">
+            <article className="gradient-border overflow-hidden rounded-[2rem] bg-white/[0.04] backdrop-blur-xl reveal">
+              <div className="relative h-72 overflow-hidden md:h-96">
+                <NewsletterCover item={featured} />
+                <div className="absolute top-4 right-4">
+                  <span className="rounded-full bg-brand-red px-4 py-2 text-xs font-bold text-white shadow-lg">
+                    Destacado
+                  </span>
                 </div>
-                <div className="p-8 md:p-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-[#808285]">
-                    {newsletters[0].title}
-                  </h2>
-                  <p className="text-[#808285]/80 text-lg mb-6 font-light leading-relaxed">
-                    {newsletters[0].description}
-                  </p>
-                  <div className="flex flex-col md:flex-row gap-4 text-[#808285]/60 text-sm mb-8">
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {newsletters[0].date}
-                    </div>
-                    <div className="flex items-center">
-                      <User className="w-4 h-4 mr-2" />
-                      {newsletters[0].author}
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => toggleExpand(newsletters[0].id)}
-                    className="inline-flex items-center bg-[#EE202E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#d11c29] transition-all duration-300 hover:scale-105 shadow-md"
-                  >
-                    Leer más
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </button>
-                  {expandedId === newsletters[0].id && (
-                    <div className="mt-8 pt-8 border-t border-gray-200">
-                      <p className="text-[#808285] font-light leading-relaxed whitespace-pre-line mb-12">
-                        {newsletters[0].content}
-                      </p>
-
-                      {/* Necesidades de Carolita dentro del boletín */}
-                      <div className="mt-12 pt-12 border-t border-gray-200">
-                        <div className="text-center mb-10">
-                          <h3 className="text-3xl md:text-4xl font-bold text-[#808285] mb-4 tracking-tight">
-                            Necesidades de Carolita
-                          </h3>
-                          <p className="text-base text-[#808285]/70 font-light max-w-2xl mx-auto">
-                            Conoce las áreas donde tu apoyo puede generar un impacto significativo en la vida de nuestros beneficiarios
-                          </p>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                          {needsImages.map((image, index) => (
-                            <div
-                              key={index}
-                              onClick={() => openCarousel(index)}
-                              className="relative h-56 rounded-[20px] overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
-                            >
-                              <img
-                                src={image.src}
-                                alt={image.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                              <div className="absolute bottom-4 left-4 right-4">
-                                <p className="text-white font-bold text-sm mb-1">{image.title}</p>
-                              </div>
-                              <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#EE202E] rounded-[20px] transition-all duration-300"></div>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="mt-8 text-center">
-                          <a
-                            href="https://wa.me/5213121109700?text=Hola, me gustaría conocer más sobre cómo puedo apoyar las necesidades de Fundación Carolita"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center bg-[#14AC94] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0f9582] transition-all duration-300 hover:scale-105 shadow-lg"
-                          >
-                            ¿Cómo puedo ayudar?
-                            <ArrowRight className="w-5 h-5 ml-2" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/10 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="inline-block rounded-full bg-black/40 px-3 py-1 text-sm font-medium text-white/90 backdrop-blur-sm">
+                    {featured.category}
+                  </span>
                 </div>
               </div>
-            </section>
+              <div className="p-7 md:p-12">
+                <h2 className="font-display text-2xl font-bold leading-tight tracking-tight md:text-4xl">
+                  {featured.title}
+                </h2>
+                <p className="mt-4 text-base font-light leading-relaxed text-white/70 md:text-lg">
+                  {featured.description}
+                </p>
+                <div className="mt-6 flex flex-col gap-3 text-sm text-white/50 md:flex-row md:gap-6">
+                  <span className="inline-flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    {featured.date}
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    {featured.author}
+                  </span>
+                </div>
+                <button onClick={() => toggleExpand(featured.id)} className="btn-primary mt-8">
+                  {expandedId === featured.id ? "Leer menos" : "Leer más"}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+
+                {expandedId === featured.id && (
+                  <div className="mt-9 border-t border-white/10 pt-9">
+                    <p className="whitespace-pre-line text-base font-light leading-relaxed text-white/75">
+                      {featured.content}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </article>
           </div>
 
-          {/* Sidebar - Suggested Newsletters (Right in desktop, second in mobile) */}
-          <aside className="lg:col-span-1 order-2">
-            <div className="lg:sticky lg:top-24">
-              <h3 className="text-2xl font-bold text-[#808285] mb-6 tracking-tight">
-                Más Boletines
-              </h3>
-              <div className="space-y-4">
-                {newsletters.slice(1).map((newsletter) => {
-                  const isExpanded = expandedId === newsletter.id;
+          {/* Sidebar: resto de 2026 + archivo 2025 */}
+          <aside className="order-2 lg:col-span-1">
+            <div className="space-y-10 lg:sticky lg:top-28">
+              {restEdicion2026.length > 0 && (
+                <div>
+                  <h3 className="mb-4 font-display text-xl font-bold tracking-tight">
+                    Más comunicados {EVENT.edition}
+                  </h3>
+                  <div className="space-y-4 reveal">
+                    {restEdicion2026.map((item) => (
+                      <NewsletterCard
+                        key={item.id}
+                        item={item}
+                        isExpanded={expandedId === item.id}
+                        onToggle={() => toggleExpand(item.id)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
 
-                  return (
-                    <article
-                      key={newsletter.id}
-                      className={`bg-white border rounded-[20px] overflow-hidden transition-all duration-300 cursor-pointer ${
-                        isExpanded
-                          ? 'border-[#EE202E] shadow-lg'
-                          : 'border-gray-200 hover:shadow-lg hover:border-[#EE202E]/50'
-                      }`}
-                      onClick={() => toggleExpand(newsletter.id)}
-                    >
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={newsletter.image}
-                          alt={newsletter.title}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                        <div className="absolute top-2 left-2">
-                          <span className="text-xs font-bold bg-[#EE202E] text-white px-2 py-1 rounded-full">
-                            {newsletter.category}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="p-4">
-                        <h4 className="text-sm font-bold text-[#808285] mb-1 hover:text-[#EE202E] transition-colors">
-                          {isExpanded ? newsletter.title : (
-                            <span className="line-clamp-2">{newsletter.title}</span>
-                          )}
-                        </h4>
-                        {!isExpanded && (
-                          <>
-                            <p className="text-xs text-[#808285]/60 mb-2 line-clamp-2 font-light">
-                              {newsletter.description}
-                            </p>
-                            <span className="text-xs text-[#808285]/50 flex items-center">
-                              <Calendar className="w-3 h-3 mr-1" />
-                              {newsletter.date}
-                            </span>
-                          </>
-                        )}
-
-                        {isExpanded && (
-                          <div className="mt-3 animate-in fade-in duration-300">
-                            <div className="flex flex-col gap-2 text-[#808285]/60 text-xs mb-3">
-                              <div className="flex items-center">
-                                <Calendar className="w-3 h-3 mr-2" />
-                                {newsletter.date}
-                              </div>
-                              <div className="flex items-center">
-                                <User className="w-3 h-3 mr-2" />
-                                {newsletter.author}
-                              </div>
-                            </div>
-                            <p className="text-[#808285] text-sm font-light leading-relaxed whitespace-pre-line mb-3">
-                              {newsletter.content}
-                            </p>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setExpandedId(null);
-                              }}
-                              className="inline-flex items-center text-[#EE202E] font-semibold hover:text-[#d11c29] transition-colors text-sm"
-                            >
-                              Cerrar
-                              <ArrowLeft className="w-3 h-3 ml-2" />
-                            </button>
-                          </div>
-                        )}
-                      </div>
-                    </article>
-                  );
-                })}
+              <div>
+                <h3 className="mb-4 flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white/70">
+                  <Archive className="h-5 w-5" />
+                  Archivo 2025
+                </h3>
+                <div className="space-y-4 reveal">
+                  {archivo2025.map((item) => (
+                    <NewsletterCard
+                      key={item.id}
+                      item={item}
+                      isExpanded={expandedId === item.id}
+                      onToggle={() => toggleExpand(item.id)}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </aside>
         </div>
+
+        {/* Necesidades de Carolita: aparece al expandir cualquier comunicado del archivo 2025 */}
+        {expandedItem?.edition === 2025 && (
+          <div className="mt-16 border-t border-white/10 pt-14 reveal">
+            <div className="mx-auto mb-9 max-w-2xl text-center">
+              <h3 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+                Necesidades de Carolita
+              </h3>
+              <p className="mx-auto mt-3 max-w-2xl text-sm font-light text-white/60">
+                Conoce las áreas donde tu apoyo puede generar un impacto significativo en la vida
+                de nuestros beneficiarios
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+              {needsImages.map((image, index) => (
+                <button
+                  key={image.src}
+                  onClick={() => openCarousel(index)}
+                  className="group relative h-48 overflow-hidden rounded-2xl border border-white/10 shadow-md transition-all duration-300 hover:shadow-xl"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                  <p className="absolute bottom-3 left-3 right-3 text-left text-sm font-bold text-white">
+                    {image.title}
+                  </p>
+                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-brand-lime" />
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <a
+                href={`https://wa.me/${EVENT.whatsapp}?text=${encodeURIComponent(
+                  "Hola, me gustaría conocer más sobre cómo puedo apoyar las necesidades de Fundación Carolita"
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-lime"
+              >
+                ¿Cómo puedo ayudar?
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        )}
       </main>
 
-            {/* Footer */}
-      <footer className="bg-[#808285] text-white py-12 mt-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-white/80 font-light">
-            © 2025 Un Día Para Dar Colima. Todos los derechos reservados:{" "}
-            <a
-              href="https://spartans-dev.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white"
-            >
-              Powered by Spartans-dev.io
-            </a>
-            .
-          </p>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Carousel Modal */}
       {selectedImageIndex !== null && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={closeCarousel}>
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
+          onClick={closeCarousel}
+        >
           <button
             onClick={closeCarousel}
-            className="absolute top-4 right-4 text-white hover:text-[#EE202E] transition-colors z-10"
+            aria-label="Cerrar"
+            className="absolute right-4 top-4 z-10 text-white transition-colors hover:text-brand-lime"
           >
-            <X className="w-8 h-8" />
+            <X className="h-8 w-8" />
           </button>
-
           <button
             onClick={(e) => {
               e.stopPropagation();
               prevImage();
             }}
-            className="absolute left-4 text-white hover:text-[#EE202E] transition-colors z-10"
+            aria-label="Anterior"
+            className="absolute left-4 z-10 text-white transition-colors hover:text-brand-lime"
           >
-            <ChevronLeft className="w-10 h-10" />
+            <ChevronLeft className="h-10 w-10" />
           </button>
-
           <button
             onClick={(e) => {
               e.stopPropagation();
               nextImage();
             }}
-            className="absolute right-4 text-white hover:text-[#EE202E] transition-colors z-10"
+            aria-label="Siguiente"
+            className="absolute right-4 z-10 text-white transition-colors hover:text-brand-lime"
           >
-            <ChevronRight className="w-10 h-10" />
+            <ChevronRight className="h-10 w-10" />
           </button>
 
-          <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
             <div className="relative">
               <img
                 src={needsImages[selectedImageIndex].src}
                 alt={needsImages[selectedImageIndex].title}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-[20px]"
+                className="h-auto max-h-[80vh] w-full rounded-[20px] object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 rounded-b-[20px]">
-                <h4 className="text-white text-2xl font-bold mb-2">
+              <div className="absolute bottom-0 left-0 right-0 rounded-b-[20px] bg-gradient-to-t from-black/90 to-transparent p-6">
+                <h4 className="mb-2 text-2xl font-bold text-white">
                   {needsImages[selectedImageIndex].title}
                 </h4>
-                <p className="text-white/90 text-base font-light">
+                <p className="text-base font-light text-white/90">
                   {needsImages[selectedImageIndex].description}
                 </p>
               </div>
             </div>
-            <div className="flex justify-center mt-4 gap-2">
+            <div className="mt-4 flex justify-center gap-2">
               {needsImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === selectedImageIndex ? 'bg-[#EE202E] w-8' : 'bg-white/50 hover:bg-white/80'
+                  aria-label={`Ir a la imagen ${index + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === selectedImageIndex ? "w-8 bg-brand-lime" : "w-2 bg-white/40 hover:bg-white/70"
                   }`}
                 />
               ))}
@@ -413,5 +488,65 @@ export default function Boletin() {
         </div>
       )}
     </div>
+  );
+}
+
+function NewsletterCard({
+  item,
+  isExpanded,
+  onToggle,
+}: {
+  item: Newsletter;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <article
+      onClick={onToggle}
+      className={`cursor-pointer overflow-hidden rounded-[1.5rem] border backdrop-blur-xl transition-all duration-300 ${
+        isExpanded
+          ? "border-brand-lime/50 bg-white/[0.08]"
+          : "border-white/10 bg-white/[0.04] hover:border-white/25 hover:bg-white/[0.07]"
+      }`}
+    >
+      <div className="relative h-36 overflow-hidden">
+        <NewsletterCover item={item} className="transition-transform duration-500 hover:scale-105" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <span className="absolute left-2 top-2 rounded-full bg-brand-red px-2.5 py-1 text-[0.65rem] font-bold text-white">
+          {item.category}
+        </span>
+      </div>
+      <div className="p-4">
+        <h4 className="line-clamp-2 text-sm font-bold leading-snug text-white">{item.title}</h4>
+
+        {!isExpanded && (
+          <>
+            <p className="mt-2 line-clamp-2 text-xs font-light text-white/55">{item.description}</p>
+            <span className="mt-2 flex items-center text-xs text-white/40">
+              <Calendar className="mr-1 h-3 w-3" />
+              {item.date}
+            </span>
+          </>
+        )}
+
+        {isExpanded && (
+          <div className="mt-3 animate-fade-in-up">
+            <div className="mb-3 flex flex-col gap-1.5 text-xs text-white/50">
+              <span className="flex items-center">
+                <Calendar className="mr-2 h-3 w-3" />
+                {item.date}
+              </span>
+              <span className="flex items-center">
+                <User className="mr-2 h-3 w-3" />
+                {item.author}
+              </span>
+            </div>
+            <p className="mb-3 whitespace-pre-line text-sm font-light leading-relaxed text-white/70">
+              {item.content}
+            </p>
+          </div>
+        )}
+      </div>
+    </article>
   );
 }
