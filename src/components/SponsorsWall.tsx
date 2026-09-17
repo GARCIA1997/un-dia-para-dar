@@ -9,8 +9,9 @@ interface Sponsor {
 
 /**
  * Patrocinadores de Un Día para Dar Colima 2026 (confirmados a la fecha).
- * Se muestran todos al mismo nivel: con pocos logos, un muro corrido resta
- * más de lo que suma — mejor destacarlos grandes y quietos.
+ * En escritorio se muestran quietos y grandes (caben los 4 sin apretarse).
+ * En móvil se listan en un carrusel: es más fácil de recorrer con el dedo
+ * que una cuadrícula 2x2 apretada.
  */
 const SPONSORS: Sponsor[] = [
   { name: "Spartans Dev", logo: "/images/sponsors/spartansdevio.png", url: "https://spartans-dev.io" },
@@ -19,7 +20,7 @@ const SPONSORS: Sponsor[] = [
   { name: "Bestia Grupera", logo: "/images/sponsors/bestia.png" },
 ];
 
-function LogoTile({ sponsor }: { sponsor: Sponsor }) {
+function LogoTile({ sponsor, carousel = false }: { sponsor: Sponsor; carousel?: boolean }) {
   // Los logos vienen en formatos y fondos distintos, así que van sobre una
   // "tarjeta" blanca: se ven bien todos sin tener que retocar cada archivo.
   const content = (
@@ -33,8 +34,9 @@ function LogoTile({ sponsor }: { sponsor: Sponsor }) {
     </span>
   );
 
-  const classes =
-    "group relative flex flex-col items-center justify-center gap-3 rounded-3xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-white/30 hover:bg-white/[0.12]";
+  const classes = `group relative flex flex-col items-center justify-center gap-3 rounded-3xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-white/30 hover:bg-white/[0.12] ${
+    carousel ? "w-40 shrink-0" : ""
+  }`;
 
   const inner = (
     <>
@@ -77,11 +79,24 @@ export default function SponsorsWall() {
           </p>
         </div>
 
-        {/* Patrocinadores confirmados */}
-        <div className="mx-auto mb-14 grid max-w-3xl grid-cols-2 gap-5 sm:grid-cols-4 reveal">
-          {SPONSORS.map((sponsor) => (
-            <LogoTile key={sponsor.name} sponsor={sponsor} />
-          ))}
+        {/* Patrocinadores confirmados: carrusel en móvil, cuadrícula quieta desde sm */}
+        <div className="mb-14 reveal">
+          <div className="marquee-mask -mx-5 overflow-hidden px-5 sm:hidden">
+            <div className="flex w-max animate-marquee gap-5">
+              {/* Duplicado exacto: el keyframe "marquee" recorre -50%, que debe
+                  coincidir con el ancho de un set completo para que el loop
+                  no salte. */}
+              {[...SPONSORS, ...SPONSORS].map((sponsor, i) => (
+                <LogoTile key={`${sponsor.name}-${i}`} sponsor={sponsor} carousel />
+              ))}
+            </div>
+          </div>
+
+          <div className="mx-auto hidden max-w-3xl grid-cols-4 gap-5 sm:grid">
+            {SPONSORS.map((sponsor) => (
+              <LogoTile key={sponsor.name} sponsor={sponsor} />
+            ))}
+          </div>
         </div>
 
         {/* Invitación a patrocinar */}
