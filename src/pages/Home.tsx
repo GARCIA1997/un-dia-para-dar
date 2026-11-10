@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import CirculosDeDar from "../components/CirculosDeDar";
-import MysteryOrgs from "../components/MysteryOrgs";
+import Causas from "../components/Causas";
 import JoinCircle from "../components/JoinCircle";
 import SponsorsWall from "../components/SponsorsWall";
 import LegacyTeaser from "../components/LegacyTeaser";
@@ -77,7 +77,7 @@ const JSONLD = [
         name: "¿Cuáles son las organizaciones beneficiarias de 2026?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Este año serán tres organizaciones colimenses y sus nombres se revelarán el 24 de noviembre de 2026 en un destape en vivo. Hasta entonces solo publicamos pistas sobre sus causas.",
+          text: "Este año son tres organizaciones colimenses: el Comedor Solidario Cristo Rey (alimentación), la Red Desaparecidos en Colima A.C. (memoria y búsqueda) y FHADI (movilidad y autonomía de personas con discapacidad motriz). Cada Círculo de Dar decide a cuál destinar lo que reúna.",
         },
       },
       {
@@ -105,8 +105,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-ink-900">
       <Seo
-        title="Un Día para Dar Colima 2026 · Círculos de Dar | 3 causas por revelar"
-        description="El 1 de diciembre de 2026 Colima da en círculo. Forma tu Círculo de Dar y súmate a las 3 organizaciones beneficiarias que se revelarán el 24 de noviembre. #UnDíaParaDarMX"
+        title="Un Día para Dar Colima 2026 · Círculos de Dar | Conoce las 3 causas"
+        description="El 1 de diciembre de 2026 Colima da en círculo. Forma tu Círculo de Dar y conoce a las 3 organizaciones beneficiarias: Comedor Solidario Cristo Rey, Red Desaparecidos en Colima y FHADI. #UnDíaParaDarMX"
         path="/"
         jsonLd={JSONLD}
       />
@@ -114,7 +114,7 @@ export default function Home() {
       <main>
         <Hero />
         <CirculosDeDar />
-        <MysteryOrgs />
+        <Causas />
         <JoinCircle />
         <SponsorsWall />
         <LegacyTeaser />

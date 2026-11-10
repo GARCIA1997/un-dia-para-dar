@@ -2,8 +2,8 @@
 
 Sitio oficial de "Un Día para Dar Colima", la iniciativa local del movimiento global
 #UnDíaParaDar / Giving Tuesday. La edición **2026** estrena una nueva dinámica —los
-**Círculos de Dar**— y genera expectativa alrededor de las **3 organizaciones**
-beneficiarias, cuyos nombres se revelarán el 24 de noviembre de 2026.
+**Círculos de Dar**— y apoya a **3 organizaciones** colimenses: el Comedor Solidario
+Cristo Rey, la Red Desaparecidos en Colima A.C. y FHADI.
 
 La edición **2025** (enfocada en la Fundación Carolita IAP) se conserva íntegra como
 archivo histórico en [`/historia-2025`](src/pages/Historia2025.tsx).
@@ -14,11 +14,11 @@ archivo histórico en [`/historia-2025`](src/pages/Historia2025.tsx).
 - **Hero** con cuenta regresiva al evento (1 de diciembre de 2026), fondo animado y
   metáfora visual del círculo.
 - **Círculos de Dar**: explicación de la dinámica en 4 pasos interactivos.
-- **Las 3 causas**: tarjetas "clasificadas" con pistas destapables sobre las
-  organizaciones aún sin revelar, cuenta regresiva propia al día del destape y una
-  línea de tiempo hacia el evento.
-- **Arma tu círculo**: simulador de impacto (personas × aportación → total repartido
-  entre las 3 causas) y las tres formas de sumarse (personal, empresarial, de talento).
+- **Las 3 causas**: selector interactivo con la ficha de cada organización (quiénes son,
+  a quiénes acompañan y a qué se destina lo que reúnan, sin montos) y una línea de
+  tiempo hacia el evento.
+- **Arma tu círculo**: elige a qué causa apoya tu círculo (o las 3), simulador de impacto
+  (personas × aportación) y las tres formas de sumarse (personal, empresarial, de talento).
 - **Patrocinadores y aliados**: logos en fila fija en desktop, carrusel deslizante en
   móvil.
 - **Historia**: teaser que enlaza al archivo de la edición 2025.
@@ -67,13 +67,14 @@ un-dia-para-dar/
 │   └── og-image.jpg
 ├── src/
 │   ├── config/
-│   │   └── event.ts          # Fuente única de verdad: fecha, sede, WhatsApp,
-│   │                          # nº de organizaciones, línea de tiempo del reveal
+│   │   ├── event.ts          # Fuente única de verdad: fecha, sede, WhatsApp,
+│   │   │                      # nº de organizaciones, línea de tiempo
+│   │   └── organizations.ts  # Datos de las 3 organizaciones beneficiarias
 │   ├── components/
 │   │   ├── Navbar.tsx / Footer.tsx / Seo.tsx
 │   │   ├── Hero.tsx
 │   │   ├── CirculosDeDar.tsx     # Explica la dinámica en 4 pasos
-│   │   ├── MysteryOrgs.tsx       # Expectativa por las 3 causas sin revelar
+│   │   ├── Causas.tsx            # Fichas de las 3 organizaciones 2026
 │   │   ├── JoinCircle.tsx        # Simulador de impacto + formas de participar
 │   │   ├── SponsorsWall.tsx      # Patrocinadores (fila fija / carrusel móvil)
 │   │   ├── LegacyTeaser.tsx      # Enlaza a /historia-2025
@@ -128,7 +129,7 @@ npm run lint     # Verificar calidad de código con ESLint
 ## ⚙️ Configuración del evento
 
 Todo lo relacionado a la edición actual (fecha, sede, horario, WhatsApp, número de
-organizaciones beneficiarias y la línea de tiempo hacia el destape) vive en un solo
+organizaciones beneficiarias y la línea de tiempo hacia el evento) vive en un solo
 archivo:
 
 ```ts
@@ -147,8 +148,9 @@ export const EVENT = {
 Cambiar un valor ahí lo propaga automáticamente al hero, la cuenta regresiva, el
 archivo `.ics`, el footer y los datos estructurados (JSON-LD) de todas las páginas.
 
-Las pistas de las 3 organizaciones (aún sin revelar) y la fecha del destape en vivo se
-editan en `src/components/MysteryOrgs.tsx`.
+Las 3 organizaciones beneficiarias (nombre, causa, a quién ayudan y destino de los
+recursos) se editan en `src/config/organizations.ts`. Por decisión del comité no se
+publican montos, teléfonos, correos ni nombres de personas.
 
 ## 🎨 Guía de estilo
 
@@ -209,9 +211,9 @@ Agregar una entrada al arreglo `newsletters` en `src/pages/Boletin.tsx`, indican
 `edition` (2026 o 2025) — los comunicados 2026 sin fotografía usan una tarjeta gráfica
 en vez de imagen.
 
-### Revelar las 3 organizaciones
-Reemplazar las pistas de `MYSTERY` en `src/components/MysteryOrgs.tsx` por el
-contenido real cuando llegue la fecha del destape.
+### Cambiar una organización beneficiaria
+Editar su entrada en `ORGANIZATIONS` dentro de `src/config/organizations.ts` (y su ícono
+en `src/components/Causas.tsx`).
 
 ## 📞 Contacto
 

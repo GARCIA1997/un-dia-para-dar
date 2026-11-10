@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { MessageCircle, Users2, Building2, HeartHandshake } from "lucide-react";
 import { EVENT } from "../config/event";
+import { ORGANIZATIONS } from "../config/organizations";
 
 const MXN = new Intl.NumberFormat("es-MX", {
   style: "currency",
@@ -39,8 +40,13 @@ export default function JoinCircle() {
   const [people, setPeople] = useState(12);
   const [amount, setAmount] = useState(300);
 
+  /** "todas" = el círculo reparte entre las 3 causas. */
+  const [cause, setCause] = useState<string>("todas");
+  const chosen = ORGANIZATIONS.find((o) => o.id === cause);
+
   const total = people * amount;
   const perOrg = useMemo(() => Math.round(total / EVENT.orgsCount), [total]);
+  const causeSuffix = chosen ? ` Queremos apoyar a ${chosen.whatsappCause}.` : "";
 
   return (
     <section id="unete" className="relative overflow-hidden bg-ink-900 py-24 md:py-32">
@@ -56,8 +62,8 @@ export default function JoinCircle() {
             Arma tu círculo <span className="text-gradient-lime">hoy</span>
           </h2>
           <p className="mt-6 text-lg font-light leading-relaxed text-white/70">
-            No necesitas saber todavía a quién vas a apoyar: el círculo se arma antes del destape.
-            Esa es justo la gracia —te sumas por confianza en la comunidad, no por una sola causa.
+            Ya conoces a las tres organizaciones. Reúne a los tuyos, conversen y decidan juntos: pueden
+            apoyar a una sola o repartir entre las tres.
           </p>
         </div>
 
@@ -72,6 +78,27 @@ export default function JoinCircle() {
 
           <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
             <div className="space-y-7">
+              <fieldset>
+                <legend className="mb-3 text-sm font-medium text-white/70">¿A quién apoya tu círculo?</legend>
+                <div className="flex flex-wrap gap-2">
+                  {[{ id: "todas", shortName: "Las 3 causas" }, ...ORGANIZATIONS].map((o) => (
+                    <button
+                      key={o.id}
+                      type="button"
+                      onClick={() => setCause(o.id)}
+                      aria-pressed={cause === o.id}
+                      className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all ${
+                        cause === o.id
+                          ? "border-brand-lime bg-brand-lime text-ink-900"
+                          : "border-white/20 bg-white/5 text-white/75 hover:border-white/40"
+                      }`}
+                    >
+                      {o.shortName}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
               <label className="block">
                 <span className="mb-2 flex items-baseline justify-between text-sm font-medium text-white/70">
                   Personas en el círculo
@@ -115,8 +142,16 @@ export default function JoinCircle() {
                 {MXN.format(total)}
               </div>
               <p className="mt-3 text-sm leading-relaxed text-white/65">
-                ≈ <strong className="text-white">{MXN.format(perOrg)}</strong> para cada una de las{" "}
-                {EVENT.orgsCount} organizaciones.
+                {chosen ? (
+                  <>
+                    Todo para <strong className="text-white">{chosen.shortName}</strong>.
+                  </>
+                ) : (
+                  <>
+                    ≈ <strong className="text-white">{MXN.format(perOrg)}</strong> para cada una de las{" "}
+                    {EVENT.orgsCount} organizaciones.
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -137,7 +172,7 @@ export default function JoinCircle() {
                 {way.body}
               </p>
               <a
-                href={`https://wa.me/${EVENT.whatsapp}?text=${encodeURIComponent(way.message)}`}
+                href={`https://wa.me/${EVENT.whatsapp}?text=${encodeURIComponent(way.message + causeSuffix)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost mt-6 w-full text-sm"

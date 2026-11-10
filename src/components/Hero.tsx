@@ -99,8 +99,8 @@ export default function Hero() {
             grupos de personas y empresas que juntan tiempo, talento y recursos, y deciden
             <em className="not-italic text-brand-lime"> juntos</em> a quién apoyar.
             Este {EVENT.edition} serán{" "}
-            <strong className="font-semibold text-white">{EVENT.orgsCount} organizaciones</strong> …
-            y todavía nadie sabe cuáles.
+            <strong className="font-semibold text-white">{EVENT.orgsCount} organizaciones colimenses</strong>,
+            y ya puedes conocerlas.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-medium text-white/65">
@@ -121,8 +121,8 @@ export default function Hero() {
               <Sparkles className="h-5 w-5" />
               Forma tu Círculo de Dar
             </a>
-            <a href="#reveal" className="btn-ghost w-full sm:w-auto">
-              Descubre las 3 causas
+            <a href="#causas" className="btn-ghost w-full sm:w-auto">
+              Conoce las 3 causas
             </a>
           </div>
 

@@ -17,7 +17,7 @@ export const EVENT = {
   whatsapp: "5213121109700",
   email: "undiaparadarcolima@gmail.com",
   hashtags: ["#UnDiaParaDarMX", "#CirculosDeDar", "#UnDiaParaDarColima"],
-  /** Número de organizaciones beneficiarias de esta edición (aún sin revelar). */
+  /** Número de organizaciones beneficiarias de esta edición. */
   orgsCount: 3,
   social: {
     facebook: "https://www.facebook.com/share/1BfmYrV77r/?mibextid=wwXIfr",
@@ -25,25 +25,25 @@ export const EVENT = {
   },
 } as const;
 
-/** Fechas de la ruta hacia el 1 de diciembre: expectativa escalonada. */
+/** Ruta hacia el 1 de diciembre. */
 export const REVEAL_TIMELINE = [
   {
     date: "Octubre 2026",
     title: "Se abre el círculo",
-    body: "Lanzamos la convocatoria: personas, familias y empresas se registran para formar parte de los Círculos de Dar.",
+    body: "Se lanza la convocatoria: personas, familias y empresas se registran para formar parte de los Círculos de Dar.",
+    state: "done" as const,
+  },
+  {
+    date: "9 de noviembre 2026",
+    title: "Se revelan las 3 organizaciones",
+    body: "El comité da a conocer a las tres organizaciones colimenses beneficiarias de esta edición.",
     state: "done" as const,
   },
   {
     date: "Noviembre 2026",
-    title: "Primera pista",
-    body: "Revelamos las tres causas —no los nombres— que sostendrán las organizaciones de este año.",
+    title: "Cada círculo elige su causa",
+    body: "Los círculos conocen a las organizaciones, conversan y deciden a cuál destinar lo que reúnan.",
     state: "next" as const,
-  },
-  {
-    date: "24 de noviembre 2026",
-    title: "El gran reveal",
-    body: "Se destapan las 3 organizaciones beneficiarias en vivo, frente a todos los círculos.",
-    state: "locked" as const,
   },
   {
     date: "1 de diciembre 2026",
