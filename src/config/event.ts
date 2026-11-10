@@ -14,7 +14,7 @@ export const EVENT = {
   dateLabel: "Martes 1 de diciembre de 2026",
   timeLabel: "9:00 AM – 8:00 PM",
   place: "Jardín Libertad, Colima, México",
-  whatsapp: "5213121109700",
+  whatsapp: "5213121437460",
   email: "undiaparadarcolima@gmail.com",
   hashtags: ["#UnDiaParaDarMX", "#CirculosDeDar", "#UnDiaParaDarColima"],
   /** Número de organizaciones beneficiarias de esta edición. */

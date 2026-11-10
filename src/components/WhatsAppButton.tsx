@@ -14,7 +14,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   className = '', 
   variant = 'primary' 
 }) => {
-  const phoneNumber = "5213121109700";
+  const phoneNumber = "5213121437460";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const baseClasses = "inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg";

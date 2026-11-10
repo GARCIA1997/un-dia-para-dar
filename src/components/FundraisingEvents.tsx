@@ -89,7 +89,7 @@ const FundraisingEvents: React.FC = () => {
 
   const generateWhatsAppLink = (eventTitle: string) => {
     const message = `Hola, quiero colaborar en el evento ${eventTitle} de Fundación Carolita IAP. ¿Cómo puedo ayudar?`;
-    return `https://wa.me/5213121109700?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/5213121437460?text=${encodeURIComponent(message)}`;
   };
 
   const generateCalendarFile = (event: Event) => {

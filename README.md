@@ -139,7 +139,7 @@ export const EVENT = {
   dateISO: "2026-12-01T09:00:00-06:00",
   dateLabel: "Martes 1 de diciembre de 2026",
   place: "Jardín Libertad, Colima, México",
-  whatsapp: "5213121109700",
+  whatsapp: "5213121437460",
   orgsCount: 3,
   // ...
 };
@@ -218,7 +218,7 @@ en `src/components/Causas.tsx`).
 ## 📞 Contacto
 
 **Un Día para Dar Colima**
-- 📱 WhatsApp: +52 312 110 9700
+- 📱 WhatsApp: +52 312 143 7460
 - ✉️ Email: undiaparadarcolima@gmail.com
 - 🌐 Web: [udpd.spartans-dev.io](https://udpd.spartans-dev.io)
 - 📍 Jardín Libertad, Colima, México

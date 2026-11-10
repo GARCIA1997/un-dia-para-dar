@@ -108,7 +108,7 @@ export default function Footer() {
               </li>
               <li>
                 <a className="hover:text-brand-lime" href={`https://wa.me/${EVENT.whatsapp}`} target="_blank" rel="noopener noreferrer">
-                  WhatsApp · +52 312 110 9700
+                  WhatsApp · +52 312 143 7460
                 </a>
               </li>
               <li>{EVENT.place}</li>
