@@ -5,7 +5,7 @@ import { EVENT } from "../config/event";
 
 const LINKS = [
   { label: "Círculos de Dar", to: "/#circulos" },
-  { label: "Las 3 causas", to: "/#reveal" },
+  { label: "Las 3 causas", to: "/#causas" },
   { label: "Únete", to: "/#unete" },
   { label: "Aliados", to: "/#aliados" },
   { label: "Historia 2025", to: "/historia-2025" },

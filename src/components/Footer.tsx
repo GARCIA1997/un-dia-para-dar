@@ -88,7 +88,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm text-white/70">
               <li><a className="hover:text-brand-lime" href="/#circulos">Círculos de Dar</a></li>
-              <li><a className="hover:text-brand-lime" href="/#reveal">Las 3 causas</a></li>
+              <li><a className="hover:text-brand-lime" href="/#causas">Las 3 causas</a></li>
               <li><a className="hover:text-brand-lime" href="/#unete">Cómo participar</a></li>
               <li><a className="hover:text-brand-lime" href="/#aliados">Patrocinadores</a></li>
               <li><Link className="hover:text-brand-lime" to="/historia-2025">Historia 2025</Link></li>

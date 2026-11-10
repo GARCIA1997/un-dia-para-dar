@@ -6,7 +6,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Sparkles,
-  Lock,
   Handshake,
   Archive,
   type LucideIcon,
@@ -37,6 +36,38 @@ interface Newsletter {
 const newsletters: Newsletter[] = [
   // ---------- Edición 2026 ----------
   {
+    id: "2026-revelacion",
+    edition: 2026,
+    title: "Un Día para Dar Colima 2026 revela a sus 3 organizaciones beneficiarias",
+    description:
+      "Comedor Solidario Cristo Rey, Red Desaparecidos en Colima y FHADI serán las tres causas que apoyen los Círculos de Dar este año.",
+    date: "9 de noviembre de 2026",
+    isoDate: "2026-11-09",
+    author: "Comité Organizador Un Día Para Dar Colima",
+    category: "Comunicado Oficial",
+    icon: Sparkles,
+    accent: "from-brand-teal to-brand-lime",
+    content: `COLIMA, Col. – 9 de noviembre de 2026 – El comité organizador de "Un Día para Dar Colima ${EVENT.edition}" da a conocer a las tres organizaciones colimenses que serán beneficiarias de la edición de este año, bajo la dinámica de los Círculos de Dar: el Comedor Solidario Cristo Rey, la Red Desaparecidos en Colima A.C. y la Fundación Humanista de Ayuda a Personas con Discapacidad (FHADI).
+
+El comité había previsto un destape posterior, pero decidió revelar los nombres desde ahora para que cada círculo tenga más tiempo de conocer a las organizaciones, conversar y decidir a cuál destinar lo que reúna.
+
+Comedor Solidario Cristo Rey
+Ubicado en la colonia Solidaridad, en Villa de Álvarez, atiende a unas 60 personas de las colonias Solidaridad, Lomas Altas, Linda Vista y Villa Izcalli. Lo que reúnan los círculos se destinará a alimentos frescos y no perecederos, artículos de limpieza y gas para mantener la cocina en funcionamiento.
+
+Red Desaparecidos en Colima A.C.
+Integrada por familias con personas desaparecidas, busca a sus seres queridos desde 2018, acompaña a otras familias y mantiene el diálogo con las autoridades. Con su campaña "Fosa Común" renovará la Plaza de las y los Desaparecidos y llevará información a los 10 municipios del estado sobre prevención, denuncia y donación de muestras de ADN.
+
+FHADI
+Con presencia en Colima desde convenios con ayuntamientos, DIF municipales y universidades, acompaña desde 1997 a personas adultas con discapacidad motriz mediante capacitación, atención psicológica y autoempleo. Su campaña creará un Fondo de Movilidad para reparar sillas de ruedas y cubrir insumos de cuidado personal, de modo que una falla no deje a nadie días sin movilidad.
+
+"No les decimos a quién ayudar: las tres causas están sobre la mesa y cada círculo decide", explicó el comité organizador.
+
+Las personas, familias y empresas interesadas en formar un Círculo de Dar pueden registrarse por WhatsApp desde el sitio oficial. La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabel}, en el ${EVENT.place}.
+
+Un Día para Dar Colima
+Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, que desde 2016 ha movilizado a miles de colimenses en actos de generosidad.`,
+  },
+  {
     id: "2026-lanzamiento",
     edition: 2026,
     title: "Un Día para Dar Colima 2026 estrena los Círculos de Dar",
@@ -58,26 +89,6 @@ La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabe
 
 Un Día para Dar Colima
 Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, que desde 2016 ha movilizado a miles de colimenses en actos de generosidad. La edición ${EVENT.edition} suma la mecánica de Círculos de Dar como su principal novedad.`,
-  },
-  {
-    id: "2026-misterio",
-    edition: 2026,
-    title: '"Ya las elegimos, pero no lo podemos contar": el misterio de las 3 organizaciones',
-    description:
-      "El comité confirma que las tres organizaciones beneficiarias de este año ya fueron seleccionadas. Sus nombres se revelan hasta el 24 de noviembre.",
-    date: "20 de septiembre de 2026",
-    isoDate: "2026-09-20",
-    author: "Comité Organizador Un Día Para Dar Colima",
-    category: "Detrás de cámaras",
-    icon: Lock,
-    accent: "from-brand-amber to-brand-lime",
-    content: `COLIMA, Col. – 20 de septiembre de 2026 – Contrario a lo que se podría pensar, el proceso de selección de las tres organizaciones beneficiarias de "Un Día para Dar Colima ${EVENT.edition}" ya concluyó. El comité organizador confirmó que las causas fueron evaluadas y elegidas durante el verano, pero se mantendrán en secreto hasta el día del destape.
-
-"No es un truco de mercadotecnia, es parte de la mecánica de los Círculos de Dar", aclaró el comité. "Queremos que la gente se sume a un círculo por confianza en el movimiento, no solo porque ya sabe a quién va a ayudar. Esa es la diferencia con años anteriores".
-
-Mientras tanto, en el sitio oficial se han publicado pistas sobre el trabajo de cada organización, sin revelar nombres ni logotipos. El destape en vivo se realizará el 24 de noviembre de 2026 y será transmitido a los círculos ya registrados antes de darse a conocer públicamente.
-
-Quienes deseen enterarse primero pueden registrar su interés directamente por WhatsApp desde la sección "Las 3 causas" del sitio oficial.`,
   },
   {
     id: "2026-patrocinadores",
@@ -249,7 +260,7 @@ export default function Boletin() {
     <div className="min-h-screen bg-ink-900">
       <Seo
         title="Sala de prensa · Un Día para Dar Colima 2026"
-        description="Comunicados oficiales de Un Día para Dar Colima: el lanzamiento de los Círculos de Dar, el misterio de las 3 organizaciones 2026 y el archivo de comunicados de la edición 2025."
+        description="Comunicados oficiales de Un Día para Dar Colima: el lanzamiento de los Círculos de Dar, las 3 organizaciones 2026 y el archivo de comunicados de la edición 2025."
         path="/boletin"
         jsonLd={BOLETIN_JSONLD}
       />
