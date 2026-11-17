@@ -31,7 +31,7 @@ export function downloadCalendar() {
     `UID:undiaparadar-colima-${EVENT.edition}@spartans-dev.io`,
     `DTSTAMP:${toICS(new Date().toISOString())}`,
     `DTSTART:${toICS(EVENT.dateISO)}`,
-    `DTEND:${toICS(EVENT.endISO)}`,
+    ...(EVENT.endISO ? [`DTEND:${toICS(EVENT.endISO)}`] : []),
     `SUMMARY:${EVENT.name}`,
     `DESCRIPTION:${EVENT.tagline} Más información en ${SITE_URL}`,
     `LOCATION:${EVENT.place}`,

@@ -35,7 +35,7 @@ const STEPS: Step[] = [
   {
     icon: PartyPopper,
     title: "Se entrega el 1 de diciembre",
-    short: "Y se celebra en el Jardín",
+    short: "Y se celebra juntos",
     body: "En Un Día para Dar Colima los círculos se encuentran, entregan lo reunido a las organizaciones beneficiarias y lo celebran frente a toda la ciudad.",
     accent: "from-brand-teal to-brand-blue",
   },

@@ -18,7 +18,7 @@ const JSONLD = [
     description:
       "Un Día para Dar Colima 2026 estrena los Círculos de Dar: grupos que juntan tiempo, talento y recursos y deciden juntos a cuál de las 3 organizaciones beneficiarias apoyar.",
     startDate: EVENT.dateISO,
-    endDate: EVENT.endISO,
+    ...(EVENT.endISO ? { endDate: EVENT.endISO } : {}),
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     isAccessibleForFree: true,
@@ -26,13 +26,13 @@ const JSONLD = [
     image: [`${SITE_URL}/og-image.jpg`],
     location: {
       "@type": "Place",
-      name: "Jardín Libertad",
+      name: EVENT.placeName,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Jardín Libertad, Centro",
+        streetAddress: EVENT.streetAddress,
         addressLocality: "Colima",
         addressRegion: "Colima",
-        postalCode: "28000",
+        postalCode: EVENT.postalCode,
         addressCountry: "MX",
       },
     },
@@ -69,7 +69,7 @@ const JSONLD = [
         name: "¿Cuándo es Un Día para Dar Colima 2026?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${EVENT.dateLabel}, de ${EVENT.timeLabel}, en ${EVENT.place}. Coincide con el Giving Tuesday global.`,
+          text: `${EVENT.dateLabel}, a las ${EVENT.timeLabel}, en ${EVENT.place}. Coincide con el Giving Tuesday global.`,
         },
       },
       {

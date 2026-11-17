@@ -108,7 +108,7 @@ export default function SponsorsWall() {
               </h3>
               <p className="mt-3 text-base font-light leading-relaxed text-white/70">
                 Patrocinar Un Día para Dar Colima {EVENT.edition} es sumarte a las tres causas al
-                mismo tiempo, con presencia en el Jardín Libertad, en la campaña digital y en el
+                mismo tiempo, con presencia en el evento, en la campaña digital y en el
                 boletín de prensa.
               </p>
             </div>

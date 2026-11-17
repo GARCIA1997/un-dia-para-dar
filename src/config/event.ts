@@ -9,11 +9,16 @@ export const EVENT = {
   name: "Un Día para Dar Colima 2026",
   tagline: "Tres causas. Un solo círculo. Toda Colima dando.",
   /** Giving Tuesday 2026: martes 1 de diciembre */
-  dateISO: "2026-12-01T09:00:00-06:00",
-  endISO: "2026-12-01T20:00:00-06:00",
+  dateISO: "2026-12-01T18:30:00-06:00",
+  /** Hora de término: aún no se anuncia; sin ella el calendario y los datos estructurados omiten el fin. */
+  endISO: null as string | null,
   dateLabel: "Martes 1 de diciembre de 2026",
-  timeLabel: "9:00 AM – 8:00 PM",
-  place: "Jardín Libertad, Colima, México",
+  timeLabel: "6:30 PM",
+  placeName: "ISIMA Colima",
+  streetAddress: "Aquiles Serdán 549, La Armonía",
+  postalCode: "28030",
+  place: "ISIMA Colima, Aquiles Serdán 549, La Armonía, Colima, México",
+  mapUrl: "https://maps.google.com/?q=ISIMA+Colima,+Aquiles+Serd%C3%A1n+549,+La+Armon%C3%ADa,+Colima",
   whatsapp: "5213121437460",
   email: "undiaparadarcolima@gmail.com",
   hashtags: ["#UnDiaParaDarMX", "#CirculosDeDar", "#UnDiaParaDarColima"],
@@ -48,7 +53,7 @@ export const REVEAL_TIMELINE = [
   {
     date: "1 de diciembre 2026",
     title: "Un Día para Dar",
-    body: "El círculo se cierra en el Jardín Libertad: donativos, talento, tiempo y voz para las tres causas.",
+    body: "El círculo se cierra en ISIMA Colima: donativos, talento, tiempo y voz para las tres causas.",
     state: "locked" as const,
   },
 ];

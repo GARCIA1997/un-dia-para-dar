@@ -85,7 +85,7 @@ Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, qu
 
 Como parte de esta edición, serán tres las organizaciones colimenses beneficiarias — un salto respecto a la edición anterior, enfocada únicamente en la Fundación Carolita IAP. Sus nombres se mantendrán en reserva hasta el destape oficial, programado para el 24 de noviembre de 2026, semana previa al evento central.
 
-La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabel}, en el ${EVENT.place}, coincidiendo una vez más con el movimiento global Giving Tuesday.
+La cita para cerrar el círculo será el ${EVENT.dateLabel}, a las ${EVENT.timeLabel}, en ${EVENT.place}, coincidiendo una vez más con el movimiento global Giving Tuesday.
 
 Un Día para Dar Colima
 Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, que desde 2016 ha movilizado a miles de colimenses en actos de generosidad. La edición ${EVENT.edition} suma la mecánica de Círculos de Dar como su principal novedad.`,
@@ -104,7 +104,7 @@ Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, qu
     accent: "from-brand-teal to-brand-lime",
     content: `COLIMA, Col. – 25 de septiembre de 2026 – El comité organizador de "Un Día para Dar Colima ${EVENT.edition}" dio a conocer a las primeras empresas confirmadas como patrocinadoras de esta edición: Spartans Dev, Razo, Casa Macehual y La Bestia Grupera.
 
-Cada patrocinador aporta algo distinto al movimiento: desde el desarrollo del sitio oficial y la plataforma digital de los Círculos de Dar, hasta presencia en medios, servicios de bienestar en el Jardín Libertad y difusión en radio.
+Cada patrocinador aporta algo distinto al movimiento: desde el desarrollo del sitio oficial y la plataforma digital de los Círculos de Dar, hasta presencia en medios, servicios de bienestar en el evento y difusión en radio.
 
 "Patrocinar este año significa sumarse a las tres causas al mismo tiempo, no solo a una", señaló el comité. "Es una manera de multiplicar el impacto sin tener que elegir a cuál organización apoyar".
 

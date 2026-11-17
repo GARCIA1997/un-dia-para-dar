@@ -106,11 +106,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-medium text-white/65">
             <span className="inline-flex items-center gap-2">
               <CalendarPlus className="h-4 w-4 text-brand-lime" />
-              {EVENT.dateLabel}
+              {EVENT.dateLabel} · {EVENT.timeLabel}
             </span>
             <span className="inline-flex items-center gap-2">
               <MapPin className="h-4 w-4 text-brand-lime" />
-              {EVENT.place}
+              <a className="hover:text-brand-lime" href={EVENT.mapUrl} rel="noopener noreferrer" target="_blank">
+                {EVENT.place}
+              </a>
             </span>
           </div>
 

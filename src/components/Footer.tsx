@@ -111,7 +111,11 @@ export default function Footer() {
                   WhatsApp · +52 312 143 7460
                 </a>
               </li>
-              <li>{EVENT.place}</li>
+              <li>
+                <a className="hover:text-brand-lime" href={EVENT.mapUrl} rel="noopener noreferrer" target="_blank">
+                  {EVENT.place}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

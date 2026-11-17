@@ -136,9 +136,10 @@ archivo:
 // src/config/event.ts
 export const EVENT = {
   edition: 2026,
-  dateISO: "2026-12-01T09:00:00-06:00",
+  dateISO: "2026-12-01T18:30:00-06:00",
   dateLabel: "Martes 1 de diciembre de 2026",
-  place: "Jardín Libertad, Colima, México",
+  timeLabel: "6:30 PM",
+  place: "ISIMA Colima, Aquiles Serdán 549, La Armonía, Colima, México",
   whatsapp: "5213121437460",
   orgsCount: 3,
   // ...
@@ -221,7 +222,7 @@ en `src/components/Causas.tsx`).
 - 📱 WhatsApp: +52 312 143 7460
 - ✉️ Email: undiaparadarcolima@gmail.com
 - 🌐 Web: [udpd.spartans-dev.io](https://udpd.spartans-dev.io)
-- 📍 Jardín Libertad, Colima, México
+- 📍 ISIMA Colima, Aquiles Serdán 549, La Armonía, Colima, México
 
 ### Redes sociales
 - [Facebook](https://www.facebook.com/share/1BfmYrV77r/?mibextid=wwXIfr)
