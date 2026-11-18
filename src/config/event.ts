@@ -14,7 +14,7 @@ export const EVENT = {
   dateLabel: "Martes 1 de diciembre de 2026",
   timeLabel: "5:30 PM a 7:30 PM",
   /** Las puertas de ISIMA abren antes del evento para recibir donativos. */
-  doorsNote: "Desde las 9:00 AM las puertas de ISIMA están abiertas para recibir donativos en especie.",
+  doorsNote: "Desde las 9:00 AM las puertas de ISIMA están abiertas para recibir, con gratitud, tus donativos en especie.",
   placeName: "ISIMA Colima",
   streetAddress: "Aquiles Serdán 549, La Armonía",
   postalCode: "28030",

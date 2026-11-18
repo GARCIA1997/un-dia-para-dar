@@ -76,7 +76,7 @@ const JSONLD = [
         name: "¿Cómo puedo asistir?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "La entrada es con previa solicitud de invitación: forma tu Círculo de Dar y escríbenos por WhatsApp para registrarlo y recibir tu invitación.",
+          text: "Con mucho gusto: la entrada es por invitación. Forma tu Círculo de Dar y escríbenos por WhatsApp; te registramos y te enviamos la tuya.",
         },
       },
       {
