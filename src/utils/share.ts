@@ -33,7 +33,7 @@ export function downloadCalendar() {
     `DTSTART:${toICS(EVENT.dateISO)}`,
     ...(EVENT.endISO ? [`DTEND:${toICS(EVENT.endISO)}`] : []),
     `SUMMARY:${EVENT.name}`,
-    `DESCRIPTION:${EVENT.tagline} Más información en ${SITE_URL}`,
+    `DESCRIPTION:${EVENT.tagline} ${EVENT.doorsNote} Más información en ${SITE_URL}`,
     `LOCATION:${EVENT.place}`,
     "END:VEVENT",
     "END:VCALENDAR",

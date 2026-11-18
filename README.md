@@ -136,9 +136,9 @@ archivo:
 // src/config/event.ts
 export const EVENT = {
   edition: 2026,
-  dateISO: "2026-12-01T18:30:00-06:00",
+  dateISO: "2026-12-01T17:30:00-06:00",
   dateLabel: "Martes 1 de diciembre de 2026",
-  timeLabel: "6:30 PM",
+  timeLabel: "5:30 PM a 7:30 PM",
   place: "ISIMA Colima, Aquiles Serdán 549, La Armonía, Colima, México",
   whatsapp: "5213121437460",
   orgsCount: 3,

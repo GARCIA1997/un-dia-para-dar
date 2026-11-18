@@ -69,7 +69,7 @@ const JSONLD = [
         name: "¿Cuándo es Un Día para Dar Colima 2026?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${EVENT.dateLabel}, a las ${EVENT.timeLabel}, en ${EVENT.place}. Coincide con el Giving Tuesday global.`,
+          text: `${EVENT.dateLabel}, de ${EVENT.timeLabel}, en ${EVENT.place}. ${EVENT.doorsNote} Coincide con el Giving Tuesday global.`,
         },
       },
       {

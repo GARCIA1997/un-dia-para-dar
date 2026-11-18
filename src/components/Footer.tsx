@@ -118,6 +118,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          <p className="mt-8 border-t border-white/10 pt-6 text-center text-sm font-light text-white/70">{EVENT.doorsNote}</p>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center text-xs text-white/45 sm:flex-row sm:text-left">

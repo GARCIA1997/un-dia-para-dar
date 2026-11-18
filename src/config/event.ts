@@ -9,11 +9,12 @@ export const EVENT = {
   name: "Un Día para Dar Colima 2026",
   tagline: "Tres causas. Un solo círculo. Toda Colima dando.",
   /** Giving Tuesday 2026: martes 1 de diciembre */
-  dateISO: "2026-12-01T18:30:00-06:00",
-  /** Hora de término: aún no se anuncia; sin ella el calendario y los datos estructurados omiten el fin. */
-  endISO: null as string | null,
+  dateISO: "2026-12-01T17:30:00-06:00",
+  endISO: "2026-12-01T19:30:00-06:00",
   dateLabel: "Martes 1 de diciembre de 2026",
-  timeLabel: "6:30 PM",
+  timeLabel: "5:30 PM a 7:30 PM",
+  /** Las puertas de ISIMA abren antes del evento para recibir donativos. */
+  doorsNote: "Desde las 9:00 AM las puertas de ISIMA están abiertas para recibir donativos en especie.",
   placeName: "ISIMA Colima",
   streetAddress: "Aquiles Serdán 549, La Armonía",
   postalCode: "28030",

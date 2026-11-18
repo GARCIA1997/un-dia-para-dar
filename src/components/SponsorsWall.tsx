@@ -99,6 +99,23 @@ export default function SponsorsWall() {
           </div>
         </div>
 
+        {/* Agradecimiento especial: la sede */}
+        <div className="mx-auto mb-14 max-w-4xl overflow-hidden rounded-[2rem] border border-brand-lime/30 bg-gradient-to-br from-brand-lime/10 via-white/[0.04] to-brand-teal/15 p-8 backdrop-blur-xl reveal md:p-10">
+          <div className="flex flex-col items-center gap-7 text-center md:flex-row md:text-left">
+            <span className="grid h-28 w-44 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white px-4 py-3">
+              <img src="/images/sponsors/isima.webp" alt="Grupo ISIMA — sede de Un Día para Dar Colima" loading="lazy" className="max-h-full max-w-full object-contain" />
+            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-lime">Gracias especiales · Sede del evento</p>
+              <h3 className="mt-2 font-display text-2xl font-bold tracking-tight md:text-3xl">Gracias, Grupo ISIMA</h3>
+              <p className="mt-3 text-base font-light leading-relaxed text-white/75">
+                Por abrirnos sus puertas, por su atención y calidez, y por sumar a sus aliados para
+                que este día sea posible. {EVENT.doorsNote}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Invitación a patrocinar */}
         <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-white/12 bg-gradient-to-br from-brand-red/20 via-white/[0.04] to-brand-teal/20 p-8 backdrop-blur-xl reveal md:p-12">
           <div className="flex flex-col items-center gap-7 text-center md:flex-row md:text-left">

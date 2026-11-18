@@ -62,7 +62,7 @@ Con presencia en Colima desde convenios con ayuntamientos, DIF municipales y uni
 
 "No les decimos a quién ayudar: las tres causas están sobre la mesa y cada círculo decide", explicó el comité organizador.
 
-Las personas, familias y empresas interesadas en formar un Círculo de Dar pueden registrarse por WhatsApp desde el sitio oficial. La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabel}, en el ${EVENT.place}.
+Las personas, familias y empresas interesadas en formar un Círculo de Dar pueden registrarse por WhatsApp desde el sitio oficial. La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabel}, en ${EVENT.place}. ${EVENT.doorsNote}
 
 Un Día para Dar Colima
 Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, que desde 2016 ha movilizado a miles de colimenses en actos de generosidad.`,
@@ -85,7 +85,7 @@ Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, qu
 
 Como parte de esta edición, serán tres las organizaciones colimenses beneficiarias — un salto respecto a la edición anterior, enfocada únicamente en la Fundación Carolita IAP. Sus nombres se mantendrán en reserva hasta el destape oficial, programado para el 24 de noviembre de 2026, semana previa al evento central.
 
-La cita para cerrar el círculo será el ${EVENT.dateLabel}, a las ${EVENT.timeLabel}, en ${EVENT.place}, coincidiendo una vez más con el movimiento global Giving Tuesday.
+La cita para cerrar el círculo será el ${EVENT.dateLabel}, de ${EVENT.timeLabel}, en ${EVENT.place}, coincidiendo una vez más con el movimiento global Giving Tuesday.
 
 Un Día para Dar Colima
 Es la iniciativa local del movimiento global #UnDíaParaDar / Giving Tuesday, que desde 2016 ha movilizado a miles de colimenses en actos de generosidad. La edición ${EVENT.edition} suma la mecánica de Círculos de Dar como su principal novedad.`,
