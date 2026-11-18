@@ -21,7 +21,6 @@ const JSONLD = [
     ...(EVENT.endISO ? { endDate: EVENT.endISO } : {}),
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    isAccessibleForFree: true,
     inLanguage: "es-MX",
     image: [`${SITE_URL}/og-image.jpg`],
     location: {
@@ -70,6 +69,14 @@ const JSONLD = [
         acceptedAnswer: {
           "@type": "Answer",
           text: `${EVENT.dateLabel}, de ${EVENT.timeLabel}, en ${EVENT.place}. ${EVENT.doorsNote} Coincide con el Giving Tuesday global.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Cómo puedo asistir?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "La entrada es con previa solicitud de invitación: forma tu Círculo de Dar y escríbenos por WhatsApp para registrarlo y recibir tu invitación.",
         },
       },
       {
